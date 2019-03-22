@@ -74,7 +74,7 @@
             </objects>
             <point key="canvasLocation" x="-1126" y="1166"/>
         </scene>
-        <!--Item 1-->
+        <!--First Controller-->
         <scene sceneID="oz9-tW-qd4">
             <objects>
                 <viewController id="K6J-uX-zev" customClass="FirstController" customModule="Arbel_IOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,7 +84,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0eR-Ef-ssk"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="5JH-XP-ip2"/>
+                    <tabBarItem key="tabBarItem" title="" id="5JH-XP-ip2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDY-PW-2Rd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
