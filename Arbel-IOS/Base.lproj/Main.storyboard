@@ -6,11 +6,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Fifth Controller-->
         <scene sceneID="B7o-ni-tzy">
             <objects>
                 <viewController id="kVs-SL-TFG" customClass="FifthController" customModule="Arbel_IOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,13 +21,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HwP-f1-bev"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="X1L-Ay-DtB"/>
+                    <tabBarItem key="tabBarItem" title="" image="profileIcon" id="X1L-Ay-DtB">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pjH-QM-Xid" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="967" y="1165"/>
         </scene>
-        <!--Item-->
+        <!--Third Controller-->
         <scene sceneID="fd6-gw-Qcj">
             <objects>
                 <viewController id="NPd-L6-8GY" customClass="ThirdController" customModule="Arbel_IOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,13 +39,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="V5C-cl-seR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="hym-Bi-0bN"/>
+                    <tabBarItem key="tabBarItem" title="" image="coursesIcon" id="hym-Bi-0bN">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qiw-k8-gZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-457" y="1250"/>
+            <point key="canvasLocation" x="-449" y="1165"/>
         </scene>
-        <!--Item-->
+        <!--Fourth Controller-->
         <scene sceneID="kPx-Ix-EX7">
             <objects>
                 <viewController id="S1M-4N-cu4" customClass="FourthController" customModule="Arbel_IOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,13 +57,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9VW-5v-aJ2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="gfC-F6-gAC"/>
+                    <tabBarItem key="tabBarItem" title="" image="contactIcon" id="gfC-F6-gAC">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BdC-lc-ZSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="226" y="1229"/>
+            <point key="canvasLocation" x="252" y="1165"/>
         </scene>
-        <!--Item 2-->
+        <!--Second Controller-->
         <scene sceneID="gUd-f1-9WA">
             <objects>
                 <viewController id="zTV-VM-dA5" customClass="SecondController" customModule="Arbel_IOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,7 +75,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LqI-3l-KJt"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="wWf-pO-Zzn"/>
+                    <tabBarItem key="tabBarItem" title="" image="calendarIcon" id="wWf-pO-Zzn">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awo-Rz-raU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,10 +90,12 @@
                     <view key="view" contentMode="scaleToFill" id="9mV-Xo-nMB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="0eR-Ef-ssk"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="5JH-XP-ip2"/>
+                    <tabBarItem key="tabBarItem" title="" image="homeIcon" id="5JH-XP-ip2">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDY-PW-2Rd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,8 +109,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" red="1" green="0.2867321343" blue="0.2206847156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" name="chckedIconColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="K6J-uX-zev" kind="relationship" relationship="viewControllers" id="71m-KT-Zk5"/>
@@ -114,5 +126,18 @@
             <point key="canvasLocation" x="-642" y="367"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendarIcon" width="23" height="23"/>
+        <image name="contactIcon" width="24" height="24"/>
+        <image name="coursesIcon" width="24" height="23"/>
+        <image name="homeIcon" width="22" height="23"/>
+        <image name="profileIcon" width="24" height="24"/>
+        <namedColor name="backgroundColor">
+            <color red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="chckedIconColor">
+            <color red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
     <color key="tintColor" red="1" green="0.28673213427827537" blue="0.22068471563571013" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
