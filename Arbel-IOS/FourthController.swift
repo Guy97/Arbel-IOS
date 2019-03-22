@@ -10,8 +10,18 @@ import UIKit
 
 class FourthController: UIViewController {
     
+    @IBOutlet weak var mailForm: UITextField!
+    @IBOutlet weak var objectForm: UITextField!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        self.mailForm.layer.cornerRadius = 17
+        self.objectForm.layer.cornerRadius = 17
+    
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         print("fourth")
