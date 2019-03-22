@@ -14,7 +14,7 @@ class FirstController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        print("first")
+        print("first porco due speriamo funzioni")
     }
     
     
