@@ -15,6 +15,7 @@ class FirstController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         print("first porco due speriamo funzioni")
+        print("ma speriamo")
     }
     
     
