@@ -16,7 +16,7 @@ class FifthController: UIViewController {
         
         print("fifth")
     }
-    
+    //funzione swipe
     @IBAction func swipeControl(sender: UISwipeGestureRecognizer) {
         if sender.direction == UISwipeGestureRecognizer.Direction.right {
             self.tabBarController?.selectedIndex = 3
