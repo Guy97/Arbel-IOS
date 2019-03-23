@@ -49,5 +49,12 @@ class ThirdController: UIViewController {
         print("third")
     }
     
-    
+    @IBAction func swipeControl(sender: UISwipeGestureRecognizer) {
+        if sender.direction == UISwipeGestureRecognizer.Direction.left {
+            self.tabBarController?.selectedIndex = 3
+        }
+        else if sender.direction == UISwipeGestureRecognizer.Direction.right {
+            self.tabBarController?.selectedIndex = 1
+        }
+    }
 }

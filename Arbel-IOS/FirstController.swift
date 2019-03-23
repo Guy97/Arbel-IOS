@@ -17,6 +17,10 @@ class FirstController: UIViewController {
         print("first porco due speriamo funzioni")
         print("ma speriamo speriamooooo")
     }
-    
+    @IBAction func swipeControl(sender: UISwipeGestureRecognizer) {
+        if sender.direction == UISwipeGestureRecognizer.Direction.left {
+            self.tabBarController?.selectedIndex = 1
+        }
+    }
     
 }
