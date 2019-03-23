@@ -55,12 +55,20 @@
                             <constraint firstItem="NxS-Xe-rj7" firstAttribute="top" secondItem="BE2-Io-u2L" secondAttribute="top" id="sje-h5-nXc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HwP-f1-bev"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="bg6-Jn-Yng" appends="YES" id="Dmi-YV-l9n"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="profileIcon" id="X1L-Ay-DtB">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pjH-QM-Xid" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="bg6-Jn-Yng">
+                    <connections>
+                        <action selector="swipeControlWithSender:" destination="kVs-SL-TFG" id="krV-O3-jEw"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="965.60000000000002" y="1164.4677661169417"/>
         </scene>
@@ -359,6 +367,10 @@
                             <constraint firstItem="V5C-cl-seR" firstAttribute="trailing" secondItem="XXU-9U-xga" secondAttribute="trailing" constant="38" id="zSu-5O-Rf0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V5C-cl-seR"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Xxn-Ym-Vdi" appends="YES" id="kRv-SI-MnL"/>
+                            <outletCollection property="gestureRecognizers" destination="fkX-iB-0wD" appends="YES" id="mwz-X2-hbU"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="coursesIcon" id="hym-Bi-0bN">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
@@ -371,6 +383,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qiw-k8-gZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Xxn-Ym-Vdi">
+                    <connections>
+                        <action selector="swipeControlWithSender:" destination="NPd-L6-8GY" id="523-kV-zyR"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="fkX-iB-0wD">
+                    <connections>
+                        <action selector="swipeControlWithSender:" destination="NPd-L6-8GY" id="HGX-uq-av1"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-450.39999999999998" y="1164.4677661169417"/>
         </scene>
@@ -458,6 +480,10 @@
                             <constraint firstItem="gea-dK-MUc" firstAttribute="top" secondItem="gJf-S1-yQN" secondAttribute="bottom" constant="10" id="v5J-Un-DVd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9VW-5v-aJ2"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aCt-v4-elx" appends="YES" id="5I9-wB-zO1"/>
+                            <outletCollection property="gestureRecognizers" destination="Kmv-dE-EL4" appends="YES" id="XlC-FD-DlR"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="contactIcon" id="gfC-F6-gAC">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
@@ -468,6 +494,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BdC-lc-ZSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="aCt-v4-elx">
+                    <connections>
+                        <action selector="swipeControlWithSender:" destination="S1M-4N-cu4" id="bed-9i-LsM"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="Kmv-dE-EL4">
+                    <connections>
+                        <action selector="swipeControlWithSender:" destination="S1M-4N-cu4" id="RNv-Id-glT"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="252" y="1164.4677661169417"/>
         </scene>
@@ -504,6 +540,31 @@
                                     <navigationItem title="CALENDARIO" id="BqZ-2q-JEM"/>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z1U-P1-KnZ" customClass="FSCalendar">
+                                <rect key="frame" x="16" y="109" width="375" height="302"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
+                                        <color key="value" red="1" green="0.2867321343" blue="0.2206847156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="eventSelectionColor">
+                                        <color key="value" red="1" green="0.2867321343" blue="0.2206847156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                        <color key="value" name="chckedIconColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
+                                        <color key="value" red="1" green="0.2867321343" blue="0.2206847156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                        <color key="value" red="1" green="0.2867321343" blue="0.2206847156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
@@ -516,12 +577,26 @@
                             <constraint firstItem="Tqn-rB-9K9" firstAttribute="leading" secondItem="LqI-3l-KJt" secondAttribute="leading" id="wHG-V4-ztN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LqI-3l-KJt"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qIZ-YM-zfV" appends="YES" id="Jit-nZ-Zmz"/>
+                            <outletCollection property="gestureRecognizers" destination="ijB-br-1AI" appends="YES" id="VHx-2Q-qPs"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="calendarIcon" id="wWf-pO-Zzn">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awo-Rz-raU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="qIZ-YM-zfV">
+                    <connections>
+                        <action selector="swipeControlWithSender:" destination="zTV-VM-dA5" id="x4m-md-lGg"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="ijB-br-1AI">
+                    <connections>
+                        <action selector="swipeControlWithSender:" destination="zTV-VM-dA5" id="Z0I-4E-FlQ"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1127.2" y="1165.3673163418291"/>
         </scene>
@@ -577,6 +652,7 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" name="backgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ygz-YR-n24" firstAttribute="trailing" secondItem="0eR-Ef-ssk" secondAttribute="trailing" id="8Qk-Fn-jYK"/>
                             <constraint firstItem="ygz-YR-n24" firstAttribute="top" secondItem="0eR-Ef-ssk" secondAttribute="top" id="9To-IC-mcr"/>
@@ -589,12 +665,20 @@
                             <constraint firstItem="ygz-YR-n24" firstAttribute="leading" secondItem="0eR-Ef-ssk" secondAttribute="leading" id="wp4-pH-Zfi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0eR-Ef-ssk"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="CAj-RP-0oE" appends="YES" id="MEF-Jw-fM5"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="homeIcon" id="5JH-XP-ip2">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDY-PW-2Rd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="CAj-RP-0oE">
+                    <connections>
+                        <action selector="swipeControlWithSender:" destination="K6J-uX-zev" id="sAY-Xc-QE5"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1823.2" y="1165.3673163418291"/>
         </scene>

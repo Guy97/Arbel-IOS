@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01EB3A4C3802DEFFE0FA58F0 /* Pods_Arbel_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A7F856B1D7FB4A9D5D4E21 /* Pods_Arbel_IOS.framework */; };
 		044CB2F92237CBBD00F0A410 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB2F82237CBBD00F0A410 /* AppDelegate.swift */; };
 		044CB2FB2237CBBD00F0A410 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB2FA2237CBBD00F0A410 /* ViewController.swift */; };
 		044CB2FE2237CBBD00F0A410 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044CB2FC2237CBBD00F0A410 /* Main.storyboard */; };
@@ -59,6 +60,11 @@
 		046E90CE22405AF800C9BC16 /* ThirdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdController.swift; sourceTree = "<group>"; };
 		046E90D022405B1E00C9BC16 /* FourthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthController.swift; sourceTree = "<group>"; };
 		046E90D222405B3E00C9BC16 /* FifthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthController.swift; sourceTree = "<group>"; };
+		8326CE3A93FD07E2C99ADA02 /* Pods_Arbel_IOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F8FF6F13083F23CAAF23347 /* Pods-Arbel-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arbel-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arbel-IOS/Pods-Arbel-IOS.debug.xcconfig"; sourceTree = "<group>"; };
+		D5A7F856B1D7FB4A9D5D4E21 /* Pods_Arbel_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E22AAF5412B0D6F1C2C996BB /* Pods_Arbel_IOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF2544FAE85A6DA607EFF1F4 /* Pods-Arbel-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arbel-IOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Arbel-IOS/Pods-Arbel-IOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01EB3A4C3802DEFFE0FA58F0 /* Pods_Arbel_IOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +100,8 @@
 				044CB30C2237CBBF00F0A410 /* Arbel-IOSTests */,
 				044CB3172237CBBF00F0A410 /* Arbel-IOSUITests */,
 				044CB2F62237CBBD00F0A410 /* Products */,
+				2073715DC458F6E9C066A6EF /* Pods */,
+				F393F425E70A14346D9F3A42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +152,25 @@
 			path = "Arbel-IOSUITests";
 			sourceTree = "<group>";
 		};
+		2073715DC458F6E9C066A6EF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F8FF6F13083F23CAAF23347 /* Pods-Arbel-IOS.debug.xcconfig */,
+				FF2544FAE85A6DA607EFF1F4 /* Pods-Arbel-IOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F393F425E70A14346D9F3A42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5A7F856B1D7FB4A9D5D4E21 /* Pods_Arbel_IOS.framework */,
+				8326CE3A93FD07E2C99ADA02 /* Pods_Arbel_IOSTests.framework */,
+				E22AAF5412B0D6F1C2C996BB /* Pods_Arbel_IOSUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 044CB31D2237CBBF00F0A410 /* Build configuration list for PBXNativeTarget "Arbel-IOS" */;
 			buildPhases = (
+				FF5D385179FB9C62BF6A0B2D /* [CP] Check Pods Manifest.lock */,
 				044CB2F12237CBBD00F0A410 /* Sources */,
 				044CB2F22237CBBD00F0A410 /* Frameworks */,
 				044CB2F32237CBBD00F0A410 /* Resources */,
+				24092F54ABC3C22BD5A13AC3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,6 +298,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24092F54ABC3C22BD5A13AC3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Arbel-IOS/Pods-Arbel-IOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Calendar-iOS/Calendar_iOS.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Calendar_iOS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Arbel-IOS/Pods-Arbel-IOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF5D385179FB9C62BF6A0B2D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Arbel-IOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		044CB2F12237CBBD00F0A410 /* Sources */ = {
@@ -454,16 +535,17 @@
 		};
 		044CB31E2237CBBF00F0A410 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F8FF6F13083F23CAAF23347 /* Pods-Arbel-IOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G8Q47GA8PQ;
+				DEVELOPMENT_TEAM = N34DY4RDKG;
 				INFOPLIST_FILE = "Arbel-IOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "simoneGhisu.Arbel-IOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marcellopajntar.Arbel-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -472,16 +554,17 @@
 		};
 		044CB31F2237CBBF00F0A410 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF2544FAE85A6DA607EFF1F4 /* Pods-Arbel-IOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G8Q47GA8PQ;
+				DEVELOPMENT_TEAM = N34DY4RDKG;
 				INFOPLIST_FILE = "Arbel-IOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "simoneGhisu.Arbel-IOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marcellopajntar.Arbel-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
