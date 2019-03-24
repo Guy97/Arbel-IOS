@@ -429,7 +429,7 @@
                                     <navigationItem title="CONTATTA" id="VMO-qQ-1tO"/>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Destinatari" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJf-S1-yQN">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Destinatari" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJf-S1-yQN">
                                 <rect key="frame" x="38" y="135" width="300" height="37"/>
                                 <color key="backgroundColor" name="formColor"/>
                                 <constraints>
@@ -440,7 +440,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Oggetto" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gea-dK-MUc">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Oggetto" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gea-dK-MUc">
                                 <rect key="frame" x="38" y="182" width="300" height="37"/>
                                 <color key="backgroundColor" name="formColor"/>
                                 <constraints>
