@@ -541,7 +541,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z1U-P1-KnZ" customClass="FSCalendar">
-                                <rect key="frame" x="16" y="109" width="375" height="302"/>
+                                <rect key="frame" x="-1.6923076922716973" y="109" width="375" height="301.99999999999977"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
