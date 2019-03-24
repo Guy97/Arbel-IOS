@@ -540,28 +540,56 @@
                                     <navigationItem title="CALENDARIO" id="BqZ-2q-JEM"/>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z1U-P1-KnZ" customClass="FSCalendar">
-                                <rect key="frame" x="16" y="109" width="375" height="302"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1U-P1-KnZ" customClass="FSCalendar">
+                                <rect key="frame" x="37" y="64" width="300" height="302"/>
+                                <color key="backgroundColor" name="backgroundColor"/>
+                                <color key="tintColor" name="primaryColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="z1U-P1-KnZ" secondAttribute="height" multiplier="150:151" id="EZU-PA-tfX"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
-                                        <color key="value" red="1" green="0.2867321343" blue="0.2206847156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" name="primaryColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="eventSelectionColor">
-                                        <color key="value" red="1" green="0.2867321343" blue="0.2206847156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" name="primaryColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" name="titleColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
-                                        <color key="value" name="chckedIconColor"/>
+                                        <color key="value" name="titleColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
-                                        <color key="value" red="1" green="0.2867321343" blue="0.2206847156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" name="primaryColor"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                                        <color key="value" red="1" green="0.2867321343" blue="0.2206847156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" name="primaryColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="useVeryShortWeekdaySymbols" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fakeSubtitles" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="weekdayTextSize">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleTextSize">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerTitleTextSize">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerMinimumDissolvedAlpha">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
+                                        <color key="value" name="titleColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="pagingEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerHeight">
+                                        <real key="value" value="70"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fakedSelectedDay">
+                                        <integer key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -573,8 +601,11 @@
                             <constraint firstItem="ncj-IZ-1Ku" firstAttribute="leading" secondItem="LqI-3l-KJt" secondAttribute="leading" id="HNA-cs-A6p"/>
                             <constraint firstItem="Tqn-rB-9K9" firstAttribute="top" secondItem="LqI-3l-KJt" secondAttribute="top" id="L8c-iE-Xy4"/>
                             <constraint firstItem="Tqn-rB-9K9" firstAttribute="top" secondItem="LqI-3l-KJt" secondAttribute="top" id="Ls9-iy-zNh"/>
+                            <constraint firstItem="z1U-P1-KnZ" firstAttribute="leading" secondItem="LqI-3l-KJt" secondAttribute="leading" constant="37" id="bLL-9X-mKg"/>
+                            <constraint firstItem="z1U-P1-KnZ" firstAttribute="top" secondItem="Tqn-rB-9K9" secondAttribute="bottom" id="pKq-mX-hfn"/>
                             <constraint firstItem="ncj-IZ-1Ku" firstAttribute="trailing" secondItem="LqI-3l-KJt" secondAttribute="trailing" id="tgp-NO-HMY"/>
                             <constraint firstItem="Tqn-rB-9K9" firstAttribute="leading" secondItem="LqI-3l-KJt" secondAttribute="leading" id="wHG-V4-ztN"/>
+                            <constraint firstItem="LqI-3l-KJt" firstAttribute="trailing" secondItem="z1U-P1-KnZ" secondAttribute="trailing" constant="38" id="zp1-T4-b83"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LqI-3l-KJt"/>
                         <connections>
