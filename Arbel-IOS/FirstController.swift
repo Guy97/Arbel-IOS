@@ -16,6 +16,7 @@ class FirstController: UIViewController {
         
         print("first porco due speriamo funzioni")
         print("ma speriamo speriamoooooo")
+        print("scusate ho fatto un bordello e ho dovuto rifare il clone")
     }
     
     //funzione swipe
