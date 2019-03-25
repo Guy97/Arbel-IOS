@@ -141,6 +141,10 @@
                                             <constraint firstAttribute="height" constant="47" id="iAl-iT-FnW"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vce-2k-6G0">
+                                        <rect key="frame" x="-8" y="-11" width="314" height="67"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -507,7 +511,7 @@
             </objects>
             <point key="canvasLocation" x="252" y="1164.4677661169417"/>
         </scene>
-        <!--Second Controller-->
+        <!--Data Source-->
         <scene sceneID="gUd-f1-9WA">
             <objects>
                 <viewController id="zTV-VM-dA5" customClass="SecondController" customModule="Arbel_IOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -592,7 +596,18 @@
                                         <integer key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zTV-VM-dA5" id="dpA-yR-lGD"/>
+                                    <outlet property="delegate" destination="zTV-VM-dA5" id="EXa-HX-98G"/>
+                                </connections>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gUd-nH-n8k">
+                                <rect key="frame" x="67" y="419" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
@@ -616,6 +631,10 @@
                     <tabBarItem key="tabBarItem" title="" image="calendarIcon" id="wWf-pO-Zzn">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="calendar" destination="z1U-P1-KnZ" id="f0J-zm-b8G"/>
+                        <outlet property="display" destination="gUd-nH-n8k" id="Nnx-kV-fQH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awo-Rz-raU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="qIZ-YM-zfV">

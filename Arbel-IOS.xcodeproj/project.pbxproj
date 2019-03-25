@@ -21,6 +21,7 @@
 		046E90CF22405AF800C9BC16 /* ThirdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E90CE22405AF800C9BC16 /* ThirdController.swift */; };
 		046E90D122405B1E00C9BC16 /* FourthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E90D022405B1E00C9BC16 /* FourthController.swift */; };
 		046E90D322405B3E00C9BC16 /* FifthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E90D222405B3E00C9BC16 /* FifthController.swift */; };
+		049D129A22482AC000CD1548 /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D129922482AC000CD1548 /* LogInController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		046E90CE22405AF800C9BC16 /* ThirdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdController.swift; sourceTree = "<group>"; };
 		046E90D022405B1E00C9BC16 /* FourthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthController.swift; sourceTree = "<group>"; };
 		046E90D222405B3E00C9BC16 /* FifthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthController.swift; sourceTree = "<group>"; };
+		049D129922482AC000CD1548 /* LogInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		8326CE3A93FD07E2C99ADA02 /* Pods_Arbel_IOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8FF6F13083F23CAAF23347 /* Pods-Arbel-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arbel-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arbel-IOS/Pods-Arbel-IOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D5A7F856B1D7FB4A9D5D4E21 /* Pods_Arbel_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 				046E90CE22405AF800C9BC16 /* ThirdController.swift */,
 				046E90D022405B1E00C9BC16 /* FourthController.swift */,
 				046E90D222405B3E00C9BC16 /* FifthController.swift */,
+				049D129922482AC000CD1548 /* LogInController.swift */,
 			);
 			path = "Arbel-IOS";
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				046E90CB2240580800C9BC16 /* FirstController.swift in Sources */,
 				046E90CF22405AF800C9BC16 /* ThirdController.swift in Sources */,
 				044CB2FB2237CBBD00F0A410 /* ViewController.swift in Sources */,
+				049D129A22482AC000CD1548 /* LogInController.swift in Sources */,
 				046E90C9224040FF00C9BC16 /* TabarController.swift in Sources */,
 				046E90D322405B3E00C9BC16 /* FifthController.swift in Sources */,
 				044CB2F92237CBBD00F0A410 /* AppDelegate.swift in Sources */,

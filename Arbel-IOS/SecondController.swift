@@ -9,9 +9,10 @@
 import UIKit
 import FSCalendar
 
-class SecondController: UIViewController {
+class SecondController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
     
-
+    @IBOutlet weak var calendar: FSCalendar!
+    @IBOutlet weak var display: UITextView!
     
     
     override func viewDidLoad() {
@@ -19,6 +20,7 @@ class SecondController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         print("second.")
+        
         
     }
     
