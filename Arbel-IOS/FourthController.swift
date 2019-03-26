@@ -14,15 +14,22 @@ class FourthController: UIViewController {
     @IBOutlet weak var objectForm: UITextField!
     @IBOutlet weak var messageForm: UITextView!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        self.HideKeyboard()
+        
         self.mailForm.layer.cornerRadius = 17
         self.objectForm.layer.cornerRadius = 17
         self.messageForm.layer.cornerRadius = 13
         self.sendButton.layer.cornerRadius = 20
+        
+        addButton.clipsToBounds = true
+        addButton.layer.cornerRadius = 17
+        addButton.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
     
         
         

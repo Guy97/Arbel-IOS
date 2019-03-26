@@ -12,10 +12,13 @@ import FSCalendar
 class SecondController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
     
     @IBOutlet weak var calendar: FSCalendar!
-    @IBOutlet weak var display: UITextView!
+    @IBOutlet weak var activityContainer: UIView!
+    
     fileprivate weak var calendar2: FSCalendar!
     
-    let calendario = FSCalendarCell.self
+    let calendario = FSCalendarCell().titleLabel
+    
+    
     
     
     
@@ -23,12 +26,20 @@ class SecondController: UIViewController, FSCalendarDataSource, FSCalendarDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // Styles00
+        activityContainer.layer.cornerRadius = 19
+        activityContainer.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.5).cgColor
+        activityContainer.layer.shadowOffset = CGSize (width: 0, height: 0.5)
+        activityContainer.layer.shadowRadius = 1.8
+        activityContainer.layer.shadowOpacity = 0.6
+        
         print("second.")
         
         calendar.dataSource = self
         calendar.delegate = self
         view.addSubview(calendar)
         //self.calendar = calendar
+        print(calendario, "QUESTO")
         //display.text = "\(calendar.)"
         
         

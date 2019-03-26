@@ -197,6 +197,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Asks the delegate for multiple event colors in selected state for the specific date.
  */
+
 - (nullable NSArray<UIColor *> *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance eventSelectionColorsForDate:(NSDate *)date;
 
 /**

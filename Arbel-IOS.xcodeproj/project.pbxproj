@@ -553,13 +553,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RT9BH7U3F2;
+				DEVELOPMENT_TEAM = G8Q47GA8PQ;
 				INFOPLIST_FILE = "Arbel-IOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "silvanatuku.Arbel-IOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "simoneGhisu.Arbel-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 4.2;
@@ -573,13 +573,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RT9BH7U3F2;
+				DEVELOPMENT_TEAM = G8Q47GA8PQ;
 				INFOPLIST_FILE = "Arbel-IOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "silvanatuku.Arbel-IOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "simoneGhisu.Arbel-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 4.2;
