@@ -12,6 +12,8 @@ class FourthController: UIViewController {
     
     @IBOutlet weak var mailForm: UITextField!
     @IBOutlet weak var objectForm: UITextField!
+    @IBOutlet weak var messageForm: UITextView!
+    @IBOutlet weak var sendButton: UIButton!
     
     override func viewDidLoad() {
         
@@ -19,6 +21,8 @@ class FourthController: UIViewController {
         
         self.mailForm.layer.cornerRadius = 17
         self.objectForm.layer.cornerRadius = 17
+        self.messageForm.layer.cornerRadius = 13
+        self.sendButton.layer.cornerRadius = 20
     
         
         

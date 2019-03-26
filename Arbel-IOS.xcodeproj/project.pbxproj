@@ -22,6 +22,8 @@
 		046E90D122405B1E00C9BC16 /* FourthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E90D022405B1E00C9BC16 /* FourthController.swift */; };
 		046E90D322405B3E00C9BC16 /* FifthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E90D222405B3E00C9BC16 /* FifthController.swift */; };
 		049D129A22482AC000CD1548 /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D129922482AC000CD1548 /* LogInController.swift */; };
+		A9943A072249151900ED3899 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9943A062249151900ED3899 /* PaddingTextField.swift */; };
+		A9943A0922491EEC00ED3899 /* PaddingtextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9943A0822491EEC00ED3899 /* PaddingtextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		049D129922482AC000CD1548 /* LogInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		8326CE3A93FD07E2C99ADA02 /* Pods_Arbel_IOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8FF6F13083F23CAAF23347 /* Pods-Arbel-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arbel-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arbel-IOS/Pods-Arbel-IOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A9943A062249151900ED3899 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
+		A9943A0822491EEC00ED3899 /* PaddingtextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingtextView.swift; sourceTree = "<group>"; };
 		D5A7F856B1D7FB4A9D5D4E21 /* Pods_Arbel_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E22AAF5412B0D6F1C2C996BB /* Pods_Arbel_IOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF2544FAE85A6DA607EFF1F4 /* Pods-Arbel-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arbel-IOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Arbel-IOS/Pods-Arbel-IOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 			children = (
 				044CB2F82237CBBD00F0A410 /* AppDelegate.swift */,
 				046E90CA2240580800C9BC16 /* FirstController.swift */,
+				A9943A062249151900ED3899 /* PaddingTextField.swift */,
+				A9943A0822491EEC00ED3899 /* PaddingtextView.swift */,
 				044CB2FA2237CBBD00F0A410 /* ViewController.swift */,
 				046E90C8224040FF00C9BC16 /* TabarController.swift */,
 				044CB2FC2237CBBD00F0A410 /* Main.storyboard */,
@@ -360,6 +366,7 @@
 			files = (
 				046E90D122405B1E00C9BC16 /* FourthController.swift in Sources */,
 				046E90CB2240580800C9BC16 /* FirstController.swift in Sources */,
+				A9943A0922491EEC00ED3899 /* PaddingtextView.swift in Sources */,
 				046E90CF22405AF800C9BC16 /* ThirdController.swift in Sources */,
 				044CB2FB2237CBBD00F0A410 /* ViewController.swift in Sources */,
 				049D129A22482AC000CD1548 /* LogInController.swift in Sources */,
@@ -367,6 +374,7 @@
 				046E90D322405B3E00C9BC16 /* FifthController.swift in Sources */,
 				044CB2F92237CBBD00F0A410 /* AppDelegate.swift in Sources */,
 				046E90CD22405ACC00C9BC16 /* SecondController.swift in Sources */,
+				A9943A072249151900ED3899 /* PaddingTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
