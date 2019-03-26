@@ -433,7 +433,7 @@
                                     <navigationItem title="CONTATTA" id="VMO-qQ-1tO"/>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Destinatari" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJf-S1-yQN">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Destinatari" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJf-S1-yQN" customClass="PaddingTextField" customModule="Arbel_IOS" customModuleProvider="target">
                                 <rect key="frame" x="38" y="135" width="300" height="37"/>
                                 <color key="backgroundColor" name="formColor"/>
                                 <constraints>
@@ -444,7 +444,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Oggetto" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gea-dK-MUc">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Oggetto" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gea-dK-MUc" customClass="PaddingTextField" customModule="Arbel_IOS" customModuleProvider="target">
                                 <rect key="frame" x="38" y="182" width="300" height="37"/>
                                 <color key="backgroundColor" name="formColor"/>
                                 <constraints>
@@ -464,19 +464,59 @@
                                 <color key="textColor" name="titleColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMUNICAZIONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qu-iY-WhJ">
+                                <rect key="frame" x="38" y="249" width="144" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2qu-iY-WhJ" secondAttribute="height" multiplier="48:7" id="mOq-yv-KBX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" name="titleColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Eq-fB-Ml3" customClass="PaddingtextView" customModule="Arbel_IOS" customModuleProvider="target">
+                                <rect key="frame" x="38" y="290" width="300" height="229"/>
+                                <color key="backgroundColor" name="formColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8Eq-fB-Ml3" secondAttribute="height" multiplier="300:203" constant="-38.423645320197011" id="Ivw-Y1-lMD"/>
+                                    <constraint firstAttribute="width" constant="300" id="q4D-za-gzT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72i-bx-TOC">
+                                <rect key="frame" x="38" y="559" width="300" height="40"/>
+                                <color key="backgroundColor" name="primaryColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VUu-jZ-Jmn"/>
+                                    <constraint firstAttribute="width" secondItem="72i-bx-TOC" secondAttribute="height" multiplier="15:2" id="W46-Cc-Fl9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="INVIA">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="gea-dK-MUc" firstAttribute="leading" secondItem="9VW-5v-aJ2" secondAttribute="leading" constant="38" id="0yn-iS-bNt"/>
                             <constraint firstItem="vlm-B1-vbU" firstAttribute="top" secondItem="9VW-5v-aJ2" secondAttribute="top" id="1ab-XI-v6m"/>
                             <constraint firstItem="pgp-od-SHq" firstAttribute="trailing" secondItem="9VW-5v-aJ2" secondAttribute="trailing" id="6o4-eb-3ua"/>
+                            <constraint firstItem="9VW-5v-aJ2" firstAttribute="trailing" secondItem="2qu-iY-WhJ" secondAttribute="trailing" constant="193" id="85o-CE-AwC"/>
                             <constraint firstItem="gJf-S1-yQN" firstAttribute="top" secondItem="EV1-aU-sva" secondAttribute="bottom" constant="20" id="8dM-N7-TB2"/>
+                            <constraint firstItem="9VW-5v-aJ2" firstAttribute="trailing" secondItem="8Eq-fB-Ml3" secondAttribute="trailing" constant="37" id="B5m-u0-QWe"/>
                             <constraint firstItem="EV1-aU-sva" firstAttribute="leading" secondItem="9VW-5v-aJ2" secondAttribute="leading" constant="38" id="D8o-Bq-bbz"/>
+                            <constraint firstItem="2qu-iY-WhJ" firstAttribute="leading" secondItem="9VW-5v-aJ2" secondAttribute="leading" constant="38" id="Dr8-DL-X7k"/>
+                            <constraint firstItem="72i-bx-TOC" firstAttribute="top" secondItem="8Eq-fB-Ml3" secondAttribute="bottom" constant="40" id="Dvs-Tq-cNR"/>
                             <constraint firstItem="9VW-5v-aJ2" firstAttribute="trailing" secondItem="EV1-aU-sva" secondAttribute="trailing" constant="275" id="IZE-kj-ILs"/>
+                            <constraint firstItem="8Eq-fB-Ml3" firstAttribute="top" secondItem="2qu-iY-WhJ" secondAttribute="bottom" constant="20" id="Ibe-Tp-YSr"/>
                             <constraint firstItem="vlm-B1-vbU" firstAttribute="leading" secondItem="9VW-5v-aJ2" secondAttribute="leading" id="UzQ-3w-6uw"/>
                             <constraint firstItem="vlm-B1-vbU" firstAttribute="trailing" secondItem="9VW-5v-aJ2" secondAttribute="trailing" id="aCA-VE-Ltc"/>
+                            <constraint firstItem="2qu-iY-WhJ" firstAttribute="top" secondItem="gea-dK-MUc" secondAttribute="bottom" constant="30" id="bcF-hz-bbn"/>
                             <constraint firstItem="pgp-od-SHq" firstAttribute="top" secondItem="h5O-b6-Kru" secondAttribute="top" id="cBL-jo-L7e"/>
+                            <constraint firstItem="9VW-5v-aJ2" firstAttribute="trailing" secondItem="72i-bx-TOC" secondAttribute="trailing" constant="37" id="ca8-Wg-LcO"/>
                             <constraint firstItem="EV1-aU-sva" firstAttribute="top" secondItem="vlm-B1-vbU" secondAttribute="bottom" constant="30" id="dx3-Rk-eeC"/>
+                            <constraint firstItem="72i-bx-TOC" firstAttribute="leading" secondItem="9VW-5v-aJ2" secondAttribute="leading" constant="38" id="jzD-Gg-mtd"/>
+                            <constraint firstItem="8Eq-fB-Ml3" firstAttribute="leading" secondItem="9VW-5v-aJ2" secondAttribute="leading" constant="38" id="muh-lf-LQD"/>
                             <constraint firstItem="9VW-5v-aJ2" firstAttribute="trailing" secondItem="gea-dK-MUc" secondAttribute="trailing" constant="37" id="nUN-Ll-rCc"/>
                             <constraint firstItem="9VW-5v-aJ2" firstAttribute="trailing" secondItem="gJf-S1-yQN" secondAttribute="trailing" constant="37" id="pHN-cd-x7b"/>
                             <constraint firstItem="pgp-od-SHq" firstAttribute="leading" secondItem="9VW-5v-aJ2" secondAttribute="leading" id="pQ8-aO-Ufb"/>
@@ -494,7 +534,9 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="mailForm" destination="gJf-S1-yQN" id="MBj-YC-7iT"/>
+                        <outlet property="messageForm" destination="8Eq-fB-Ml3" id="5KF-zQ-PSm"/>
                         <outlet property="objectForm" destination="gea-dK-MUc" id="3qb-pe-GKD"/>
+                        <outlet property="sendButton" destination="72i-bx-TOC" id="zFl-Ze-2Q8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BdC-lc-ZSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
