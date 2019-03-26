@@ -643,13 +643,6 @@
                                     <outlet property="delegate" destination="zTV-VM-dA5" id="EXa-HX-98G"/>
                                 </connections>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gUd-nH-n8k">
-                                <rect key="frame" x="67" y="419" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
@@ -675,7 +668,6 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="calendar" destination="z1U-P1-KnZ" id="f0J-zm-b8G"/>
-                        <outlet property="display" destination="gUd-nH-n8k" id="Nnx-kV-fQH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awo-Rz-raU" userLabel="First Responder" sceneMemberID="firstResponder"/>
