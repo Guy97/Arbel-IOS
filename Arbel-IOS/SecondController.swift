@@ -13,13 +13,19 @@ class SecondController: UIViewController, FSCalendarDataSource, FSCalendarDelega
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var display: UITextView!
-    
+    fileprivate weak var calendar2: FSCalendar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         print("second.")
+        
+        calendar.dataSource = self
+        calendar.delegate = self
+        view.addSubview(calendar)
+        //self.calendar = calendar
+        //display.text = "\(calendar.)"
         
         
     }
