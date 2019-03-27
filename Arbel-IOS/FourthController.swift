@@ -25,11 +25,12 @@ class FourthController: UIViewController {
         self.mailForm.layer.cornerRadius = 17
         self.objectForm.layer.cornerRadius = 17
         self.messageForm.layer.cornerRadius = 13
-        self.sendButton.layer.cornerRadius = 20
+        self.sendButton.layer.cornerRadius = 18
         
         addButton.clipsToBounds = true
         addButton.layer.cornerRadius = 17
         addButton.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
+        
     
         
         

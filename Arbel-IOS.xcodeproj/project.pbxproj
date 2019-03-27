@@ -22,6 +22,9 @@
 		046E90D122405B1E00C9BC16 /* FourthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E90D022405B1E00C9BC16 /* FourthController.swift */; };
 		046E90D322405B3E00C9BC16 /* FifthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E90D222405B3E00C9BC16 /* FifthController.swift */; };
 		049D129A22482AC000CD1548 /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D129922482AC000CD1548 /* LogInController.swift */; };
+		A90ED804224BA6C500B71E49 /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90ED803224BA6C500B71E49 /* DesignView.swift */; };
+		A912211C224AD13900779E72 /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912211B224AD13900779E72 /* NoteController.swift */; };
+		A912211E224AE2CA00779E72 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912211D224AE2CA00779E72 /* UnderlineTextField.swift */; };
 		A9943A072249151900ED3899 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9943A062249151900ED3899 /* PaddingTextField.swift */; };
 		A9943A0922491EEC00ED3899 /* PaddingtextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9943A0822491EEC00ED3899 /* PaddingtextView.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +69,9 @@
 		049D129922482AC000CD1548 /* LogInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		8326CE3A93FD07E2C99ADA02 /* Pods_Arbel_IOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8FF6F13083F23CAAF23347 /* Pods-Arbel-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arbel-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arbel-IOS/Pods-Arbel-IOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A90ED803224BA6C500B71E49 /* DesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignView.swift; sourceTree = "<group>"; };
+		A912211B224AD13900779E72 /* NoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
+		A912211D224AE2CA00779E72 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 		A94D6E0D224A588100AAA103 /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
 		A9943A062249151900ED3899 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		A9943A0822491EEC00ED3899 /* PaddingtextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingtextView.swift; sourceTree = "<group>"; };
@@ -131,15 +137,18 @@
 				A9943A0822491EEC00ED3899 /* PaddingtextView.swift */,
 				044CB2FA2237CBBD00F0A410 /* ViewController.swift */,
 				046E90C8224040FF00C9BC16 /* TabarController.swift */,
+				046E90CC22405ACC00C9BC16 /* SecondController.swift */,
+				046E90CE22405AF800C9BC16 /* ThirdController.swift */,
+				A90ED803224BA6C500B71E49 /* DesignView.swift */,
+				046E90D022405B1E00C9BC16 /* FourthController.swift */,
+				046E90D222405B3E00C9BC16 /* FifthController.swift */,
+				049D129922482AC000CD1548 /* LogInController.swift */,
+				A912211D224AE2CA00779E72 /* UnderlineTextField.swift */,
+				A912211B224AD13900779E72 /* NoteController.swift */,
 				044CB2FC2237CBBD00F0A410 /* Main.storyboard */,
 				044CB2FF2237CBBF00F0A410 /* Assets.xcassets */,
 				044CB3012237CBBF00F0A410 /* LaunchScreen.storyboard */,
 				044CB3042237CBBF00F0A410 /* Info.plist */,
-				046E90CC22405ACC00C9BC16 /* SecondController.swift */,
-				046E90CE22405AF800C9BC16 /* ThirdController.swift */,
-				046E90D022405B1E00C9BC16 /* FourthController.swift */,
-				046E90D222405B3E00C9BC16 /* FifthController.swift */,
-				049D129922482AC000CD1548 /* LogInController.swift */,
 				A94D6E0D224A588100AAA103 /* ObjCBridge.h */,
 			);
 			path = "Arbel-IOS";
@@ -366,10 +375,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A912211E224AE2CA00779E72 /* UnderlineTextField.swift in Sources */,
 				046E90D122405B1E00C9BC16 /* FourthController.swift in Sources */,
+				A912211C224AD13900779E72 /* NoteController.swift in Sources */,
 				046E90CB2240580800C9BC16 /* FirstController.swift in Sources */,
 				A9943A0922491EEC00ED3899 /* PaddingtextView.swift in Sources */,
 				046E90CF22405AF800C9BC16 /* ThirdController.swift in Sources */,
+				A90ED804224BA6C500B71E49 /* DesignView.swift in Sources */,
 				044CB2FB2237CBBD00F0A410 /* ViewController.swift in Sources */,
 				049D129A22482AC000CD1548 /* LogInController.swift in Sources */,
 				046E90C9224040FF00C9BC16 /* TabarController.swift in Sources */,

@@ -19,15 +19,23 @@ extension UIView{
     }
 }
 
+
 class LogInController: UIViewController {
     
-    @IBOutlet weak var LogInView: UIView!
+    @IBOutlet weak var usernameForm: UITextField!
+    @IBOutlet weak var passwordForm: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        //LogInView.layer.Borde
+        self.HideKeyboard()
+        
+        self.loginButton.layer.cornerRadius = 16
+        self.usernameForm.underlined()
+        self.passwordForm.underlined()
+        
+        
         
     }
     
