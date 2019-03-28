@@ -10,37 +10,45 @@ import UIKit
 
 class FifthController: UIViewController {
     
-    @IBOutlet weak var Passwordbotton: UIButton!
-  
-    @IBOutlet weak var infobutton: UIButton!
 
-    @IBOutlet weak var Imageprofile: UIImageView!
+    @IBOutlet weak var passwordVoice: UIButton!
+    @IBOutlet weak var infoVoice: UIButton!
     
-    @IBOutlet weak var Logoutbutton: UIButton!
+    
+    @IBOutlet weak var imageprofile: UIImageView!
+    
+    @IBOutlet weak var logoutbutton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        imageprofile.layer.masksToBounds = false
+        imageprofile.layer.cornerRadius = imageprofile.frame.height/2
+        imageprofile.clipsToBounds = true
  
+        // Styles00
+        passwordVoice.layer.cornerRadius = 8
+        passwordVoice.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.5).cgColor
+        passwordVoice.layer.shadowOffset = CGSize (width: 0, height: 1.0)
+        passwordVoice.layer.shadowRadius = 1.5
+        passwordVoice.layer.shadowOpacity = 0.8
         
-        self.Imageprofile.layer.cornerRadius = self.Imageprofile.frame.size.width / 2;
-        self.Imageprofile.clipsToBounds = true;
-        
-        Passwordbotton.layer.shadowColor = UIColor.lightGray.cgColor
-        Passwordbotton.layer.shadowOffset = .zero
-        Passwordbotton.layer.shadowOpacity = 0.6
-        Passwordbotton.layer.cornerRadius = 8
+        // Styles01
+        infoVoice.layer.cornerRadius = 8
+        infoVoice.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.5).cgColor
+        infoVoice.layer.shadowOffset = CGSize (width: 0, height: 1.0)
+        infoVoice.layer.shadowRadius = 1.5
+        infoVoice.layer.shadowOpacity = 0.8
 
-        
-        infobutton.layer.shadowColor = UIColor.lightGray.cgColor
-        infobutton.layer.shadowOffset = .zero
-        infobutton.layer.shadowOpacity = 0.7
-        infobutton.layer.cornerRadius = 8
        
-        Logoutbutton.layer.cornerRadius = 18
+        logoutbutton.layer.cornerRadius = 18
+        logoutbutton.layer.masksToBounds = true
+
+        logoutbutton.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
 
 
-        print("fifth")
+    
     }
 
 }
