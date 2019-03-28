@@ -9,14 +9,20 @@
 import UIKit
 import FSCalendar
 
-class SecondController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
+class SecondController: UIViewController, FSCalendarDataSource, FSCalendarDelegate  {
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var activityContainer: UIView!
     
     fileprivate weak var calendar2: FSCalendar!
+    let calendario: FSCalendarCell = FSCalendarCell()
+    let calendario2: FSCalendarEventIndicator = FSCalendarEventIndicator()
+    let calendario3: FSCalendarDelegationFactory =  FSCalendarDelegationFactory()
     
-    let calendario = FSCalendarCell().titleLabel
+    
+   
+    
+//    let calendario = FSCalendarCell().titleLabel
     
     
     
@@ -35,6 +41,9 @@ class SecondController: UIViewController, FSCalendarDataSource, FSCalendarDelega
         
         print("second.")
         
+        print("second.")
+        print(calendar2, "questo")
+     
         calendar.dataSource = self
         calendar.delegate = self
         view.addSubview(calendar)
