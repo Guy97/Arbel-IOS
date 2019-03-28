@@ -28,8 +28,12 @@ class FourthController: UIViewController {
         self.sendButton.layer.cornerRadius = 18
         
         addButton.clipsToBounds = true
+        sendButton.layer.masksToBounds = true
         addButton.layer.cornerRadius = 17
         addButton.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
+        
+        sendButton.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
+        
         
     
         
@@ -39,12 +43,26 @@ class FourthController: UIViewController {
         print("fourth")
     }
     
-    @IBAction func swipeControl(sender: UISwipeGestureRecognizer) {
-        if sender.direction == UISwipeGestureRecognizer.Direction.left {
-            self.tabBarController?.selectedIndex = 4
-        }
-        else if sender.direction == UISwipeGestureRecognizer.Direction.right {
-            self.tabBarController?.selectedIndex = 2
-        }
+    
+    @IBAction func addAction(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Seleziona il corso da contattare", message: nil, preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Media Design", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Sound Design", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Penis Design", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil )
     }
+//    @IBAction func addButton(_sender: Any) {
+//        let alertController = UIAlertController(title: "BriefOS", message: "Hello scemo", preferredStyle: .actionSheet)
+//        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//        self.present(alertController, animated: true, completion: nil )
+//    }
+    
+//    func okHandler(alert: UIAlertAction) {
+//        self.navigationController?.pushViewController(UIViewController(), animated: true)
+//    }
+    
+    
 }

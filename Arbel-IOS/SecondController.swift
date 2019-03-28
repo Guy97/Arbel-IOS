@@ -45,12 +45,4 @@ class SecondController: UIViewController, FSCalendarDataSource, FSCalendarDelega
         
     }
     
-    @IBAction func swipeControl(sender: UISwipeGestureRecognizer) {
-        if sender.direction == UISwipeGestureRecognizer.Direction.left {
-            self.tabBarController?.selectedIndex = 2
-        }
-        else if sender.direction == UISwipeGestureRecognizer.Direction.right {
-            self.tabBarController?.selectedIndex = 0
-        }
-    }
 }
