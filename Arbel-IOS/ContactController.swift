@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FourthController: UIViewController {
+class ContactController: UIViewController {
     
     @IBOutlet weak var mailForm: UITextField!
     @IBOutlet weak var objectForm: UITextField!

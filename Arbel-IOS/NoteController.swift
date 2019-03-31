@@ -14,11 +14,39 @@ class NoteController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBAction func saveButton(_ sender: Any) {
         
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .short
+        formatter.setLocalizedDateFormatFromTemplate("MMMMdd - HH:mm")
+        formatter.locale =  Locale(identifier: "it_IT")
+//        MM-dd'T'HH:mm:ssZZZZZ
+        let str = formatter.string(from: Date())
+        
+        
         if (noteForm.text != "") {
             
+            date.append(str)
             list.append(noteForm.text!)
+//            let cazzo = list.append(noteForm.text!)
+            
+            
+            
+            
+            let jsonEncoder = JSONEncoder()
+            do {
+                let jsonData = try jsonEncoder.encode(list)
+                print(String(data: jsonData, encoding: .utf8)!)
+            }
+            catch
+            {
+                print(error)
+            }
             noteForm.text = ""
+            
         }
+        
+        
+        
         
         
         
@@ -28,6 +56,8 @@ class NoteController: UIViewController {
         super.viewDidLoad()
 
         self.HideKeyboard()
+        
+//        getCurrentDateTime()
 
         self.noteForm.layer.cornerRadius = 13
         self.saveButton.layer.cornerRadius = 18
@@ -35,6 +65,14 @@ class NoteController: UIViewController {
         
         saveButton.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
     }
+    
+//    func getCurrentDateTime(){
+//        let formatter = DateFormatter()
+//        formatter.dateStyle = .long
+//        formatter.timeStyle = .medium
+//        let str = formatter.string(from: Date())
+////        label.text = str
+//    }
     
 
     /*

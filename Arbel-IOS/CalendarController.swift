@@ -9,7 +9,7 @@
 import UIKit
 import FSCalendar
 
-class SecondController: UIViewController, FSCalendarDataSource, FSCalendarDelegate  {
+class CalendarController: UIViewController, FSCalendarDataSource, FSCalendarDelegate  {
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var activityContainer: UIView!

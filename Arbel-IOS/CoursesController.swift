@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThirdController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
+class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
     
     
     @IBOutlet weak var classContainer00: UIView!

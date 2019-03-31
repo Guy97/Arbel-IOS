@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FifthController: UIViewController {
+class ProfileController: UIViewController {
     
 
     @IBOutlet weak var passwordVoice: UIButton!
