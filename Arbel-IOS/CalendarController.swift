@@ -13,6 +13,7 @@ class CalendarController: UIViewController, FSCalendarDataSource, FSCalendarDele
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var activityContainer: UIView!
+    @IBOutlet weak var day: UILabel!
     
     fileprivate weak var calendar2: FSCalendar!
     let calendario: FSCalendarCell = FSCalendarCell()
@@ -38,18 +39,17 @@ class CalendarController: UIViewController, FSCalendarDataSource, FSCalendarDele
         activityContainer.layer.shadowOffset = CGSize (width: 0, height: 0.5)
         activityContainer.layer.shadowRadius = 1.8
         activityContainer.layer.shadowOpacity = 0.6
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate("EEEE")
+        formatter.locale =  Locale(identifier: "it_IT")
+        let today = formatter.string(from: Date())
+        day.text = "\(today)"
         
-        print("second.")
         
-        print("second.")
-        print(calendar2, "questo")
-     
-        calendar.dataSource = self
-        calendar.delegate = self
-        view.addSubview(calendar)
-        //self.calendar = calendar
-        print(calendario, "QUESTO")
-        //display.text = "\(calendar.)"
+        
+        
+        let prova = calendar.selectedDates
+        print("orco", prova)
         
         
     }

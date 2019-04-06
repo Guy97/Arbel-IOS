@@ -35,11 +35,6 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         let note = tableView.dequeueReusableCell(withIdentifier: "note") as! CustomTableView
-        
-        
-        
-        
-        
         note.textNote?.text = list[indexPath.row]
         note.dateNote?.text = date[indexPath.row]
         
@@ -76,6 +71,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         noteTableView.separatorColor = UIColor (white: 0.95, alpha: 1)
         noteTableView.dataSource = self
         noteTableView.delegate = self
+        
         
         if (list.count == 0 ) {
             infoNote.isHidden = false

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct LogMemory: Codable {
+class LogMemory: Codable {
     
     var note : String
     var date : String
