@@ -1182,7 +1182,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kCf-ex-6dB" kind="show" id="XlY-d9-dgJ"/>
+                                    <action selector="login" destination="dX8-8E-OXk" eventType="touchUpInside" id="Cjj-5R-OFc"/>
+                                    <segue destination="kCf-ex-6dB" kind="show" identifier="startapp" id="XlY-d9-dgJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1204,7 +1205,7 @@
                         <viewLayoutGuide key="safeArea" id="DKx-QD-RbL"/>
                     </view>
                     <connections>
-                        <outlet property="loginButton" destination="4SI-al-Wgh" id="KUn-92-B4s"/>
+                        <outlet property="loginButton" destination="4SI-al-Wgh" id="nH3-ku-WSM"/>
                         <outlet property="passwordForm" destination="l6d-tB-gKm" id="X5V-sz-35B"/>
                         <outlet property="usernameForm" destination="q8E-7L-cgc" id="6Vl-g7-ed6"/>
                     </connections>
@@ -1271,7 +1272,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="L7c-BH-mKu"/>
+        <segue reference="XlY-d9-dgJ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.28673213427827537" blue="0.22068471563571013" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
