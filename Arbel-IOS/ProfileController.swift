@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileController: UIViewController {
     
+    
 
     @IBOutlet weak var passwordVoice: UIButton!
     @IBOutlet weak var infoVoice: UIButton!
@@ -21,6 +22,8 @@ class ProfileController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         imageprofile.layer.masksToBounds = false
@@ -50,5 +53,6 @@ class ProfileController: UIViewController {
 
     
     }
+    
 
 }

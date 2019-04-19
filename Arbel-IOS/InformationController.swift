@@ -11,18 +11,14 @@ import UIKit
 class InformationController: UIViewController {
     @IBOutlet weak var textInformation: UILabel!
     
-    @IBOutlet weak var goToProfile: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        goToProfile.layer.cornerRadius = 18
-        goToProfile.layer.masksToBounds = true
-        
-        goToProfile.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
-        
-        
+//        self.navigationController?.navigationBar.barTintColor = UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
+//        self.navigationController?.navigationBar.tintColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+//        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)]
+
     }
 }
 
