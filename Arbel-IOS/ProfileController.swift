@@ -34,15 +34,15 @@ class ProfileController: UIViewController {
         passwordVoice.layer.cornerRadius = 8
         passwordVoice.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.5).cgColor
         passwordVoice.layer.shadowOffset = CGSize (width: 0, height: 1.0)
-        passwordVoice.layer.shadowRadius = 1.5
-        passwordVoice.layer.shadowOpacity = 0.8
+        passwordVoice.layer.shadowRadius = 1.1
+        passwordVoice.layer.shadowOpacity = 0.5
         
         // Styles01
         infoVoice.layer.cornerRadius = 8
         infoVoice.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.5).cgColor
         infoVoice.layer.shadowOffset = CGSize (width: 0, height: 1.0)
-        infoVoice.layer.shadowRadius = 1.5
-        infoVoice.layer.shadowOpacity = 0.8
+        infoVoice.layer.shadowRadius = 1.1
+        infoVoice.layer.shadowOpacity = 0.5
 
        
         logoutbutton.layer.cornerRadius = 18

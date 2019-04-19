@@ -20,6 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //status bar
         UIApplication.shared.statusBarStyle = .lightContent
         
+        UITabBar.appearance().barTintColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        UITabBar.appearance().tintColor = UIColor(red: 77/255, green: 77/255, blue: 77/255, alpha: 1)
+        
+        
+        
         return true
     }
 

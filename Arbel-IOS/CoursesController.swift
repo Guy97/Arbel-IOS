@@ -10,12 +10,6 @@ import UIKit
 
 class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
     
-    
-    @IBOutlet weak var classContainer00: UIView!
-    @IBOutlet weak var classContainer01: UIView!
-    @IBOutlet weak var classContainer02: UIView!
-    @IBOutlet weak var classContainer03: UIView!
-    
     @IBOutlet var tableView: UITableView!
     
     
@@ -70,6 +64,11 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
         
         cell.contentView.backgroundColor = UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "showStudent", sender: self)
     }
     
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

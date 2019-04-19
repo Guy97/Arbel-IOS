@@ -33,6 +33,7 @@
 		A9943A072249151900ED3899 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9943A062249151900ED3899 /* PaddingTextField.swift */; };
 		A9943A0922491EEC00ED3899 /* PaddingtextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9943A0822491EEC00ED3899 /* PaddingtextView.swift */; };
 		A9B6A69E224EB5FA00AA6FDA /* LogMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B6A69D224EB5FA00AA6FDA /* LogMemory.swift */; };
+		A9DD6D4E2269ED5F002FA231 /* StudentListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD6D4D2269ED5F002FA231 /* StudentListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		A9943A062249151900ED3899 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		A9943A0822491EEC00ED3899 /* PaddingtextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingtextView.swift; sourceTree = "<group>"; };
 		A9B6A69D224EB5FA00AA6FDA /* LogMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMemory.swift; sourceTree = "<group>"; };
+		A9DD6D4D2269ED5F002FA231 /* StudentListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListController.swift; sourceTree = "<group>"; };
 		D5A7F856B1D7FB4A9D5D4E21 /* Pods_Arbel_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E22AAF5412B0D6F1C2C996BB /* Pods_Arbel_IOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF2544FAE85A6DA607EFF1F4 /* Pods-Arbel-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arbel-IOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Arbel-IOS/Pods-Arbel-IOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				046E90D222405B3E00C9BC16 /* ProfileController.swift */,
 				A90ED80B224D24A300B71E49 /* UIViewExtension.swift */,
 				044CB2FC2237CBBD00F0A410 /* Main.storyboard */,
+				A9DD6D4D2269ED5F002FA231 /* StudentListController.swift */,
 				044CB2FF2237CBBF00F0A410 /* Assets.xcassets */,
 				044CB3012237CBBF00F0A410 /* LaunchScreen.storyboard */,
 				044CB3042237CBBF00F0A410 /* Info.plist */,
@@ -403,6 +406,7 @@
 				046E90D122405B1E00C9BC16 /* ContactController.swift in Sources */,
 				A912211C224AD13900779E72 /* NoteController.swift in Sources */,
 				32FCBB382268B8CC006EA399 /* InformationController.swift in Sources */,
+				A9DD6D4E2269ED5F002FA231 /* StudentListController.swift in Sources */,
 				046E90CB2240580800C9BC16 /* HomeController.swift in Sources */,
 				A9943A0922491EEC00ED3899 /* PaddingtextView.swift in Sources */,
 				A90ED80E224E355F00B71E49 /* CustomTableView.swift in Sources */,

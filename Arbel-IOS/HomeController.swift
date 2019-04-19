@@ -72,6 +72,10 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         noteTableView.dataSource = self
         noteTableView.delegate = self
         
+        self.tabBarController!.tabBar.layer.borderWidth = 0.5
+        self.tabBarController!.tabBar.layer.borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.2).cgColor
+        self.tabBarController?.tabBar.clipsToBounds = true
+        
         
         if (list.count == 0 ) {
             infoNote.isHidden = false
