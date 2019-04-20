@@ -15,6 +15,7 @@ class ManageTabBarController: UITabBarController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.selectedIndex = 1
+//        self.tabBar.unselectedItemTintColor = UIColor.white
         
     
 

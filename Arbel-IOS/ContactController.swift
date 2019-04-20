@@ -8,7 +8,11 @@
 
 import UIKit
 
-class ContactController: UIViewController {
+class ContactController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+//    var list = [String]()
+//
+    var sendArray = ["1 Media Design","2 Media Design","2 Video Design","2 Sound Design"]
     
     @IBOutlet weak var mailForm: UITextField!
     @IBOutlet weak var objectForm: UITextField!
@@ -16,6 +20,14 @@ class ContactController: UIViewController {
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     
+    
+    var transparentView = UIView()
+    var tableView = UITableView()
+    
+    let height: CGFloat = 300
+
+
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -34,35 +46,69 @@ class ContactController: UIViewController {
         
         sendButton.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
         
+//        handleArea.layer.masksToBounds = true
+//        roundedDetail.layer.masksToBounds = true
+//        //    cardView.layer.masksToBounds = true
+//        self.handleArea.layer.cornerRadius = 17
+//        self.roundedDetail.layer.cornerRadius = 2
         
+        tableView.isScrollEnabled = true
+        tableView.delegate = self as? UITableViewDelegate
+        tableView.dataSource = self as? UITableViewDataSource
+        tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: "Cell")
     
+            
+        }
+    
+    
+    @IBAction func addAction(_ sender: AnyObject) {
         
+        let window = UIApplication.shared.keyWindow
         
-        // Do any additional setup after loading the view, typically from a nib.
+        transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        transparentView.frame = self.view.frame
+        self.view.addSubview(transparentView)
         
-        print("fourth")
+        let screenSize = UIScreen.main.bounds.size
+        
+        tableView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: height)
+        
+        self.view.addSubview(tableView)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onClickTransparentView))
+        transparentView.addGestureRecognizer(tapGesture)
+        
+        transparentView.alpha = 0
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
+            self.transparentView.alpha = 0.5
+            self.tableView.frame = CGRect(x: 0, y: screenSize.height - self.height, width: screenSize.width, height: self.height)
+        }, completion: nil)
+        
+
     }
     
-    
-    @IBAction func addAction(_ sender: Any) {
+    @objc func onClickTransparentView() {
+        let screenSize = UIScreen.main.bounds.size
         
-        let alertController = UIAlertController(title: "Seleziona il corso da contattare", message: nil, preferredStyle: .actionSheet)
-        alertController.addAction(UIAlertAction(title: "Media Design", style: .default, handler: nil))
-        alertController.addAction(UIAlertAction(title: "Sound Design", style: .default, handler: nil))
-        alertController.addAction(UIAlertAction(title: "Penis Design", style: .default, handler: nil))
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        self.present(alertController, animated: true, completion: nil )
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
+            self.transparentView.alpha = 0
+            self.tableView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.height)
+        }, completion: nil)
+        
     }
-//    @IBAction func addButton(_sender: Any) {
-//        let alertController = UIAlertController(title: "BriefOS", message: "Hello scemo", preferredStyle: .actionSheet)
-//        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//        self.present(alertController, animated: true, completion: nil )
-//    }
     
-//    func okHandler(alert: UIAlertAction) {
-//        self.navigationController?.pushViewController(UIViewController(), animated: true)
-//    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sendArray.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ContactTableViewCell else {fatalError("Unable to deque cell")}
+                cell.lbl.text = sendArray[indexPath.row]
+        return cell
+    }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
 }
