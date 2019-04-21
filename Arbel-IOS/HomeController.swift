@@ -16,9 +16,11 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var infoNote: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     
-
-    
+    var activities = Activity.fetchActivities()
+    let cellScalingH: CGFloat = 0.5
+    let cellScalingV: CGFloat = 0.7
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (list.count)
@@ -26,44 +28,15 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let note = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "note")
         
-        
-        
-        let note = tableView.dequeueReusableCell(withIdentifier: "note") as! CustomTableView
+        let note = tableView.dequeueReusableCell(withIdentifier: "note") as! NoteTableView
         note.textNote?.text = list[indexPath.row]
         note.dateNote?.text = date[indexPath.row]
-        
-        
-        
-//        noteTableView.reloadData()
-        
-        
-//        note.textLabel?.text = list[indexPath.row]
-
         return note
     }
-    
-    
-//    private func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == UITableViewCell.EditingStyle.delete {
-//            list.remove(at: indexPath.row)
-//            noteTableView.reloadData()
-//
-//        }
-//    }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-    
-//    }
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +49,6 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tabBarController!.tabBar.layer.borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.2).cgColor
         self.tabBarController?.tabBar.clipsToBounds = true
         
-        
         if (list.count == 0 ) {
             infoNote.isHidden = false
             print("Scrivi una nota")
@@ -87,11 +59,61 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
 //        list.reverse()
         
-        // Do any additional ssetup after loading the view, typically from a nib.
+//        let screenSize = UIScreen.main.bounds.size
+//        let cellWidth = floor(screenSize.width * cellScaling)
+//        let cellHeight = floor(screenSize.height * cellScaling)
+//
+//        let insetX = (view.bounds.width - cellWidth) / 2.0
+//        let insetY = (view.bounds.height - cellHeight) / 2.0
         
-         
+        let cellWidth = floor(collectionView.bounds.width * cellScalingH)
+        let cellHeight = floor(collectionView.bounds.height * cellScalingV)
         
+    
+        let insetX = (collectionView.bounds.width - cellWidth) / 2
+        let insetY = (collectionView.bounds.height - cellHeight) / 2
+        
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize (width: cellWidth, height: cellHeight)
+        collectionView?.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
+    
+        collectionView?.dataSource = self
+        print(" QUI PASSA ")
+        collectionView?.delegate = self
     }
-    
-    
 }
+
+
+extension HomeController : UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(activities.count)
+        return activities.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourCell", for: indexPath) as! HourCollectionViewCell
+
+        cell.activity = activities[indexPath.item]
+        return cell
+    }
+}
+
+extension HomeController : UIScrollViewDelegate, UICollectionViewDelegate {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+
+        var offset = targetContentOffset.pointee
+        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+        let roundedIndex = round(index)
+
+        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+        targetContentOffset.pointee = offset
+    }
+}
+
+

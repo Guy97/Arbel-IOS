@@ -15,10 +15,9 @@ class InformationController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.navigationController?.navigationBar.barTintColor = UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
-//        self.navigationController?.navigationBar.tintColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
-//        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)]
+//        textInformation.sizeToFit()
 
     }
+    
 }
 

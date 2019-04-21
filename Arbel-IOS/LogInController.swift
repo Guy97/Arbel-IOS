@@ -95,4 +95,15 @@ class LogInController: UIViewController {
         self.passwordForm.underlined()
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+//        
+//    }
+//    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        UIApplication.shared.statusBarStyle = .lightContent    }
+    
+    
 }

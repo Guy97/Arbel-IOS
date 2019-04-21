@@ -9,7 +9,7 @@
 import UIKit
 
 
-@IBDesignable class CustomTableView: UITableViewCell {
+@IBDesignable class NoteTableView: UITableViewCell {
     
     @IBOutlet weak var dateNote: UILabel!
     @IBOutlet weak var backgroundNote: UIImageView!

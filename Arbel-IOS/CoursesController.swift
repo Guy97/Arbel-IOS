@@ -12,6 +12,8 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
     
     @IBOutlet var tableView: UITableView!
     
+    var coursesArray = ["1 Media Design","2 Media Design","2 Video Design","2 Sound Design"]
+    
     
     
     override func viewDidLoad() {
@@ -52,7 +54,7 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return coursesArray.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -63,6 +65,7 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) 
         
         cell.contentView.backgroundColor = UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
+//        cell.textLabel?.text = coursesArray[indexPath.row]
         return cell
     }
     

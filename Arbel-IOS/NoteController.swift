@@ -27,8 +27,6 @@ class NoteController: UIViewController {
             
             date.append(str)
             list.append(noteForm.text!)
-//            let cazzo = list.append(noteForm.text!)
-            
             
             
             
@@ -59,30 +57,11 @@ class NoteController: UIViewController {
         
 //        getCurrentDateTime()
 
-        self.noteForm.layer.cornerRadius = 13
+        self.noteForm.layer.cornerRadius = 8
         self.saveButton.layer.cornerRadius = 18
         saveButton.layer.masksToBounds = true
         
         saveButton.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
     }
     
-//    func getCurrentDateTime(){
-//        let formatter = DateFormatter()
-//        formatter.dateStyle = .long
-//        formatter.timeStyle = .medium
-//        let str = formatter.string(from: Date())
-////        label.text = str
-//    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class DesignView: UIView {
+@IBDesignable class CoursesDesignView: UIView {
     
     @IBInspectable var cornerRadius : CGFloat = 0
     @IBInspectable var shadowColor : UIColor? = UIColor.black
