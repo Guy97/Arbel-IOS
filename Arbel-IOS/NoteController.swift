@@ -52,6 +52,8 @@ class NoteController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.edgesForExtendedLayout = []
 
         self.HideKeyboard()
         

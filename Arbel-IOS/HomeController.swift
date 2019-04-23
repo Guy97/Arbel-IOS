@@ -14,6 +14,7 @@ import UIKit
 
 class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
     @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var infoNote: UILabel!
     @IBOutlet weak var infoUser: UILabel!
@@ -41,6 +42,8 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        
         
         noteTableView.separatorColor = UIColor (white: 0.95, alpha: 1)
         noteTableView.dataSource = self
@@ -81,6 +84,9 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         collectionView?.dataSource = self
         print(" QUI PASSA ")
         collectionView?.delegate = self
+        
+
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

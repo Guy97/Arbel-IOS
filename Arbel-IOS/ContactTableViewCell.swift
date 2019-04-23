@@ -33,6 +33,7 @@ class ContactTableViewCell: UITableViewCell {
         addSubview(backView)
         backView.addSubview(lbl)
 
+
         // Configure the view for the selected state
     }
 

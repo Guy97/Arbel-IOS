@@ -39,7 +39,7 @@ class HourCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        backgroundColorView.layer.cornerRadius = 7
+        backgroundColorView.layer.cornerRadius = 8
         
         layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.5).cgColor
         layer.shadowOffset = CGSize (width: 0, height: 1.0)

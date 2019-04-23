@@ -14,6 +14,7 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
 //
     var sendArray = ["1 Media Design","2 Media Design","2 Video Design","2 Sound Design"]
     
+    
     @IBOutlet weak var mailForm: UITextField!
     @IBOutlet weak var objectForm: UITextField!
     @IBOutlet weak var messageForm: UITextView!

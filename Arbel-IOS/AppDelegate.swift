@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().unselectedItemTintColor = UIColor(red: 186/255, green: 187/255, blue: 189/255, alpha: 1)
         
         
-        
         return true
     }
 
