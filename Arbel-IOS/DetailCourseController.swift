@@ -49,10 +49,10 @@ class DetailCourseController: ButtonBarPagerTabStripViewController  {
         
         // Sets the pager strip item offsets
         settings.style.buttonBarMinimumLineSpacing = 0
-        settings.style.buttonBarItemsShouldFillAvailableWidth = true
-        settings.style.buttonBarLeftContentInset = 60
+        settings.style.buttonBarItemsShouldFillAvailableWidth = false
+        settings.style.buttonBarLeftContentInset = 70
         settings.style.buttonBarRightContentInset = 60
-        settings.style.buttonBarMinimumInteritemSpacing = 5
+        settings.style.buttonBarMinimumInteritemSpacing = 20
         
         
     
