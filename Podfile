@@ -25,7 +25,6 @@ use_frameworks!
 
 target 'Arbel-IOS' do
     pod 'Calendar-iOS'
-    pod 'JTAppleCalendar', '~> 7.0'
     pod 'FSCalendar'
     pod 'Alamofire', '~> 4.7'
 end

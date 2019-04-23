@@ -16,6 +16,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var infoNote: UILabel!
+    @IBOutlet weak var infoUser: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var activities = Activity.fetchActivities()
@@ -80,6 +81,15 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         collectionView?.dataSource = self
         print(" QUI PASSA ")
         collectionView?.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if CheckInternet.Connection() {
+            infoUser.text = "Bentornato Luca, sei Online"
+        }
+        else {
+            infoUser.text = "Mi dispiace ma sei Offline"
+        }
     }
 }
 

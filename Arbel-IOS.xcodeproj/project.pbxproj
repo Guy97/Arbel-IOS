@@ -15,6 +15,7 @@
 		044CB3032237CBBF00F0A410 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044CB3012237CBBF00F0A410 /* LaunchScreen.storyboard */; };
 		044CB30E2237CBBF00F0A410 /* Arbel_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB30D2237CBBF00F0A410 /* Arbel_IOSTests.swift */; };
 		044CB3192237CBBF00F0A410 /* Arbel_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB3182237CBBF00F0A410 /* Arbel_IOSUITests.swift */; };
+		045F24D8226F23DC0046FEDA /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045F24D7226F23DC0046FEDA /* CheckInternet.swift */; };
 		046E90C9224040FF00C9BC16 /* TabarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E90C8224040FF00C9BC16 /* TabarController.swift */; };
 		046E90CB2240580800C9BC16 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E90CA2240580800C9BC16 /* HomeController.swift */; };
 		046E90CD22405ACC00C9BC16 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E90CC22405ACC00C9BC16 /* CalendarController.swift */; };
@@ -70,6 +71,7 @@
 		044CB3142237CBBF00F0A410 /* Arbel-IOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Arbel-IOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		044CB3182237CBBF00F0A410 /* Arbel_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arbel_IOSUITests.swift; sourceTree = "<group>"; };
 		044CB31A2237CBBF00F0A410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		045F24D7226F23DC0046FEDA /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		046E90C8224040FF00C9BC16 /* TabarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabarController.swift; sourceTree = "<group>"; };
 		046E90CA2240580800C9BC16 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		046E90CC22405ACC00C9BC16 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		044CB2EC2237CBBD00F0A410 = {
 			isa = PBXGroup;
 			children = (
+				045F24D7226F23DC0046FEDA /* CheckInternet.swift */,
 				044CB2F72237CBBD00F0A410 /* Arbel-IOS */,
 				044CB30C2237CBBF00F0A410 /* Arbel-IOSTests */,
 				044CB3172237CBBF00F0A410 /* Arbel-IOSUITests */,
@@ -373,7 +376,6 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Calendar-iOS/Calendar_iOS.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -382,7 +384,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Calendar_iOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -430,6 +431,7 @@
 				A9943A0922491EEC00ED3899 /* PaddingtextView.swift in Sources */,
 				A90ED80E224E355F00B71E49 /* NoteTableView.swift in Sources */,
 				A90ED80C224D24A300B71E49 /* UIViewExtension.swift in Sources */,
+				045F24D8226F23DC0046FEDA /* CheckInternet.swift in Sources */,
 				046E90CF22405AF800C9BC16 /* CoursesController.swift in Sources */,
 				A90ED804224BA6C500B71E49 /* CoursesDesignView.swift in Sources */,
 				A9D81BB0226CBEEA00127910 /* HourCollectionViewCell.swift in Sources */,
@@ -629,7 +631,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -651,7 +653,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
