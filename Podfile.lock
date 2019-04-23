@@ -2,23 +2,27 @@ PODS:
   - Alamofire (4.8.2)
   - Calendar-iOS (0.13)
   - FSCalendar (2.8.0)
+  - XLPagerTabStrip (8.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - Calendar-iOS
   - FSCalendar
+  - XLPagerTabStrip
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Calendar-iOS
     - FSCalendar
+    - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Calendar-iOS: a7bb0e6d2cee372e7e3de98d44d60ac7364be7f3
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
+  XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
 
-PODFILE CHECKSUM: b53ba8522052de09546b326ac8a6b35e5e689e21
+PODFILE CHECKSUM: 95eb0bc9ff6a6f36fb611eec0096f64c63678198
 
 COCOAPODS: 1.5.3
