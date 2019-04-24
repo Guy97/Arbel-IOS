@@ -37,6 +37,7 @@ class LogInController: UIViewController {
     @IBOutlet weak var usernameForm: UITextField!
     @IBOutlet weak var passwordForm: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    let defaultValues = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,15 +55,21 @@ class LogInController: UIViewController {
     }
     
     @IBAction func login() {
-        Alamofire.request("http://arbel.test/api/users", method: .get, parameters: nil).responseJSON {response in
-            // response serialization result
+       
+        
+        let postDict:[String:String] = ["email": "\(usernameForm.text!)", "password": "\(passwordForm.text!)"]
+//        let postDict: Parameters=[
+//            "username":usernameForm.text!,
+//            "password":passwordForm.text!
+//        ]
+        Alamofire.request("http://arbel.test/api/login", method: .post, parameters: postDict).responseJSON {response in //response serialization result
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 print("Data: \(utf8Text)") // original server data as UTF8 string
                 do {
                     let jsonDecoder = JSONDecoder()
-                    let subjects = try jsonDecoder.decode(users.self, from: response.data!)
-                    print(subjects)
-                    
+                    let postData = try jsonDecoder.decode(users.self, from: response.data!)
+                    print(postData, "bo")
+
                 }
                 catch
                 {
@@ -71,24 +78,70 @@ class LogInController: UIViewController {
             }
         }
         
-//        let postDict:[String:String] = ["email": "\(usernameForm.text)", "password": "\(passwordForm.text)"]
-//        Alamofire.request("http://arbel.test/api/users", method: .post, parameters: postDict).responseJSON {response in
-            // response serialization result
- //           if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
- //               print("Data: \(utf8Text)") // original server data as UTF8 string
- //               do {
- //                   let jsonDecoder = JSONDecoder()
- //                   let postData = try jsonDecoder.decode(users.self, from: response.data!)
- //                   print(postData, "bo")
- //
- //               }
-  //              catch
- //               {
-  //                  print(error)
-  //              }
-  //          }
-        }
-    
+//        Alamofire.request("http://arbel.test/api/login", method: .post, parameters: postDict).responseJSON
+//            {
+//                response in
+//                //printing response
+//                print(response, "cazzo")
+//
+//                //getting the json value from the server
+//                if let result = response.result.value {
+//                    let jsonData = result as! NSDictionary
+//
+//                    //if there is no error
+//                    if(!(jsonData.value(forKey: "error") as! Bool)){
+//
+//                        //getting the user from response
+//                        let user = jsonData.value(forKey: "users") as! NSDictionary
+//
+//                        //getting user values
+//                        let userId = user.value(forKey: "id") as! Int
+//                        let userName = user.value(forKey: "name") as! String
+//                        let userEmail = user.value(forKey: "email") as! String
+//
+//
+//                        //saving user values to defaults
+//                        self.defaultValues.set(userId, forKey: "id")
+//                        self.defaultValues.set(userName, forKey: "name")
+//                        self.defaultValues.set(userEmail, forKey: "email")
+//
+//
+//                        //switching the screen
+//                        let profileViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
+//                        self.navigationController?.pushViewController(profileViewController, animated: true)
+//
+//                        self.dismiss(animated: false, completion: nil)
+//                    }else{
+//                        //error message in case of invalid credential
+//                        print("invalid user")
+//                    }
+//                }
+//        }
+        
+//        Alamofire.request("http://192.168.1.102/api/login", method: .post, parameters: postDict).responseJSON
+//            {
+//                response in
+//                //printing response
+//                print(response)
+//
+//                //getting the json value from the server
+//                if let result = response.result.value {
+//
+//                    //converting it as NSDictionary
+//                    let jsonData = result as! NSDictionary
+//                    let user = jsonData.value(forKey: "user") as! NSDictionary
+//
+//                    if self.usernameForm.text! == user.value(forKey: "email") as! String && self.passwordForm.text! == user.value(forKey: "password") as! String {
+//                        let profileViewController = self.storyboard?.instantiateViewController(withIdentifier: "Homecontroller") as! HomeController
+//                        self.navigationController?.pushViewController(profileViewController, animated: true)
+//                    }
+//                    else {
+//                        print("invalid user")
+//                    }
+//
+//                }
+//        }
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         self.usernameForm.underlined()
