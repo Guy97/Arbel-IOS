@@ -54,32 +54,14 @@ class LogInController: UIViewController {
     }
     
     @IBAction func login() {
-//        Alamofire.request("http://arbel.test/api/users", method: .get, parameters: nil).responseJSON {response in
-//            // response serialization result
-//            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-//                print("Data: \(utf8Text)") // original server data as UTF8 string
-//                do {
-//                    let jsonDecoder = JSONDecoder()
-//                    let subjects = try jsonDecoder.decode(User.self, from: response.data!)
-//                    print(subjects, "gay")
-//                    //print(subjects.title)
-//                }
-//                catch
-//                {
-//                    print(error, "boia")
-//                }
-//            }
-//        }
-        
-        let postDict:[String:String] = ["email": "\(usernameForm.text)", "password": "\(passwordForm.text)"]
-        Alamofire.request("http://arbel.test/api/users", method: .post, parameters: postDict).responseJSON {response in
+        Alamofire.request("http://arbel.test/api/users", method: .get, parameters: nil).responseJSON {response in
             // response serialization result
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 print("Data: \(utf8Text)") // original server data as UTF8 string
                 do {
                     let jsonDecoder = JSONDecoder()
-                    let postData = try jsonDecoder.decode(users.self, from: response.data!)
-                    print(postData, "bo")
+                    let subjects = try jsonDecoder.decode(users.self, from: response.data!)
+                    print(subjects)
                     
                 }
                 catch
@@ -88,7 +70,25 @@ class LogInController: UIViewController {
                 }
             }
         }
-    }
+        
+//        let postDict:[String:String] = ["email": "\(usernameForm.text)", "password": "\(passwordForm.text)"]
+//        Alamofire.request("http://arbel.test/api/users", method: .post, parameters: postDict).responseJSON {response in
+            // response serialization result
+ //           if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+ //               print("Data: \(utf8Text)") // original server data as UTF8 string
+ //               do {
+ //                   let jsonDecoder = JSONDecoder()
+ //                   let postData = try jsonDecoder.decode(users.self, from: response.data!)
+ //                   print(postData, "bo")
+ //
+ //               }
+  //              catch
+ //               {
+  //                  print(error)
+  //              }
+  //          }
+        }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         self.usernameForm.underlined()
