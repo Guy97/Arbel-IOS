@@ -32,6 +32,9 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         
         studentsList.dataSource = self
         studentsList.delegate = self
+        
+        let insets = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
+        self.studentsList.contentInset = insets
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,9 +46,45 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let student = tableView.dequeueReusableCell(withIdentifier: "student") as! StudentCell
-        student.studentName?.text = students[indexPath.row]
-        return student
+//        let student = tableView.dequeueReusableCell(withIdentifier: "student") as! StudentCell
+//        student.studentName?.text = students[indexPath.row]
+//        return student
+//
+        if indexPath.row == 9 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "save") as! StudentCell
+            
+            return cell
+        }
+            
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "student") as! StudentCell
+            cell.studentName?.text = students[indexPath.row]
+            return cell }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "showDetail", sender: self)
+        
+    }
+    
+    @IBAction func checkBoxTapped(_ sender: UIButton) {
+        
+        UIView.animate(withDuration: 0.1, delay: 0.01, options: .curveLinear, animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+            
+        }) { (success) in
+            sender.isSelected = !sender.isSelected
+            UIView.animate(withDuration: 0.1, delay: 0.01, options: .curveLinear, animations: {
+                sender.transform = .identity
+            }, completion: nil)
+        }
+//        if sender.isSelected {
+//            sender.isSelected = false
+//        }
+//        else {
+//            sender.isSelected = true
+//        }
     }
     
 
