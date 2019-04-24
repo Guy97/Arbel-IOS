@@ -11,22 +11,22 @@ import XLPagerTabStrip
 
 class ActivityTabController: UIViewController {
 
+    @IBOutlet weak var showActivity: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
-        // Do any additional setup after loading the view.
+        showActivity.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.5).cgColor
+        showActivity.layer.shadowOffset = CGSize (width: 0, height: 0.5)
+        showActivity.layer.shadowRadius = 1.8
+        showActivity.layer.shadowOpacity = 0.6
+        
+        showActivity.layer.cornerRadius = 10
+        showActivity.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

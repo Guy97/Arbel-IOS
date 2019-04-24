@@ -11,22 +11,25 @@ import XLPagerTabStrip
 
 class TestTabController: UIViewController {
 
+    @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var searchTest: UISearchBar!
     override func viewDidLoad() {
+        
+        searchTest.layer.masksToBounds = true
+        searchTest.backgroundColor = .white
+        searchTest.backgroundImage = nil
+        searchTest.layer.cornerRadius = 20
+        
+        searchView.layer.cornerRadius = 20
+        searchView.layer.shadowColor = UIColor (red: 0/255, green: 0/255, blue: 0/255, alpha: 0.4).cgColor
+        searchView.layer.shadowOffset = CGSize (width: 0, height: 1.2)
+        searchView.layer.shadowRadius = 1.4
+        searchView.layer.shadowOpacity = 0.3
+        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor(white: 1, alpha: 0)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

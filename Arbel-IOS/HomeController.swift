@@ -44,7 +44,6 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
     
         
-        
         noteTableView.separatorColor = UIColor (white: 0.95, alpha: 1)
         noteTableView.dataSource = self
         noteTableView.delegate = self

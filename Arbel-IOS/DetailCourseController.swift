@@ -43,24 +43,21 @@ class DetailCourseController: ButtonBarPagerTabStripViewController  {
         settings.style.buttonBarItemBackgroundColor = UIColor(white: 1, alpha: 0)
         
         // Sets the pager strip item font and font color
-        settings.style.buttonBarItemFont = .boldSystemFont (ofSize: 14)
+        settings.style.buttonBarItemFont = .boldSystemFont (ofSize: 12)
         settings.style.buttonBarItemTitleColor = .lightGray
         
         
         // Sets the pager strip item offsets
         settings.style.buttonBarMinimumLineSpacing = 0
         settings.style.buttonBarItemsShouldFillAvailableWidth = false
-        settings.style.buttonBarLeftContentInset = 70
-        settings.style.buttonBarRightContentInset = 60
+        settings.style.buttonBarLeftContentInset = 20
+        settings.style.buttonBarRightContentInset = 0
         settings.style.buttonBarMinimumInteritemSpacing = 20
         
-        
-    
 
-        settings.style.buttonBarHeight = 30
-        // Sets the height and colour of the slider bar of the selected pager tab
-        settings.style.selectedBarHeight = 2.0
-        
+
+        settings.style.buttonBarHeight = 27
+        settings.style.selectedBarHeight = 2
         settings.style.selectedBarBackgroundColor = .white
         
         // Changing item text color on swipe
