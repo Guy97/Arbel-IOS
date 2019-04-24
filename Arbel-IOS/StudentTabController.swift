@@ -9,24 +9,45 @@
 import UIKit
 import XLPagerTabStrip
 
-class StudentTabController: UIViewController {
+class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var searchStudent: UISearchBar!
+    @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var studentsList: UITableView!
+    
+    var students = ["Piero Chiambretti", "Scemo Pagliaccio", "Marcello Pajntar", "Simone Ghisu", "Davide Coscino", "Salvatore Aranzulla", "Riccardo Mores", "Mauro Paffi", "Fabrizio Infante", "Eugenio De Medici"]
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        searchStudent.layer.masksToBounds = true
+        searchStudent.backgroundColor = .white
+        searchStudent.backgroundImage = nil
+        searchStudent.layer.cornerRadius = 20
+        
+        searchView.layer.cornerRadius = 20
+        searchView.layer.shadowColor = UIColor (red: 0/255, green: 0/255, blue: 0/255, alpha: 0.4).cgColor
+        searchView.layer.shadowOffset = CGSize (width: 0, height: 1.2)
+        searchView.layer.shadowRadius = 1.4
+        searchView.layer.shadowOpacity = 0.3
+        
+        studentsList.dataSource = self
+        studentsList.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (students.count)
     }
-    */
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let student = tableView.dequeueReusableCell(withIdentifier: "student") as! StudentCell
+        student.studentName?.text = students[indexPath.row]
+        return student
+    }
+    
 
 }
 
