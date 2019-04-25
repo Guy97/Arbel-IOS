@@ -75,6 +75,19 @@ class LogInController: UIViewController {
                 {
                     print(error)
                 }
+                if utf8Text.contains("error") {
+                    print("utente non loggato")
+                    let alertController = UIAlertController(title: "iOScreator", message:
+                        "Invalid username or password", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "Ok", style: .default))
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                else {
+                    print("utente loggato")
+                    let profileViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") as! HomeController
+                    self.navigationController?.pushViewController(profileViewController, animated: true)
+                    //self.dismiss(animated: false, completion: nil)
+                }
             }
         }
         
