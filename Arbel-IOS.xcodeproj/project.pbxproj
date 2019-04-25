@@ -36,10 +36,13 @@
 		A92CD0D7226F917100612B13 /* TestTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92CD0D6226F917100612B13 /* TestTabController.swift */; };
 		A92CD0D9226F918400612B13 /* ActivityTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92CD0D8226F918300612B13 /* ActivityTabController.swift */; };
 		A92CD0DB22707E5900612B13 /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92CD0DA22707E5900612B13 /* StudentCell.swift */; };
+		A9431B0722717FA900D36C96 /* StudentDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9431B0622717FA900D36C96 /* StudentDetailController.swift */; };
+		A9431B092271C0DA00D36C96 /* SingleStudentDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9431B082271C0DA00D36C96 /* SingleStudentDetailCell.swift */; };
+		A9431B0D2271E02F00D36C96 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9431B0C2271E02F00D36C96 /* ActivityCell.swift */; };
 		A9943A072249151900ED3899 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9943A062249151900ED3899 /* PaddingTextField.swift */; };
 		A9943A0922491EEC00ED3899 /* PaddingtextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9943A0822491EEC00ED3899 /* PaddingtextView.swift */; };
 		A9B6A69E224EB5FA00AA6FDA /* LogMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B6A69D224EB5FA00AA6FDA /* LogMemory.swift */; };
-		A9BF9A782270DFFC0033F35C /* StudentDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BF9A772270DFFC0033F35C /* StudentDetailController.swift */; };
+		A9BF9A782270DFFC0033F35C /* ArgumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BF9A772270DFFC0033F35C /* ArgumentController.swift */; };
 		A9BF9A7A2270F2460033F35C /* SaveDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BF9A792270F2460033F35C /* SaveDesignView.swift */; };
 		A9D81BB0226CBEEA00127910 /* HourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D81BAF226CBEEA00127910 /* HourCollectionViewCell.swift */; };
 		A9D81BB4226CC68400127910 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D81BB3226CC68400127910 /* Activity.swift */; };
@@ -100,11 +103,14 @@
 		A92CD0D6226F917100612B13 /* TestTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTabController.swift; sourceTree = "<group>"; };
 		A92CD0D8226F918300612B13 /* ActivityTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTabController.swift; sourceTree = "<group>"; };
 		A92CD0DA22707E5900612B13 /* StudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
+		A9431B0622717FA900D36C96 /* StudentDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailController.swift; sourceTree = "<group>"; };
+		A9431B082271C0DA00D36C96 /* SingleStudentDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStudentDetailCell.swift; sourceTree = "<group>"; };
+		A9431B0C2271E02F00D36C96 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		A94D6E0D224A588100AAA103 /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
 		A9943A062249151900ED3899 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		A9943A0822491EEC00ED3899 /* PaddingtextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingtextView.swift; sourceTree = "<group>"; };
 		A9B6A69D224EB5FA00AA6FDA /* LogMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMemory.swift; sourceTree = "<group>"; };
-		A9BF9A772270DFFC0033F35C /* StudentDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailController.swift; sourceTree = "<group>"; };
+		A9BF9A772270DFFC0033F35C /* ArgumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentController.swift; sourceTree = "<group>"; };
 		A9BF9A792270F2460033F35C /* SaveDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDesignView.swift; sourceTree = "<group>"; };
 		A9D81BAF226CBEEA00127910 /* HourCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCollectionViewCell.swift; sourceTree = "<group>"; };
 		A9D81BB3226CC68400127910 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
@@ -184,9 +190,12 @@
 				A92CD0B3226F5F9200612B13 /* DetailCourseController.swift */,
 				A92CD0D4226F915F00612B13 /* StudentTabController.swift */,
 				A92CD0DA22707E5900612B13 /* StudentCell.swift */,
-				A9BF9A772270DFFC0033F35C /* StudentDetailController.swift */,
+				A9431B0622717FA900D36C96 /* StudentDetailController.swift */,
+				A9431B082271C0DA00D36C96 /* SingleStudentDetailCell.swift */,
+				A9BF9A772270DFFC0033F35C /* ArgumentController.swift */,
 				A92CD0D6226F917100612B13 /* TestTabController.swift */,
 				A92CD0D8226F918300612B13 /* ActivityTabController.swift */,
+				A9431B0C2271E02F00D36C96 /* ActivityCell.swift */,
 				046E90D022405B1E00C9BC16 /* ContactController.swift */,
 				A90E5FD9226B2E01001E8C2F /* ContactTableViewCell.swift */,
 				046E90D222405B3E00C9BC16 /* ProfileController.swift */,
@@ -451,7 +460,7 @@
 				A92CD0D5226F915F00612B13 /* StudentTabController.swift in Sources */,
 				A90ED80E224E355F00B71E49 /* NoteTableView.swift in Sources */,
 				A90ED80C224D24A300B71E49 /* UIViewExtension.swift in Sources */,
-				A9BF9A782270DFFC0033F35C /* StudentDetailController.swift in Sources */,
+				A9BF9A782270DFFC0033F35C /* ArgumentController.swift in Sources */,
 				045F24D8226F23DC0046FEDA /* CheckInternet.swift in Sources */,
 				A9BF9A7A2270F2460033F35C /* SaveDesignView.swift in Sources */,
 				046E90CF22405AF800C9BC16 /* CoursesController.swift in Sources */,
@@ -461,6 +470,9 @@
 				044CB2FB2237CBBD00F0A410 /* ViewController.swift in Sources */,
 				A92CD0B4226F5F9200612B13 /* DetailCourseController.swift in Sources */,
 				049D129A22482AC000CD1548 /* LogInController.swift in Sources */,
+				A9431B0722717FA900D36C96 /* StudentDetailController.swift in Sources */,
+				A9431B092271C0DA00D36C96 /* SingleStudentDetailCell.swift in Sources */,
+				A9431B0D2271E02F00D36C96 /* ActivityCell.swift in Sources */,
 				046E90C9224040FF00C9BC16 /* TabarController.swift in Sources */,
 				046E90D322405B3E00C9BC16 /* ProfileController.swift in Sources */,
 				044CB2F92237CBBD00F0A410 /* AppDelegate.swift in Sources */,

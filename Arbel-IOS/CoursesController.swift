@@ -43,6 +43,7 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print ("You selected cell #\(indexPath.row)!")
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "showStudent", sender: self)
     }

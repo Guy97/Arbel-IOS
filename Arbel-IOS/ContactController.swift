@@ -47,12 +47,6 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         
         sendButton.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
         
-//        handleArea.layer.masksToBounds = true
-//        roundedDetail.layer.masksToBounds = true
-//        //    cardView.layer.masksToBounds = true
-//        self.handleArea.layer.cornerRadius = 17
-//        self.roundedDetail.layer.cornerRadius = 2
-        
         tableView.isScrollEnabled = true
         tableView.delegate = self as? UITableViewDelegate
         tableView.dataSource = self as? UITableViewDataSource
@@ -69,6 +63,7 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
     
             
         }
+    
     
     
     @IBAction func addAction(_ sender: AnyObject) {

@@ -9,12 +9,18 @@
 import UIKit
 import XLPagerTabStrip
 
-class ActivityTabController: UIViewController {
+class ActivityTabController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var showActivity: UIView!
+    @IBOutlet weak var activityTableView: UITableView!
+    
+    var activityArray = ["Nome Argomento 1", "Nome Argomento 2", "Nome Argomento 3", "Nome Argomento 4"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activityTableView.dataSource = self
+        activityTableView.delegate = self
         
 
         showActivity.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.5).cgColor
@@ -26,8 +32,21 @@ class ActivityTabController: UIViewController {
         showActivity.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
-
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (activityArray.count)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let activity = tableView.dequeueReusableCell(withIdentifier: "activity") as! ActivityCell
+//            activity.dateLesson?.text = activityArray[indexPath.row]
+            activity.argumentName?.text = activityArray[indexPath.row]
+            return activity
+        
+        }
 }
 
 extension ActivityTabController : IndicatorInfoProvider {
