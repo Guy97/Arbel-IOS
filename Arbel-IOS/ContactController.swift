@@ -10,31 +10,33 @@ import UIKit
 
 class ContactController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-//    var list = [String]()
-//
-    var sendArray = ["1 Media Design","2 Media Design","2 Video Design","2 Sound Design"]
-    
-    
     @IBOutlet weak var mailForm: UITextField!
     @IBOutlet weak var objectForm: UITextField!
     @IBOutlet weak var messageForm: UITextView!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     
+    var sendArray = ["1 Media Design","2 Media Design","2 Video Design","2 Sound Design"]
     
     var transparentView = UIView()
     var tableView = UITableView()
     
     let height: CGFloat = 300
 
-
-
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         self.HideKeyboard()
-        
+
+        elementStyle()
+    
+        tableView.isScrollEnabled = true
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: "Cell")
+    }
+    
+    func elementStyle() {
         self.mailForm.layer.cornerRadius = 10
         self.objectForm.layer.cornerRadius = 10
         self.messageForm.layer.cornerRadius = 8
@@ -47,28 +49,15 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         
         sendButton.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
         
-        tableView.isScrollEnabled = true
-        tableView.delegate = self as? UITableViewDelegate
-        tableView.dataSource = self as? UITableViewDataSource
-        tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: "Cell")
-        
-        
         tableView.separatorColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
         tableView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0);
         
         tableView.clipsToBounds = true
         tableView.layer.cornerRadius = 10
         tableView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-
-    
-            
-        }
-    
-    
+    }
     
     @IBAction func addAction(_ sender: AnyObject) {
-        
-//        let window = UIApplication.shared.keyWindow
         
         transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         transparentView.frame = self.view.frame
@@ -89,8 +78,6 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
             self.transparentView.alpha = 0.6
             self.tableView.frame = CGRect(x: 0, y: screenSize.height - self.height, width: screenSize.width, height: self.height)
         }, completion: nil)
-        
-
     }
     
     @objc func onClickTransparentView() {
@@ -100,7 +87,6 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
             self.transparentView.alpha = 0
             self.tableView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.height)
         }, completion: nil)
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

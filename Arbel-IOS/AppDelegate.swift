@@ -13,20 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
         //status bar
-        UIApplication.shared.statusBarStyle = .lightContent
+//        UIApplication.shared.statusBarStyle = .lightContent
         
         UITabBar.appearance().barTintColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
         UITabBar.appearance().tintColor = UIColor(red: 77/255, green: 77/255, blue: 77/255, alpha: 1)
-        
-        
         UITabBar.appearance().unselectedItemTintColor = UIColor(red: 186/255, green: 187/255, blue: 189/255, alpha: 1)
         
-        
+        var preferredStatusBarStyle : UIStatusBarStyle {
+            return .lightContent
+        }
         return true
     }
 

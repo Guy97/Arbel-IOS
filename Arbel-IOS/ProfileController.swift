@@ -10,26 +10,22 @@ import UIKit
 
 class ProfileController: UIViewController {
     
-    
-
     @IBOutlet weak var passwordVoice: UIButton!
     @IBOutlet weak var infoVoice: UIButton!
-    
-    
     @IBOutlet weak var imageprofile: UIImageView!
-    
     @IBOutlet weak var logoutbutton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        
+        elementStyle()
+    }
+    
+    func elementStyle() {
         imageprofile.layer.masksToBounds = false
         imageprofile.layer.cornerRadius = imageprofile.frame.height/2
         imageprofile.clipsToBounds = true
- 
+        
         // Styles00
         passwordVoice.layer.cornerRadius = 8
         passwordVoice.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.5).cgColor
@@ -43,18 +39,14 @@ class ProfileController: UIViewController {
         infoVoice.layer.shadowOffset = CGSize (width: 0, height: 1.0)
         infoVoice.layer.shadowRadius = 1.1
         infoVoice.layer.shadowOpacity = 0.5
-
-       
+        
         logoutbutton.layer.cornerRadius = 18
         logoutbutton.layer.masksToBounds = true
-
         logoutbutton.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
-
-
-    
     }
     
-    
-    
-
+    @IBAction func exit(_ sender: Any) {
+        self.performSegue(withIdentifier: "exit", sender: self)
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+    }
 }

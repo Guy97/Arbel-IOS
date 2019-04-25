@@ -17,15 +17,16 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var students = ["Piero Chiambretti", "Scemo Pagliaccio", "Marcello Pajntar", "Simone Ghisu", "Davide Coscino", "Salvatore Aranzulla", "Riccardo Mores", "Mauro Paffi", "Fabrizio Infante", "Eugenio De Medici"]
     
-    var myIndex = 0
-    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
+        elementStyle()
+    
         studentsList.dataSource = self
         studentsList.delegate = self
-        
+    }
+    
+    func elementStyle() {
         searchStudent.layer.masksToBounds = true
         searchStudent.backgroundColor = .white
         searchStudent.backgroundImage = nil
@@ -36,11 +37,10 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         searchView.layer.shadowOffset = CGSize (width: 0, height: 1.2)
         searchView.layer.shadowRadius = 1.4
         searchView.layer.shadowOpacity = 0.3
-
+        
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
         self.studentsList.contentInset = insets
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (students.count)
@@ -51,38 +51,19 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let student = tableView.dequeueReusableCell(withIdentifier: "student") as! StudentCell
-//        student.studentName?.text = students[indexPath.row]
-//        return student
-//
         if indexPath.row == 9 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "save") as! StudentCell
-            
             return cell
-        }
-            
-        else {
+        } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "student") as! StudentCell
             cell.studentName?.text = students[indexPath.row]
-            return cell }
+            return cell
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        print ("You selected cell #\(indexPath.row)!")
-        myIndex = indexPath.row
-//        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "showDetail", sender: self)
-
     }
-//
-//    func tableView(tableView: UITableViewDelegate, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-//        print("wananananaanan" )
-//        performSegue(withIdentifier: "showDetail", sender: self)
-//
-//    }
-
-    
 
     @IBAction func checkBoxTapped(_ sender: UIButton) {
         
@@ -102,13 +83,10 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
 //            sender.isSelected = true
 //        }
     }
-    
-
 }
 
 extension StudentTabController : IndicatorInfoProvider {
-    
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "Studenti")
-}
+    }
 }

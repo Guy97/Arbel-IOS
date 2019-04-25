@@ -19,10 +19,13 @@ class ActivityTabController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        elementStyle()
+        
         activityTableView.dataSource = self
         activityTableView.delegate = self
-        
-
+    }
+    
+    func elementStyle() {
         showActivity.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.5).cgColor
         showActivity.layer.shadowOffset = CGSize (width: 0, height: 0.5)
         showActivity.layer.shadowRadius = 1.8
@@ -42,16 +45,13 @@ class ActivityTabController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let activity = tableView.dequeueReusableCell(withIdentifier: "activity") as! ActivityCell
-//            activity.dateLesson?.text = activityArray[indexPath.row]
             activity.argumentName?.text = activityArray[indexPath.row]
             return activity
-        
         }
 }
 
 extension ActivityTabController : IndicatorInfoProvider {
-    
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "Attività")
-}
+    }
 }

@@ -16,7 +16,6 @@ extension UIViewController {
         let Tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self , action: #selector(dismissKeyboard))
         
         view.addGestureRecognizer(Tap)
-        
     }
     
     @objc func DismissKeyboard() {
@@ -25,22 +24,10 @@ extension UIViewController {
 }
 
 class ViewController: UIViewController , UITextFieldDelegate {
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         }
-
 }
-
-//extension ButtonBarPagerTabStripViewController  {
-//
-//    override open func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-//        let child_1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StudentTab")
-//        let child_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TestTab")
-//        let child_3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ActivityTab")
-//        return [child_1, child_2, child_3]
-//    }
-
 

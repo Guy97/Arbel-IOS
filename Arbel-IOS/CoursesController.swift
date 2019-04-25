@@ -13,14 +13,9 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
     @IBOutlet var coursesList: UITableView!
     
     var coursesArray = ["Media Design"," Media Design","Video Design","Sound Design"]
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-//        coursesList.separatorColor = UIColor(white: 1, alpha: 1)
         coursesList.dataSource = self
         coursesList.delegate = self
     }
@@ -35,10 +30,7 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "course") as! CourseCell
-        
-//        cell.year?.text = coursesArray[indexPath.row]
         cell.courseName?.text = coursesArray[indexPath.row]
-
         return cell
     }
     
@@ -47,6 +39,4 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "showStudent", sender: self)
     }
-
-
 }

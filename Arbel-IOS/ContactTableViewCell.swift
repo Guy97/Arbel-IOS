@@ -10,7 +10,7 @@ import UIKit
 
 class ContactTableViewCell: UITableViewCell {
     
-    lazy var backView: UIView = {
+    lazy var backView: UIView = {  //chiedere a Luca la particolarità delle variabili Lazy
         let view = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 50))
         return view
     }()
@@ -19,22 +19,11 @@ class ContactTableViewCell: UITableViewCell {
         let lbl = UILabel(frame: CGRect(x: 40,  y: 10, width: self.frame.width - 80, height: 30))
             UIFont.systemFont(ofSize: 10)
         return lbl
-//        cell.labelName.font = UIFont.systemFont(ofSize: 16)
-        
     }()
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         addSubview(backView)
         backView.addSubview(lbl)
-
-
-        // Configure the view for the selected state
     }
-
 }

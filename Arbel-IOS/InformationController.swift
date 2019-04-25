@@ -9,15 +9,11 @@
 import UIKit
 
 class InformationController: UIViewController {
+    
     @IBOutlet weak var textInformation: UILabel!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        textInformation.sizeToFit()
-
     }
-    
 }
 

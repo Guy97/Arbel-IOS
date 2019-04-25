@@ -10,7 +10,6 @@ import UIKit
 
 class StudentDetailController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-
     @IBOutlet weak var studentImage: UIImageView!
     @IBOutlet weak var essentialView: UIView!
     @IBOutlet weak var formContainer: UIView!
@@ -27,16 +26,19 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
     
     var allAbsence = ["04.10.2018", "21.11.2018"]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        elementStyle()
         
         testTableView.dataSource = self
         testTableView.delegate = self
         
         absenceTableView.dataSource = self
         absenceTableView.delegate = self
-
+    }
+    
+    func elementStyle() {
         studentImage.layer.masksToBounds = false
         studentImage.layer.cornerRadius = studentImage.frame.height/2
         studentImage.clipsToBounds = true
@@ -88,5 +90,4 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
             return absence
         }
     }
-    
 }

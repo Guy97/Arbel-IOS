@@ -13,29 +13,23 @@ class DetailCourseController: ButtonBarPagerTabStripViewController  {
     
     public var selectedBarWidth: CGFloat?
     
-    
     public enum PagerTabStripBehaviour {
         case common(skipIntermediteViewControllers: Bool)
         case progressive(skipIntermediteViewControllers: Bool, elasticIndicatorLimit: Bool)
     }
     
     override func viewDidLoad() {
-        
         styleTabBar()
+        
         super.viewDidLoad()
-
     }
     
-    
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        
         let child1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StudentTab") as! StudentTabController
         let child2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TestTab") as! TestTabController
         let child3 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ActivityTab") as! ActivityTabController
         return [child1, child2, child3]
     }
-    
-    
     
     func styleTabBar() {
         // Sets the background colour of the pager strip and the pager strip item
@@ -46,16 +40,12 @@ class DetailCourseController: ButtonBarPagerTabStripViewController  {
         settings.style.buttonBarItemFont = .boldSystemFont (ofSize: 12)
         settings.style.buttonBarItemTitleColor = .lightGray
         
-        
         // Sets the pager strip item offsets
         settings.style.buttonBarMinimumLineSpacing = 0
         settings.style.buttonBarItemsShouldFillAvailableWidth = false
         settings.style.buttonBarLeftContentInset = 20
         settings.style.buttonBarRightContentInset = 0
         settings.style.buttonBarMinimumInteritemSpacing = 20
-        
-
-
         settings.style.buttonBarHeight = 27
         settings.style.selectedBarHeight = 2
         settings.style.selectedBarBackgroundColor = .white
@@ -67,5 +57,4 @@ class DetailCourseController: ButtonBarPagerTabStripViewController  {
             newCell?.label.textColor = .white
         }
     }
-    
 }

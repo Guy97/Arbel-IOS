@@ -13,12 +13,9 @@ import UIKit
     
     @IBInspectable var cornerRadius : CGFloat = 0
     @IBInspectable var shadowColor : UIColor? = UIColor.black
-    
     @IBInspectable var shadowOffSetWidth : Int = 0
     @IBInspectable var shadowOffSetHeight : Int = 1
-    
     @IBInspectable var shadowOpacity : Float = 0.2
-    
     @IBInspectable var shadowRadius : Float = 1
     
     
@@ -37,10 +34,6 @@ import UIKit
         
         layer.shadowRadius = CGFloat(shadowRadius)
     }
-    
-    
-    
-    
 }
 
 

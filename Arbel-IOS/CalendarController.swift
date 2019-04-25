@@ -20,38 +20,26 @@ class CalendarController: UIViewController, FSCalendarDataSource, FSCalendarDele
     let calendario2: FSCalendarEventIndicator = FSCalendarEventIndicator()
     let calendario3: FSCalendarDelegationFactory =  FSCalendarDelegationFactory()
     
-    
-   
-    
-//    let calendario = FSCalendarCell().titleLabel
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        elementStyle()
         
-        // Styles00
-        activityContainer.layer.cornerRadius = 19
-        activityContainer.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.5).cgColor
-        activityContainer.layer.shadowOffset = CGSize (width: 0, height: 0.5)
-        activityContainer.layer.shadowRadius = 1.8
-        activityContainer.layer.shadowOpacity = 0.6
         let formatter = DateFormatter()
         formatter.setLocalizedDateFormatFromTemplate("EEEE")
         formatter.locale =  Locale(identifier: "it_IT")
         let today = formatter.string(from: Date())
         day.text = "\(today)"
-        
-        
-        
-        
-        let prova = calendar.selectedDates
-        print("orco", prova)
-        
+    
+//        let prova = calendar.selectedDates
+//        print("orco", prova)
         
     }
     
+    func elementStyle() {
+        activityContainer.layer.cornerRadius = 19
+        activityContainer.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.5).cgColor
+        activityContainer.layer.shadowOffset = CGSize (width: 0, height: 0.5)
+        activityContainer.layer.shadowRadius = 1.8
+        activityContainer.layer.shadowOpacity = 0.6
+    }
 }

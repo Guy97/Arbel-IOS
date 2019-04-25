@@ -14,7 +14,12 @@ class TestTabController: UIViewController {
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchTest: UISearchBar!
     override func viewDidLoad() {
+        elementStyle()
         
+        super.viewDidLoad()
+    }
+    
+    func elementStyle() {
         searchTest.layer.masksToBounds = true
         searchTest.backgroundColor = .white
         searchTest.backgroundImage = nil
@@ -25,17 +30,12 @@ class TestTabController: UIViewController {
         searchView.layer.shadowOffset = CGSize (width: 0, height: 1.2)
         searchView.layer.shadowRadius = 1.4
         searchView.layer.shadowOpacity = 0.3
-        
-        super.viewDidLoad()
         self.view.backgroundColor = UIColor(white: 1, alpha: 0)
     }
-    
-
 }
 
 extension TestTabController : IndicatorInfoProvider {
-    
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "Test")
-}
+    }   
 }

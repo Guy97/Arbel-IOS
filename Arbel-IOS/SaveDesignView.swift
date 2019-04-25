@@ -16,9 +16,6 @@ import UIKit
     override func layoutSubviews() {
         
         layer.cornerRadius = cornerRadius
-    
     }
-    
-
 }
 

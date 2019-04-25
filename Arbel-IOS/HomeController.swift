@@ -11,9 +11,7 @@ import UIKit
     var list = [String]()
     var date = [String]()
 
-
 class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
     
     @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var infoNote: UILabel!
@@ -24,33 +22,16 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let cellScalingH: CGFloat = 0.5
     let cellScalingV: CGFloat = 0.7
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (list.count)
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let note = tableView.dequeueReusableCell(withIdentifier: "note") as! NoteTableView
-        note.textNote?.text = list[indexPath.row]
-        note.dateNote?.text = date[indexPath.row]
-        return note
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         
-        noteTableView.separatorColor = UIColor (white: 0.95, alpha: 1)
+        elementStyle()
+    
         noteTableView.dataSource = self
         noteTableView.delegate = self
         
-        self.tabBarController!.tabBar.layer.borderWidth = 0.5
-        self.tabBarController!.tabBar.layer.borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.2).cgColor
-        self.tabBarController?.tabBar.clipsToBounds = true
+        collectionView?.dataSource = self
+        collectionView?.delegate = self
         
         if (list.count == 0 ) {
             infoNote.isHidden = false
@@ -60,44 +41,50 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
             infoNote.isHidden = true
             print("Note già presenti")
         }
-//        list.reverse()
-        
-//        let screenSize = UIScreen.main.bounds.size
-//        let cellWidth = floor(screenSize.width * cellScaling)
-//        let cellHeight = floor(screenSize.height * cellScaling)
-//
-//        let insetX = (view.bounds.width - cellWidth) / 2.0
-//        let insetY = (view.bounds.height - cellHeight) / 2.0
-        
+
         let cellWidth = floor(collectionView.bounds.width * cellScalingH)
         let cellHeight = floor(collectionView.bounds.height * cellScalingV)
         
-    
         let insetX = (collectionView.bounds.width - cellWidth) / 2
         let insetY = (collectionView.bounds.height - cellHeight) / 2
         
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize (width: cellWidth, height: cellHeight)
         collectionView?.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
+    }
     
-        collectionView?.dataSource = self
-        print(" QUI PASSA ")
-        collectionView?.delegate = self
+    func elementStyle() {
+        noteTableView.separatorColor = UIColor (white: 0.95, alpha: 1)
         
-
-        
+        self.tabBarController!.tabBar.layer.borderWidth = 0.5
+        self.tabBarController!.tabBar.layer.borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.2).cgColor
+        self.tabBarController?.tabBar.clipsToBounds = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if CheckInternet.Connection() {
-            infoUser.text = "Bentornato Luca, sei Online"
+            infoUser.text = "Bentornato Luca," + "\n" + "sei Online"
         }
         else {
-            infoUser.text = "Mi dispiace ma sei Offline"
+            infoUser.text = "Mi dispiace ma" + "\n" + " sei Offline"
         }
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (list.count) }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
 }
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let note = tableView.dequeueReusableCell(withIdentifier: "note") as! NoteTableView
+        note.textNote?.text = list[indexPath.row]
+        note.dateNote?.text = date[indexPath.row]
+        return note
+    }
+}
 
 extension HomeController : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -121,11 +108,9 @@ extension HomeController : UIScrollViewDelegate, UICollectionViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
         let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
-
         var offset = targetContentOffset.pointee
         let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
         let roundedIndex = round(index)
-
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
     }
