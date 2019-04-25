@@ -1562,14 +1562,14 @@ programmazione 2</string>
             <objects>
                 <viewController id="Edr-qN-gdr" customClass="StudentDetailController" customModule="Arbel_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="194-Co-qVU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzL-fa-ehI">
-                                <rect key="frame" x="0.0" y="44" width="375" height="807"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="922"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5M-Tk-71I">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="922"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myBeauty" translatesAutoresizingMaskIntoConstraints="NO" id="CIm-SA-VVC">
                                                 <rect key="frame" x="33" y="30" width="90" height="90"/>
@@ -2044,13 +2044,13 @@ programmazione 2</string>
                                             <constraint firstItem="o7W-WU-48d" firstAttribute="top" secondItem="S5M-Tk-71I" secondAttribute="top" constant="35" id="JuT-9z-jeP"/>
                                             <constraint firstItem="Kjc-zK-3WN" firstAttribute="leading" secondItem="CIm-SA-VVC" secondAttribute="trailing" constant="15" id="Nii-32-WSi"/>
                                             <constraint firstItem="CIm-SA-VVC" firstAttribute="leading" secondItem="S5M-Tk-71I" secondAttribute="leading" constant="33" id="PSQ-pd-jR4"/>
-                                            <constraint firstAttribute="height" constant="1000" id="Qin-En-XmU"/>
+                                            <constraint firstAttribute="height" constant="922" id="Qin-En-XmU"/>
                                             <constraint firstItem="8BE-iD-WC7" firstAttribute="top" secondItem="Kjc-zK-3WN" secondAttribute="bottom" constant="2" id="TDr-n6-bRa"/>
                                             <constraint firstItem="Kjc-zK-3WN" firstAttribute="top" secondItem="o7W-WU-48d" secondAttribute="bottom" constant="10" id="aPZ-Bu-Fct"/>
                                             <constraint firstItem="Pbs-Bc-FJb" firstAttribute="top" secondItem="CIm-SA-VVC" secondAttribute="bottom" constant="30" id="cge-Xv-pJP"/>
                                             <constraint firstItem="w53-FT-aDX" firstAttribute="leading" secondItem="S5M-Tk-71I" secondAttribute="leading" id="hHp-p6-Bwt"/>
                                             <constraint firstItem="Pbs-Bc-FJb" firstAttribute="centerX" secondItem="S5M-Tk-71I" secondAttribute="centerX" id="hRW-5r-PNB"/>
-                                            <constraint firstAttribute="bottom" secondItem="w53-FT-aDX" secondAttribute="bottom" id="hsC-G6-8xT"/>
+                                            <constraint firstAttribute="bottom" secondItem="w53-FT-aDX" secondAttribute="bottom" constant="-78" id="hsC-G6-8xT"/>
                                             <constraint firstItem="Pbs-Bc-FJb" firstAttribute="leading" secondItem="S5M-Tk-71I" secondAttribute="leading" constant="102.5" id="mQz-rN-0zQ"/>
                                             <constraint firstItem="CIm-SA-VVC" firstAttribute="top" secondItem="S5M-Tk-71I" secondAttribute="top" constant="30" id="nmm-ty-7WG"/>
                                             <constraint firstItem="8BE-iD-WC7" firstAttribute="leading" secondItem="CIm-SA-VVC" secondAttribute="trailing" constant="15" id="uYb-td-ghd"/>
@@ -2064,7 +2064,7 @@ programmazione 2</string>
                                     <constraint firstItem="S5M-Tk-71I" firstAttribute="leading" secondItem="bzL-fa-ehI" secondAttribute="leading" id="T1R-Ae-9Zx"/>
                                     <constraint firstAttribute="trailing" secondItem="S5M-Tk-71I" secondAttribute="trailing" id="ej2-76-zeS"/>
                                     <constraint firstItem="S5M-Tk-71I" firstAttribute="top" secondItem="bzL-fa-ehI" secondAttribute="top" id="maO-iR-Pit"/>
-                                    <constraint firstAttribute="bottom" secondItem="S5M-Tk-71I" secondAttribute="bottom" constant="-93" id="wwr-2e-35q"/>
+                                    <constraint firstAttribute="bottom" secondItem="S5M-Tk-71I" secondAttribute="bottom" id="wwr-2e-35q"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -2073,12 +2073,12 @@ programmazione 2</string>
                             <constraint firstItem="bzL-fa-ehI" firstAttribute="leading" secondItem="7pa-QY-adM" secondAttribute="leading" id="GN0-pr-nuw"/>
                             <constraint firstItem="S5M-Tk-71I" firstAttribute="width" secondItem="194-Co-qVU" secondAttribute="width" id="KVV-m0-pwH"/>
                             <constraint firstItem="bzL-fa-ehI" firstAttribute="trailing" secondItem="7pa-QY-adM" secondAttribute="trailing" id="LdW-TO-pSM"/>
-                            <constraint firstItem="bzL-fa-ehI" firstAttribute="bottom" secondItem="7pa-QY-adM" secondAttribute="bottom" constant="-15" id="O5c-F9-P6z"/>
+                            <constraint firstItem="bzL-fa-ehI" firstAttribute="bottom" secondItem="7pa-QY-adM" secondAttribute="bottom" id="O5c-F9-P6z"/>
                             <constraint firstItem="bzL-fa-ehI" firstAttribute="top" secondItem="7pa-QY-adM" secondAttribute="top" id="pyJ-V9-Ue6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7pa-QY-adM"/>
                     </view>
-                    <size key="freeformSize" width="375" height="900"/>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="absenceTableView" destination="hOr-mM-LuS" id="2lY-Ce-JOY"/>
                         <outlet property="dateForm" destination="azN-8N-yc7" id="a2X-bb-urj"/>
@@ -2708,7 +2708,6 @@ programmazione 2</string>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mgs-sR-4Zq"/>
         <segue reference="LeG-gi-FkN"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.28673213427827537" blue="0.22068471563571013" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
