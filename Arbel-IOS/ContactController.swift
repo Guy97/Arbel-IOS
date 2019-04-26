@@ -34,7 +34,10 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: "Cell")
+
     }
+    
+    
     
     func elementStyle() {
         self.mailForm.layer.cornerRadius = 10
@@ -47,7 +50,9 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         addButton.layer.cornerRadius = 10
         addButton.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
         
-        sendButton.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
+        self.sendButton.setTitleColor(UIColor.white, for: .highlighted)
+        self.sendButton.setBackgroundColor(color: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), forState: .normal)
+        self.sendButton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)
         
         tableView.separatorColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
         tableView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0);
@@ -56,7 +61,7 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         tableView.layer.cornerRadius = 10
         tableView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-    
+
     @IBAction func addAction(_ sender: AnyObject) {
         
         transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
@@ -75,10 +80,11 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         transparentView.alpha = 0
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
-            self.transparentView.alpha = 0.6
+            self.transparentView.alpha = 0.4
             self.tableView.frame = CGRect(x: 0, y: screenSize.height - self.height, width: screenSize.width, height: self.height)
         }, completion: nil)
     }
+    
     
     @objc func onClickTransparentView() {
         let screenSize = UIScreen.main.bounds.size
@@ -104,3 +110,5 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         return 45
     }
 }
+
+

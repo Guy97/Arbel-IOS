@@ -16,20 +16,31 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var dateForm: UITextField!
     @IBOutlet weak var typeForm: UITextField!
     @IBOutlet weak var voteForm: UITextField!
-    @IBOutlet weak var infoForm: UITextView!
     @IBOutlet weak var testTableView: UITableView!
     @IBOutlet weak var absenceTableView: UITableView!
     @IBOutlet weak var noteForm: UITextView!
     @IBOutlet weak var saveButton: UIButton!
     
+    var transparentView = UIView()
+    
     var testResult = ["Test Scritto (26.11.2018): 28", "Test Orale (15.02.2019): 24"]
     
     var allAbsence = ["04.10.2018", "21.11.2018"]
+    
+    let testType = ["Scritto", "Orale"]
+    var selectedType : String?
+    
+    private var datePicker: UIDatePicker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         elementStyle()
+        createDataPicker()
+        createTestTypePicker()
+        self.HideKeyboard()
+        
+//        createToolbar()
         
         testTableView.dataSource = self
         testTableView.delegate = self
@@ -58,11 +69,13 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
         typeForm.layer.cornerRadius = 10
         voteForm.layer.cornerRadius = 10
         noteForm.layer.cornerRadius = 8
-        infoForm.layer.cornerRadius = 8
         saveButton.layer.cornerRadius = 18
         
         saveButton.layer.masksToBounds = true
-        saveButton.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
+
+        self.saveButton.setTitleColor(UIColor.white, for: .highlighted)
+        self.saveButton.setBackgroundColor(color: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), forState: .normal)
+        self.saveButton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,4 +103,89 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
             return absence
         }
     }
+    
+    func createTestTypePicker() {
+        let testPicker = UIPickerView()
+        testPicker.delegate = self
+        typeForm.inputView = testPicker
+        
+//        self.view.addSubview(testPicker)
+//        self.view.bringSubviewToFront(testPicker)
+        
+        testPicker.backgroundColor = UIColor (red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
+        testPicker.clipsToBounds = false
+        testPicker.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.7).cgColor
+        testPicker.layer.shadowOffset = CGSize (width: 0, height: 0)
+        testPicker.layer.shadowRadius = 2.7
+        testPicker.layer.shadowOpacity = 0.3
+    }
+    
+    func createDataPicker() {
+        let datePicker = UIDatePicker()
+        dateForm.inputView = datePicker
+        
+//        transparentView.backgroundColor = UIColor.black.withAlphaComponent(1)
+
+        
+        datePicker.backgroundColor = UIColor (red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
+        datePicker.clipsToBounds = false
+        datePicker.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.7).cgColor
+        datePicker.layer.shadowOffset = CGSize (width: 0, height: 0)
+        datePicker.layer.shadowRadius = 2.7
+        datePicker.layer.shadowOpacity = 0.3
+        
+        datePicker.datePickerMode = .date
+        datePicker.locale = Locale(identifier: "it_IT")
+        
+        datePicker.addTarget(self, action: #selector(StudentDetailController.dateChaged(datePicker:)), for: .valueChanged)
+        
+
+    }
+    
+    @objc func dateChaged(datePicker: UIDatePicker) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        
+        dateForm.text = dateFormatter.string(from: datePicker.date)
+//        view.endEditing(true)
+    }
+
+    //    func createToolbar() {
+//        let toolBar = UIToolbar()
+//        toolBar.sizeToFit()
+//
+//        let doneButton = UIBarButtonItem(title: "Conferma", style: .plain, target: self, action: #selector(StudentDetailController.dismissKeyboard))
+//
+//        toolBar.setItems([doneButton], animated: false)
+//        toolBar.isUserInteractionEnabled = true
+//
+//        typeForm.inputAccessoryView = toolBar
+//    }
+//
+//    override func dismissKeyboard() {
+//        view.endEditing(true)
+//    }
+    
 }
+
+extension StudentDetailController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return testType.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return testType[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        typeForm.text = testType[row]
+    }
+}
+
+

@@ -31,7 +31,7 @@ class ActivityTabController: UIViewController, UITableViewDelegate, UITableViewD
         showActivity.layer.shadowRadius = 1.8
         showActivity.layer.shadowOpacity = 0.6
         
-        showActivity.layer.cornerRadius = 10
+        showActivity.layer.cornerRadius = 16
         showActivity.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     

@@ -14,6 +14,7 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var searchStudent: UISearchBar!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var studentsList: UITableView!
+    @IBOutlet weak var saveButton: UIButton!
     
     var students = ["Piero Chiambretti", "Scemo Pagliaccio", "Marcello Pajntar", "Simone Ghisu", "Davide Coscino", "Salvatore Aranzulla", "Riccardo Mores", "Mauro Paffi", "Fabrizio Infante", "Eugenio De Medici"]
     
