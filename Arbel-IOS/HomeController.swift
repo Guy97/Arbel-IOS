@@ -11,21 +11,27 @@ import UIKit
     var list = [String]()
     var date = [String]()
 
+
+
+
 class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var infoNote: UILabel!
     @IBOutlet weak var infoUser: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    
+    var bo: users!
+    //var prova: usersData?
     var activities = Activity.fetchActivities()
     let cellScalingH: CGFloat = 0.5
     let cellScalingV: CGFloat = 0.7
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        print(bo.success.name, "aio")
         elementStyle()
     
         noteTableView.dataSource = self

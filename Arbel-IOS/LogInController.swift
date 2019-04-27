@@ -65,6 +65,7 @@ class LogInController: UIViewController {
                     let jsonDecoder = JSONDecoder()
                     let postData = try jsonDecoder.decode(users.self, from: response.data!)
                     print(postData, "bo")
+                    
 
                 }
                 catch
