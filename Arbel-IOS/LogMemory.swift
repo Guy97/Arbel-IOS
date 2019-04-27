@@ -8,10 +8,21 @@
 
 import Foundation
 
-struct users: Codable {
+struct usersData: Codable {
     var id : Int
     var name : String
     var surname : String
     var email : String
-    var password : String
+    
+    init(id: Int = 0, name: String = "", surname: String = "", email: String = "") {
+        self.id = id
+        self.name = name
+        self.surname = surname
+        self.email = email
+    }
+}
+
+struct users: Codable {
+    var success: usersData
+    
 }

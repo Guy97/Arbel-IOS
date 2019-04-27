@@ -61,6 +61,7 @@ class LogInController: UIViewController {
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 print("Data: \(utf8Text)") // original server data as UTF8 string
                 do {
+                    
                     let jsonDecoder = JSONDecoder()
                     let postData = try jsonDecoder.decode(users.self, from: response.data!)
                     print(postData, "bo")
@@ -84,6 +85,22 @@ class LogInController: UIViewController {
                 }
             }
         }
+        
+//        Alamofire.request("http://arbel.test/api/details", method: .post, parameters: postDict).responseJSON {response in //response serialization result
+//            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+//                print("Data: \(utf8Text)") // original server data as UTF8 string
+//                do {
+//                    let jsonDecoder = JSONDecoder()
+//                    let postData = try jsonDecoder.decode(users.self, from: response.data!)
+//                    print(postData, "bo")
+//
+//                }
+//                catch
+//                {
+//                    print(error)
+//                }
+//            }
+//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

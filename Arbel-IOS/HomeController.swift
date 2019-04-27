@@ -18,6 +18,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var infoUser: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
     var activities = Activity.fetchActivities()
     let cellScalingH: CGFloat = 0.5
     let cellScalingV: CGFloat = 0.7
@@ -51,6 +52,8 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize (width: cellWidth, height: cellHeight)
         collectionView?.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
+        
+        
     }
     
     func elementStyle() {
