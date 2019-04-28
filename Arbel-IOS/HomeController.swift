@@ -20,8 +20,9 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var infoNote: UILabel!
     @IBOutlet weak var infoUser: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    var bo: users!
-    //var prova: usersData?
+    //var bo: users!
+    //var prova: usersData!
+    
     var activities = Activity.fetchActivities()
     let cellScalingH: CGFloat = 0.5
     let cellScalingV: CGFloat = 0.7
@@ -31,7 +32,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         
-        print(bo.success.name, "aio")
+        print("aio")
         elementStyle()
     
         noteTableView.dataSource = self

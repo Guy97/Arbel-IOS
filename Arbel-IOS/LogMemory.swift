@@ -10,6 +10,7 @@ import Foundation
 
 struct users: Codable {
     var success: usersData
+    
 }
 
 
@@ -18,5 +19,11 @@ struct usersData: Codable {
     var name : String
     var surname : String
     var email : String
+    
+    
 }
 
+struct Api {
+    static var cazzo: Any?
+
+}

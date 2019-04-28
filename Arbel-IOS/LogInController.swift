@@ -61,10 +61,12 @@ class LogInController: UIViewController {
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 print("Data: \(utf8Text)") // original server data as UTF8 string
                 do {
-                    
+                    var prova = Api.cazzo
                     let jsonDecoder = JSONDecoder()
                     let postData = try jsonDecoder.decode(users.self, from: response.data!)
+                    prova = postData
                     print(postData, "bo")
+                    print(postData.success.name)
                     
 
                 }
