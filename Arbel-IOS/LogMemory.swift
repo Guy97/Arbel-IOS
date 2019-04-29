@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+
 struct users: Codable {
     var success: usersData
     
@@ -21,9 +23,25 @@ struct usersData: Codable {
     var email : String
     
     
+    
+    
 }
 
-struct Api {
-    static var cazzo: Any?
 
-}
+//extension usersData {
+//    init?(json: [String: Any]) {
+//        guard let id = json["id"] as? Int,
+//            let name = json["name"] as? String,
+//            let surname = json["surname"] as? String,
+//            let email = json["email"] as? String
+//            else {
+//                return nil
+//        }
+//
+//
+//        self.id = id
+//        self.name = name
+//        self.surname = surname
+//        self.email = email
+//    }
+//}

@@ -20,7 +20,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var infoNote: UILabel!
     @IBOutlet weak var infoUser: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    //var bo: users!
+    var bo: users!
     //var prova: usersData!
     
     var activities = Activity.fetchActivities()

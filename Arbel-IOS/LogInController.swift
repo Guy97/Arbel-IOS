@@ -61,14 +61,14 @@ class LogInController: UIViewController {
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 print("Data: \(utf8Text)") // original server data as UTF8 string
                 do {
-                    var prova = Api.cazzo
+                    
                     let jsonDecoder = JSONDecoder()
                     let postData = try jsonDecoder.decode(users.self, from: response.data!)
-                    prova = postData
+                  
+                    //self.performSegue(withIdentifier: "enter", sender: postData)
                     print(postData, "bo")
                     print(postData.success.name)
-                    
-
+//                    usersData(id: postData.success.id, name: postData.success.name, surname: postData.success.surname, email: postData.success.email)
                 }
                 catch
                 {
@@ -89,6 +89,8 @@ class LogInController: UIViewController {
             }
         }
         
+        
+        
 //        Alamofire.request("http://arbel.test/api/details", method: .post, parameters: postDict).responseJSON {response in //response serialization result
 //            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
 //                print("Data: \(utf8Text)") // original server data as UTF8 string
@@ -105,6 +107,7 @@ class LogInController: UIViewController {
 //            }
 //        }
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         self.usernameForm.underlined()
