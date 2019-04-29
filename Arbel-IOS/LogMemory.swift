@@ -8,15 +8,13 @@
 
 import Foundation
 
-
-
-struct users: Codable {
-    var success: usersData
-    
+struct Users: Codable {
+    var success: UsersData
+    static var ciccio: Users!
 }
 
 
-struct usersData: Codable {
+struct UsersData: Codable {
     var id : Int
     var name : String
     var surname : String

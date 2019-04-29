@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 
+//var name = ""
+
 extension Double {
     func nodecimal() -> String
     {
@@ -53,9 +55,8 @@ class LogInController: UIViewController {
         self.loginButton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)
 
     }
-    
+//    var porcaPuttana : Any!
     @IBAction func login() {
-    
         let postDict:[String:String] = ["email": "\(usernameForm.text!)", "password": "\(passwordForm.text!)"]
         Alamofire.request("http://arbel.test/api/login", method: .post, parameters: postDict).responseJSON {response in //response serialization result
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
@@ -63,12 +64,16 @@ class LogInController: UIViewController {
                 do {
                     
                     let jsonDecoder = JSONDecoder()
-                    let postData = try jsonDecoder.decode(users.self, from: response.data!)
-                  
+                    var postData = try jsonDecoder.decode(Users.self, from: response.data!)
+                    Users.ciccio = postData
+//                    porcaPuttana = postData.success.name
                     //self.performSegue(withIdentifier: "enter", sender: postData)
                     print(postData, "bo")
                     print(postData.success.name)
+                    
 //                    usersData(id: postData.success.id, name: postData.success.name, surname: postData.success.surname, email: postData.success.email)
+//                    self.porcaPuttana = usersData.init(id: postData.success.id, name: postData.success.name, surname: postData.success.surname, email: postData.success.email)
+                  
                 }
                 catch
                 {
@@ -88,24 +93,6 @@ class LogInController: UIViewController {
                 }
             }
         }
-        
-        
-        
-//        Alamofire.request("http://arbel.test/api/details", method: .post, parameters: postDict).responseJSON {response in //response serialization result
-//            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-//                print("Data: \(utf8Text)") // original server data as UTF8 string
-//                do {
-//                    let jsonDecoder = JSONDecoder()
-//                    let postData = try jsonDecoder.decode(users.self, from: response.data!)
-//                    print(postData, "bo")
-//
-//                }
-//                catch
-//                {
-//                    print(error)
-//                }
-//            }
-//        }
     }
     
     

@@ -20,7 +20,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var infoNote: UILabel!
     @IBOutlet weak var infoUser: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    var bo: users!
+    //var bo: users!
     //var prova: usersData!
     
     var activities = Activity.fetchActivities()
@@ -32,7 +32,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         
-        print("aio")
+        print(Users.ciccio.success.name, "aio")
         elementStyle()
     
         noteTableView.dataSource = self
@@ -73,7 +73,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidAppear(_ animated: Bool) {
         if CheckInternet.Connection() {
-            infoUser.text = "Bentornato Luca," + "\n" + "sei Online"
+            infoUser.text = "Bentornato \(Users.ciccio.success.name)," + "\n" + "sei Online"
         }
         else {
             infoUser.text = "Mi dispiace ma" + "\n" + " sei Offline"
