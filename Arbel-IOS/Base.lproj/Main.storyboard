@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dX8-8E-OXk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dX8-8E-OXk">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -2316,10 +2316,10 @@ programmazione 2</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="boI-Ss-8YC">
-                                <rect key="frame" x="20" y="528" width="335" height="250"/>
+                                <rect key="frame" x="20" y="558" width="335" height="220"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pic-gs-SMF">
-                                        <rect key="frame" x="0.0" y="8" width="335" height="242"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pic-gs-SMF">
+                                        <rect key="frame" x="0.0" y="9" width="335" height="211"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="activity" rowHeight="55" id="Uvf-pT-YBw" customClass="ActivityCell" customModule="Arbel_IOS" customModuleProvider="target">
@@ -2416,27 +2416,36 @@ programmazione 2</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="2rs-co-rZb"/>
+                                    <constraint firstAttribute="height" constant="220" id="2rs-co-rZb"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="330" id="6mf-74-xlX"/>
-                                    <constraint firstItem="Pic-gs-SMF" firstAttribute="top" secondItem="boI-Ss-8YC" secondAttribute="top" constant="8" id="Dm6-Mq-9FV"/>
+                                    <constraint firstItem="Pic-gs-SMF" firstAttribute="top" secondItem="boI-Ss-8YC" secondAttribute="top" constant="9" id="Dm6-Mq-9FV"/>
                                     <constraint firstAttribute="trailing" secondItem="Pic-gs-SMF" secondAttribute="trailing" id="Mep-6a-Dz5"/>
                                     <constraint firstAttribute="bottom" secondItem="Pic-gs-SMF" secondAttribute="bottom" id="Sfe-Es-fh3"/>
                                     <constraint firstItem="Pic-gs-SMF" firstAttribute="leading" secondItem="boI-Ss-8YC" secondAttribute="leading" id="hnc-DR-6ys"/>
                                     <constraint firstAttribute="width" constant="335" id="iY4-7x-5g1"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqz-FY-1Ic" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="194" width="315" height="334"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="boI-Ss-8YC" firstAttribute="top" secondItem="rqz-FY-1Ic" secondAttribute="bottom" constant="30" id="0nf-ia-xJX"/>
                             <constraint firstItem="boI-Ss-8YC" firstAttribute="leading" secondItem="NSP-bf-ZBJ" secondAttribute="leading" constant="20" id="Qjz-rh-qrR"/>
                             <constraint firstItem="boI-Ss-8YC" firstAttribute="bottom" secondItem="NSP-bf-ZBJ" secondAttribute="bottom" id="RNJ-Ex-ViG"/>
                             <constraint firstItem="NSP-bf-ZBJ" firstAttribute="trailing" secondItem="boI-Ss-8YC" secondAttribute="trailing" constant="20" id="Tbn-Zl-vjw"/>
+                            <constraint firstItem="rqz-FY-1Ic" firstAttribute="leading" secondItem="NSP-bf-ZBJ" secondAttribute="leading" constant="20" id="o5J-Fp-68h"/>
                             <constraint firstItem="boI-Ss-8YC" firstAttribute="centerX" secondItem="RZD-nX-GKs" secondAttribute="centerX" id="pQe-kL-ZLG"/>
+                            <constraint firstItem="rqz-FY-1Ic" firstAttribute="top" secondItem="NSP-bf-ZBJ" secondAttribute="top" constant="150" id="wuF-kC-adi"/>
+                            <constraint firstItem="NSP-bf-ZBJ" firstAttribute="trailing" secondItem="rqz-FY-1Ic" secondAttribute="trailing" constant="40" id="zIB-kl-Xwt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NSP-bf-ZBJ"/>
                     </view>
                     <connections>
                         <outlet property="activityTableView" destination="Pic-gs-SMF" id="4xJ-gM-3tD"/>
+                        <outlet property="mChart" destination="rqz-FY-1Ic" id="uo2-xB-Jlk"/>
                         <outlet property="showActivity" destination="boI-Ss-8YC" id="Vyw-R8-zwh"/>
                     </connections>
                 </viewController>

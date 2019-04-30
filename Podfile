@@ -28,4 +28,5 @@ target 'Arbel-IOS' do
     pod 'FSCalendar'
     pod 'Alamofire', '~> 4.7'
     pod 'XLPagerTabStrip'
+    pod 'Charts'
 end
