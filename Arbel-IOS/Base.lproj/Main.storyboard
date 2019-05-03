@@ -2265,6 +2265,45 @@ programmazione 2</string>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LWd-kP-R9a">
                                 <rect key="frame" x="0.0" y="259" width="375" height="519"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fMC-z3-uuQ">
+                                        <rect key="frame" x="21" y="117" width="333" height="394"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxO-tc-JCf">
+                                        <rect key="frame" x="37" y="8" width="300" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="backgroundColor"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal">
+                                            <color key="titleColor" name="titleColor"/>
+                                            <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Argomento" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="NQK-EM-zHk">
+                                        <rect key="frame" x="55" y="19" width="161" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goArrow" translatesAutoresizingMaskIntoConstraints="NO" id="KHL-Hd-SzD">
+                                        <rect key="frame" x="211" y="8" width="109" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlY-XI-TKa">
+                                        <rect key="frame" x="37" y="74" width="300" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="primaryColor"/>
+                                        <state key="normal" title="AGGIUNGI">
+                                            <color key="titleColor" name="backgroundColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wz8-1c-Y4b" userLabel="argomenti">
@@ -2299,13 +2338,15 @@ programmazione 2</string>
                         <viewLayoutGuide key="safeArea" id="9gx-9w-g6D"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="YlY-XI-TKa" id="8WW-eR-ou2"/>
                         <outlet property="searchTest" destination="UwO-4H-yhT" id="e3T-p4-SgI"/>
                         <outlet property="searchView" destination="zMJ-F5-VbA" id="BA0-fb-cKs"/>
+                        <outlet property="testList" destination="fMC-z3-uuQ" id="trQ-f4-Snn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06k-35-1bJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="510" y="2682"/>
+            <point key="canvasLocation" x="509.60000000000002" y="2681.5270935960593"/>
         </scene>
         <!--Activity Tab Controller-->
         <scene sceneID="rxP-x2-8lk">
@@ -2758,6 +2799,50 @@ programmazione 2</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GiW-8w-tNs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1714.4000000000001" y="1166.7487684729065"/>
+        </scene>
+        <!--ARGOMENTO-->
+        <scene sceneID="rlI-ev-2LA">
+            <objects>
+                <viewController id="HMU-Nu-zve" customClass="ArgumentController" customModule="Arbel_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yxB-8b-Ixs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FG4-vV-pux">
+                                <rect key="frame" x="37" y="636" width="300" height="35"/>
+                                <color key="backgroundColor" name="primaryColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="HBp-6r-6LV"/>
+                                    <constraint firstAttribute="width" constant="300" id="rRz-u6-k3e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="INVIA">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButton:" destination="MKh-lQ-S35" eventType="touchUpInside" id="cFy-aW-olB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="peU-Bq-orK" firstAttribute="trailing" secondItem="FG4-vV-pux" secondAttribute="trailing" constant="37.5" id="8Pc-ea-5d5"/>
+                            <constraint firstItem="FG4-vV-pux" firstAttribute="leading" secondItem="peU-Bq-orK" secondAttribute="leading" constant="37.5" id="Qsq-Bh-Dmc"/>
+                            <constraint firstItem="FG4-vV-pux" firstAttribute="centerX" secondItem="yxB-8b-Ixs" secondAttribute="centerX" id="htU-LX-eGC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="peU-Bq-orK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ARGOMENTO" id="XSd-td-CSB">
+                        <barButtonItem key="backBarButtonItem" title=" " id="4Zs-Zy-J5J"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sendButton" destination="FG4-vV-pux" id="4EI-HA-41W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r7b-OY-k55" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969" y="3488"/>
         </scene>
     </scenes>
     <resources>
