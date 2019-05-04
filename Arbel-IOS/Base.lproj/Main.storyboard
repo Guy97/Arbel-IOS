@@ -443,7 +443,7 @@
             <objects>
                 <viewController id="S1M-4N-cu4" customClass="ContactController" customModule="Arbel_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h5O-b6-Kru">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgp-od-SHq">
@@ -861,7 +861,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A3r-3n-UIy"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="calendarIcon" id="wWf-pO-Zzn">
+                    <tabBarItem key="tabBarItem" title="" image="calendarIcon" selectedImage="calendarSelected" id="wWf-pO-Zzn">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <connections>
@@ -1150,7 +1150,7 @@ programmazione 2</string>
                                     <segue destination="MKh-lQ-S35" kind="show" id="Mgs-sR-4Zq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMo-Z2-vtv">
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMo-Z2-vtv">
                                 <rect key="frame" x="336" y="69" width="23" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="0m8-lD-aPC"/>
@@ -1326,10 +1326,10 @@ programmazione 2</string>
             </objects>
             <point key="canvasLocation" x="-642" y="-378"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Manage Tab Bar Controller-->
         <scene sceneID="eL4-jy-0ab">
             <objects>
-                <tabBarController storyboardIdentifier="tabBar" id="kCf-ex-6dB" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="kCf-ex-6dB" customClass="ManageTabBarController" customModule="Arbel_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wxn-7f-0D8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2832,7 +2832,7 @@ programmazione 2</string>
         <scene sceneID="JVv-uu-iv0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="DXU-CJ-hhF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="profileIcon" id="X1L-Ay-DtB">
+                    <tabBarItem key="tabBarItem" title="" image="profileIcon" selectedImage="profileSelected" id="X1L-Ay-DtB">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -2869,7 +2869,7 @@ programmazione 2</string>
         <scene sceneID="GEk-8t-4UZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="HcY-aq-ifS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="coursesIcon" id="hym-Bi-0bN">
+                    <tabBarItem key="tabBarItem" title="" image="coursesIcon" selectedImage="coursesSelected" id="hym-Bi-0bN">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -2902,7 +2902,7 @@ programmazione 2</string>
         <scene sceneID="i0A-Wj-LTq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="QQl-cm-UUf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="contactIcon" id="gfC-F6-gAC">
+                    <tabBarItem key="tabBarItem" title="" image="contactIcon" selectedImage="contactSelected" id="gfC-F6-gAC">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -2924,7 +2924,7 @@ programmazione 2</string>
         <scene sceneID="jVN-fa-tDo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="O3j-td-sf2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="homeIcon" id="5JH-XP-ip2">
+                    <tabBarItem key="tabBarItem" title="" image="homeIcon" selectedImage="homeSelected" id="5JH-XP-ip2">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -3087,16 +3087,21 @@ programmazione 2</string>
         <image name="addIcon" width="14" height="14"/>
         <image name="backIcon" width="25" height="14"/>
         <image name="calendarIcon" width="23" height="23"/>
+        <image name="calendarSelected" width="25" height="25"/>
         <image name="checkedBox" width="27" height="27"/>
         <image name="contactIcon" width="24" height="24"/>
+        <image name="contactSelected" width="25" height="24"/>
         <image name="coursesIcon" width="24" height="23"/>
+        <image name="coursesSelected" width="24" height="23"/>
         <image name="editUser" width="21" height="21"/>
         <image name="goArrow" width="7" height="12"/>
         <image name="homeIcon" width="22" height="23"/>
+        <image name="homeSelected" width="22" height="23"/>
         <image name="lineBackground" width="375" height="193"/>
         <image name="logo" width="105" height="72"/>
         <image name="myBeauty" width="540" height="360"/>
         <image name="profileIcon" width="24" height="24"/>
+        <image name="profileSelected" width="25" height="25"/>
         <image name="refreshIcon" width="23" height="20"/>
         <image name="uncheckedBox" width="27" height="27"/>
         <image name="verticalDivide" width="1" height="31"/>
@@ -3128,7 +3133,7 @@ programmazione 2</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vKa-3Q-xpQ"/>
-        <segue reference="xRN-Gj-bgT"/>
+        <segue reference="6c8-T4-Wr5"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.28673213427827537" blue="0.22068471563571013" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
