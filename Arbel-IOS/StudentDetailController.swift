@@ -23,17 +23,21 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
     
     var transparentView = UIView()
     
-    var testResult = ["Test Scritto (26.11.2018): 28", "Test Orale (15.02.2019): 24"]
+    var testResult = ["Scritto (26.11.2018): 28", "Orale (15.02.2019): 24", "Test (04.05.2019): +"]
     
     var allAbsence = ["04.10.2018", "21.11.2018"]
     
-    let testType = ["Scritto", "Orale"]
+    let testType = ["Scritto", "Orale", "Test"]
     var selectedType : String?
     
     private var datePicker: UIDatePicker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.navigationController
+        let logoutBarButtonItem = UIBarButtonItem(image: UIImage(named: "contactIcon"), style: .done, target: self, action: #selector(logoutUser))
+        self.navigationItem.rightBarButtonItem  = logoutBarButtonItem
+
         
         elementStyle()
         createDataPicker()
@@ -47,6 +51,11 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
         
         absenceTableView.dataSource = self
         absenceTableView.delegate = self
+    }
+    
+    @objc func logoutUser(){
+        print("mail")
+        self.performSegue(withIdentifier: "sendMail", sender: self)
     }
     
     func elementStyle() {
@@ -106,11 +115,12 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
     
     func createTestTypePicker() {
         let testPicker = UIPickerView()
+        testPicker.center = view.center
+//        view.addSubview(testPicker)
         testPicker.delegate = self
         typeForm.inputView = testPicker
-        
 //        self.view.addSubview(testPicker)
-//        self.view.bringSubviewToFront(testPicker)
+    
         
         testPicker.backgroundColor = UIColor (red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
         testPicker.clipsToBounds = false
@@ -138,6 +148,9 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
         datePicker.locale = Locale(identifier: "it_IT")
         
         datePicker.addTarget(self, action: #selector(StudentDetailController.dateChaged(datePicker:)), for: .valueChanged)
+        
+        
+//        datePicker.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         
 
     }

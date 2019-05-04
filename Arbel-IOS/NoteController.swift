@@ -59,6 +59,7 @@ class NoteController: UIViewController {
         self.saveButton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)
 
     }
+
 }
 
 

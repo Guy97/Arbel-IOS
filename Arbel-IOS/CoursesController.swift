@@ -39,4 +39,9 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "showStudent", sender: self)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
 }

@@ -9,6 +9,12 @@
 import UIKit
 import XLPagerTabStrip
 
+struct cellData {
+    var opened = Bool()
+    var title = String()
+    var sectionData = [String]()
+}
+
 class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var searchStudent: UISearchBar!
@@ -16,12 +22,18 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var studentsList: UITableView!
     @IBOutlet weak var saveButton: UIButton!
     
-    var students = ["Piero Chiambretti", "Scemo Pagliaccio", "Marcello Pajntar", "Simone Ghisu", "Davide Coscino", "Salvatore Aranzulla", "Riccardo Mores", "Mauro Paffi", "Fabrizio Infante", "Eugenio De Medici"]
+//    var students = ["Piero Chiambretti", "Scemo Pagliaccio", "Marcello Pajntar", "Simone Ghisu", "Davide Coscino", "Salvatore Aranzulla", "Riccardo Mores", "Mauro Paffi", "Fabrizio Infante", "Eugenio De Medici"]
+    
+    var tableViewData = [cellData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         elementStyle()
+        
+        tableViewData = [cellData(opened: false, title: "Nome Cognome", sectionData: ["Prova nota1"]),
+                         cellData(opened: false, title: "Nome Cognome", sectionData: ["Prova nota2"]),
+                         cellData(opened: false, title: "Nome Cognome", sectionData: ["Prova nota3"])]
     
         studentsList.dataSource = self
         studentsList.delegate = self
@@ -44,26 +56,91 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (students.count)
+//        return (students.count)
+        
+        if tableViewData[section].opened == true {
+            return tableViewData[section].sectionData.count + 1
+        }
+        else {
+            return 1
+        }
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+//        return 1
+        
+        return (tableViewData.count)
+        
+        
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 9 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "save") as! StudentCell
-            return cell
-        } else {
+        let dataIndex = indexPath.row - 1
+        let numberRow = tableViewData.count
+//        if indexPath.row == 0 {
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "student") else {return StudentCell()}
+////            cell.textLabel?.text = tableViewData[indexPath.section].title
+//            cell.textLabel?.text = tableViewData[indexPath.section].title
+////            cell.studentName?.text = students[indexPath.row]
+//            return cell
+//        }
+//        else {
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {return UITableViewCell()}
+//            cell.textLabel?.text = tableViewData[indexPath.section].sectionData[dataIndex]
+//            return cell
+//        }
+        
+        if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "student") as! StudentCell
-            cell.studentName?.text = students[indexPath.row]
+            cell.studentName?.text = tableViewData[indexPath.section].title
             return cell
         }
+            
+        else if indexPath.row == dataIndex {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "save") as! StudentCell
+            return cell
+        }
+        
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! StudentCell
+            cell.noteUser?.text = tableViewData[indexPath.section].sectionData[dataIndex]
+            return cell
+        }
+        
+        
+        
+        
+//        if indexPath.row == 9 {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "save") as! StudentCell
+//            return cell
+//        } else {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "student") as! StudentCell
+//            cell.studentName?.text = students[indexPath.row]
+//            return cell
+//        }
+        
+
+        
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetail", sender: self)
+        
+        if indexPath.row == 0 {
+            if tableViewData[indexPath.section].opened == true {
+                tableViewData[indexPath.section].opened = false
+                let sections = IndexSet.init(integer: indexPath.section)
+                tableView.reloadSections(sections, with: .none)
+            }
+            else{
+                tableViewData[indexPath.section].opened = true
+                let sections = IndexSet.init(integer: indexPath.section)
+                tableView.reloadSections(sections, with: .none)
+            }
+            
+//            performSegue(withIdentifier: "showDetail", sender: self)
+        }
     }
 
     @IBAction func checkBoxTapped(_ sender: UIButton) {

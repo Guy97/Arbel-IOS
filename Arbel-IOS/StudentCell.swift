@@ -12,7 +12,9 @@ class StudentCell: UITableViewCell {
     
     @IBOutlet weak var studentName: UILabel!
     @IBOutlet weak var studentView: UIView!
+    @IBOutlet weak var noteUser: UILabel!
     @IBOutlet weak var saveAll: UIButton!
+    
     
     
     override func setSelected(_ selected: Bool, animated: Bool) {

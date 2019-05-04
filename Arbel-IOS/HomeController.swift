@@ -112,6 +112,7 @@ extension HomeController : UICollectionViewDataSource {
         cell.activity = activities[indexPath.item]
         return cell
     }
+    
 }
 
 extension HomeController : UIScrollViewDelegate, UICollectionViewDelegate {
