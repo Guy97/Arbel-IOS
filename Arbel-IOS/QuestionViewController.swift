@@ -40,8 +40,8 @@ extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cella", for: indexPath) as? QuestionTableViewCell
-        cell?.label.text = numberQuestions[indexPath.row]
-        cell?.question.text = questions[indexPath.row]
+        cell?.label.text = questions[indexPath.row]
+        cell?.question.text = numberQuestions[indexPath.row]
         cell?.layer.cornerRadius = 15
         
         return (cell!)
