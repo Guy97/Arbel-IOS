@@ -14,7 +14,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var questionTV: UITableView!
     
     var numberQuestions = ["Domanda 1", "Domanda 2", "Domanda 3", "Domanda 4"]
-    var questions = ["Quanti anni ha Luca?", "Quanti bottoni ha il computer?", "Quanti elefanti ci stanno in una 500?", "Quanti capelli abbiamo?"]
+    var questions = ["Testo domanda 1", "Testo domanda 2", "Testo domanda 3", "Testo domanda 4"]
     override func viewDidLoad() {
         super.viewDidLoad()
             elementStyle()
@@ -22,7 +22,7 @@ class QuestionViewController: UIViewController {
     }
     
     func elementStyle() {
-            createBtn.layer.cornerRadius = 8
+            createBtn.layer.cornerRadius = 20
             createBtn.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.5).cgColor
             createBtn.layer.shadowOffset = CGSize (width: 0, height: 1.0)
             createBtn.layer.shadowRadius = 1.1
@@ -44,8 +44,13 @@ extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.question.text = numberQuestions[indexPath.row]
         cell?.layer.cornerRadius = 15
         
-        return (cell!)
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.red
+        cell?.selectedBackgroundView = backgroundView
         
+        
+        return (cell!)
+    
     }
 }
 

@@ -17,6 +17,8 @@ import UIKit
     @IBInspectable var shadowOffSetHeight : Int = 1
     @IBInspectable var shadowOpacity : Float = 0.2
     @IBInspectable var shadowRadius : Float = 1
+    @IBInspectable var borderColor : UIColor? = UIColor.black
+    @IBInspectable var borderStroke : Float = 1
     
     
     override func layoutSubviews() {

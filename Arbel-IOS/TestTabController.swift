@@ -16,7 +16,7 @@ class TestTabController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     
-    var arguments = ["Programmazione", "Graphic Design", "Video Design", "Semiotica dell'arte", "TTPF", "IOS", "Android", "Web Laravel", "Motion Graphic"]
+    var arguments = ["Argomento 1", "Argomento 2", "Argomento 3", "Argomento 4", "Tutti gli argomenti"]
   
     override func viewDidLoad() {
         elementStyle()
