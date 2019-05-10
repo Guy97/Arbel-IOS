@@ -9,17 +9,21 @@
 import UIKit
 import XLPagerTabStrip
 
-class TestTabController: UIViewController {
+class TestTabController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchTest: UISearchBar!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var argumentTableView: UITableView!
     
     
     var arguments = ["Argomento 1", "Argomento 2", "Argomento 3", "Argomento 4", "Tutti gli argomenti"]
   
     override func viewDidLoad() {
         elementStyle()
+        
+        argumentTableView.dataSource = self
+        argumentTableView.delegate = self
         
         super.viewDidLoad()
         
@@ -44,6 +48,26 @@ class TestTabController: UIViewController {
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
 //        self.testList.contentInset = insets
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (arguments.count)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let argument = tableView.dequeueReusableCell(withIdentifier: "argument") as! StudentCell
+        
+        argument.argumentName?.text = arguments[indexPath.row]
+        return argument
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "showArgument", sender: self)
+    }
 }
 
 
@@ -55,25 +79,6 @@ extension TestTabController : IndicatorInfoProvider {
      
     }
     
-}
-
-
-extension TestTabController: UITableViewDelegate, UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return arguments.count
-        
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cella", for: indexPath) as? TestTableViewCell
-        cell?.arguments.text = arguments[indexPath.row]
-        cell?.layer.cornerRadius = 15
-        
-        return (cell!)
-        
-    }
 }
 
 

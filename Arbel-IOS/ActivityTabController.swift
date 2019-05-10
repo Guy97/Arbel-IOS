@@ -21,8 +21,15 @@ class ActivityTabController: UIViewController, UITableViewDelegate, UITableViewD
 //    @IBOutlet weak var chartView: LineChartView!
     @IBOutlet weak var mChart: LineChartView!
     
+    struct Lessons {
+        var date: String
+        var activity: String
+    }
     
-    var activityArray = ["Nome Argomento 1", "Nome Argomento 2", "Nome Argomento 3", "Nome Argomento 4"]
+    var activityArray = [Lessons(date: "08.15.2019", activity: "Nome Argomento 1"),Lessons(date: "10.15.2019", activity: "Nome Argomento 2"),Lessons(date: "18.15.2019", activity: "Nome Argomento 3"),Lessons(date: "22.15.2019", activity: "Nome Argomento 4")]
+    
+    
+//    var activityArray = ["Nome Argomento 1", "Nome Argomento 2", "Nome Argomento 3", "Nome Argomento 4"]
     
 
     
@@ -59,8 +66,14 @@ class ActivityTabController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let activity = tableView.dequeueReusableCell(withIdentifier: "activity") as! ActivityCell
-            activity.argumentName?.text = activityArray[indexPath.row]
-            return activity
+        
+        let singleLesson = activityArray[indexPath.row]
+        activity.argumentName?.text = singleLesson.activity
+        activity.dateLesson?.text = "Lezione " + singleLesson.date
+        
+//        activity.argumentName?.text = activityArray[indexPath.row]
+        return activity
+        
         }
     
     func setChart(values: [Double]) {

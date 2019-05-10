@@ -9,21 +9,18 @@
 import UIKit
 
 class QuestionTableViewCell: UITableViewCell {
-    @IBOutlet weak var questions: UILabel!
-    @IBOutlet weak var questionBtn: UIButton!
-    @IBOutlet weak var domanda: UILabel!
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var question: UILabel!
+
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    
+    @IBOutlet weak var question: UILabel!
+    @IBOutlet weak var questionView: UIView!
+    
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
+        questionView.layer.cornerRadius = 8
     }
 
 }

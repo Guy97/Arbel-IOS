@@ -47,7 +47,6 @@
 		A9D81BB0226CBEEA00127910 /* HourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D81BAF226CBEEA00127910 /* HourCollectionViewCell.swift */; };
 		A9D81BB4226CC68400127910 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D81BB3226CC68400127910 /* Activity.swift */; };
 		A9FDF30A22708A74002222DC /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FDF30922708A74002222DC /* CourseCell.swift */; };
-		EB68924B227C94BF00727BDC /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68924A227C94BF00727BDC /* TestTableViewCell.swift */; };
 		EB689253227CAEBA00727BDC /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB689252227CAEBA00727BDC /* QuestionViewController.swift */; };
 		EB689255227CB10500727BDC /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB689254227CB10500727BDC /* QuestionTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -120,7 +119,6 @@
 		A9FDF30922708A74002222DC /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		D5A7F856B1D7FB4A9D5D4E21 /* Pods_Arbel_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E22AAF5412B0D6F1C2C996BB /* Pods_Arbel_IOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB68924A227C94BF00727BDC /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		EB689252227CAEBA00727BDC /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		EB689254227CB10500727BDC /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		FF2544FAE85A6DA607EFF1F4 /* Pods-Arbel-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arbel-IOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Arbel-IOS/Pods-Arbel-IOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -196,17 +194,16 @@
 				A92CD0B3226F5F9200612B13 /* DetailCourseController.swift */,
 				A92CD0D4226F915F00612B13 /* StudentTabController.swift */,
 				A92CD0DA22707E5900612B13 /* StudentCell.swift */,
-				EB68924A227C94BF00727BDC /* TestTableViewCell.swift */,
 				A9431B0622717FA900D36C96 /* StudentDetailController.swift */,
 				A9431B082271C0DA00D36C96 /* SingleStudentDetailCell.swift */,
 				A9BF9A772270DFFC0033F35C /* ArgumentController.swift */,
 				A92CD0D6226F917100612B13 /* TestTabController.swift */,
 				A92CD0D8226F918300612B13 /* ActivityTabController.swift */,
+				EB689252227CAEBA00727BDC /* QuestionViewController.swift */,
 				EB689254227CB10500727BDC /* QuestionTableViewCell.swift */,
 				A9431B0C2271E02F00D36C96 /* ActivityCell.swift */,
 				046E90D022405B1E00C9BC16 /* ContactController.swift */,
 				A90E5FD9226B2E01001E8C2F /* ContactTableViewCell.swift */,
-				EB689252227CAEBA00727BDC /* QuestionViewController.swift */,
 				046E90D222405B3E00C9BC16 /* ProfileController.swift */,
 				32FCBB352268B8AE006EA399 /* PasswordController.swift */,
 				32FCBB372268B8CC006EA399 /* InformationController.swift */,
@@ -479,7 +476,6 @@
 				A90ED804224BA6C500B71E49 /* CoursesDesignView.swift in Sources */,
 				A92CD0D7226F917100612B13 /* TestTabController.swift in Sources */,
 				A9D81BB0226CBEEA00127910 /* HourCollectionViewCell.swift in Sources */,
-				EB68924B227C94BF00727BDC /* TestTableViewCell.swift in Sources */,
 				044CB2FB2237CBBD00F0A410 /* ViewController.swift in Sources */,
 				A92CD0B4226F5F9200612B13 /* DetailCourseController.swift in Sources */,
 				049D129A22482AC000CD1548 /* LogInController.swift in Sources */,

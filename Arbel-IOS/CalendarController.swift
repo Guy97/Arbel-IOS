@@ -16,7 +16,15 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var day: UILabel!
     @IBOutlet weak var calendarTableView: UITableView!
     
-    var activityArray = ["Prima fascia oraria","Seconda fascia oraria","Terza fascia oraria","Quarta fascia oraria"]
+    struct Lessons {
+        var hour: String
+        var activity: String
+    }
+    
+//    var activityArray = [Lessons]()
+    var activityArray = [Lessons(hour: "8:30 - 11:30", activity: "Prima fascia oraria"),Lessons(hour: "9:00 - 12:00", activity: "Seconda fascia oraria"),Lessons(hour: "12:30 - 15:00", activity: "Terza fascia oraria"),Lessons(hour: "15:30 - 18:30", activity: "Quarta fascia oraria")]
+    
+//    var activityArray = ["Prima fascia oraria","Seconda fascia oraria","Terza fascia oraria","Quarta fascia oraria"]
 
     
     fileprivate weak var calendar2: FSCalendar!
@@ -36,6 +44,8 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
         formatter.locale =  Locale(identifier: "it_IT")
         let today = formatter.string(from: Date())
         day.text = "\(today)".uppercased()
+        
+        
     
 //        let prova = calendar.selectedDates
 //        print("orco", prova)
@@ -60,7 +70,11 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "singleActivity") as! ActivityCell
-        cell.hourActivity?.text = activityArray[indexPath.row]
+        let activityDetail = activityArray[indexPath.row]
+        cell.hourActivity?.text = activityDetail.activity
+        cell.currentActivity?.text = activityDetail.hour
+        
+        
         return cell
     }
 }

@@ -10,23 +10,21 @@ import UIKit
 
 class QuestionViewController: UIViewController {
 
-    @IBOutlet weak var createBtn: UIButton!
     @IBOutlet weak var questionTV: UITableView!
     
-    var numberQuestions = ["Domanda 1", "Domanda 2", "Domanda 3", "Domanda 4"]
-    var questions = ["Testo domanda 1", "Testo domanda 2", "Testo domanda 3", "Testo domanda 4"]
+//    var numberQuestions = ["Domanda 1", "Domanda 2", "Domanda 3", "Domanda 4"]
+    var questions = ["Prova domanda 1, lorem ipsum dolor consect.", "Prova domanda 2, lorem ipsum dolor consect.", "Prova domanda 3, lorem ipsum dolor consect.", "Prova domanda 4, lorem ipsum dolor consect."]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-            elementStyle()
-        // Do any additional setup after loading the view.
+        elementStyle()
+        self.questionTV.allowsMultipleSelection = true
+        self.questionTV.allowsMultipleSelectionDuringEditing = true
     }
     
     func elementStyle() {
-            createBtn.layer.cornerRadius = 20
-            createBtn.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.5).cgColor
-            createBtn.layer.shadowOffset = CGSize (width: 0, height: 1.0)
-            createBtn.layer.shadowRadius = 1.1
-            createBtn.layer.shadowOpacity = 0.5
+
     }
 }
     
@@ -34,24 +32,27 @@ extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return numberQuestions.count
+        return questions.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cella", for: indexPath) as? QuestionTableViewCell
-        cell?.label.text = questions[indexPath.row]
-        cell?.question.text = numberQuestions[indexPath.row]
-        cell?.layer.cornerRadius = 15
         
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor.red
-        cell?.selectedBackgroundView = backgroundView
+        let cell = tableView.dequeueReusableCell(withIdentifier: "question", for: indexPath) as? QuestionTableViewCell
+        cell?.question.text = questions[indexPath.row]
+        
+        cell?.layer.cornerRadius = 8
         
         
         return (cell!)
     
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        (tableView.cellForRow(at: indexPath) as! QuestionTableViewCell).questionView.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))        
+    }
+    
+    
 }
 
 

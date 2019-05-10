@@ -14,6 +14,8 @@ class StudentCell: UITableViewCell {
     @IBOutlet weak var studentView: UIView!
     @IBOutlet weak var noteUser: UILabel!
     @IBOutlet weak var saveAll: UIButton!
+    @IBOutlet weak var argumentName: UILabel!
+    
     
     
     
