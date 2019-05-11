@@ -13,6 +13,7 @@ class QuestionTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var question: UILabel!
+    @IBOutlet weak var questionTitle: UILabel!
     @IBOutlet weak var questionView: UIView!
     
     

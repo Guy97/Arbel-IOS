@@ -32,6 +32,7 @@
 		A912211C224AD13900779E72 /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912211B224AD13900779E72 /* NoteController.swift */; };
 		A912211E224AE2CA00779E72 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912211D224AE2CA00779E72 /* UnderlineTextField.swift */; };
 		A91BD5DF2286B29E00BFB8D7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91BD5DE2286B29E00BFB8D7 /* DataModel.swift */; };
+		A91BD5E32286D99000BFB8D7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91BD5E22286D98F00BFB8D7 /* GradientView.swift */; };
 		A92CD0B4226F5F9200612B13 /* DetailCourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92CD0B3226F5F9200612B13 /* DetailCourseController.swift */; };
 		A92CD0D5226F915F00612B13 /* StudentTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92CD0D4226F915F00612B13 /* StudentTabController.swift */; };
 		A92CD0D7226F917100612B13 /* TestTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92CD0D6226F917100612B13 /* TestTabController.swift */; };
@@ -102,6 +103,7 @@
 		A912211B224AD13900779E72 /* NoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
 		A912211D224AE2CA00779E72 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 		A91BD5DE2286B29E00BFB8D7 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		A91BD5E22286D98F00BFB8D7 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		A92CD0B3226F5F9200612B13 /* DetailCourseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCourseController.swift; sourceTree = "<group>"; };
 		A92CD0D4226F915F00612B13 /* StudentTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTabController.swift; sourceTree = "<group>"; };
 		A92CD0D6226F917100612B13 /* TestTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTabController.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				A9943A062249151900ED3899 /* PaddingTextField.swift */,
 				A9943A0822491EEC00ED3899 /* PaddingtextView.swift */,
 				A90ED80B224D24A300B71E49 /* UIViewExtension.swift */,
+				A91BD5E22286D98F00BFB8D7 /* GradientView.swift */,
 				A912211D224AE2CA00779E72 /* UnderlineTextField.swift */,
 			);
 			path = "Arbel-IOS";
@@ -459,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91BD5E32286D99000BFB8D7 /* GradientView.swift in Sources */,
 				A912211E224AE2CA00779E72 /* UnderlineTextField.swift in Sources */,
 				A90E5FDA226B2E01001E8C2F /* ContactTableViewCell.swift in Sources */,
 				046E90D122405B1E00C9BC16 /* ContactController.swift in Sources */,

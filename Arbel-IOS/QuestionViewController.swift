@@ -39,6 +39,7 @@ extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "question", for: indexPath) as? QuestionTableViewCell
+        cell?.question.sizeToFit()
         cell?.question.text = questions[indexPath.row]
         
         cell?.layer.cornerRadius = 8
@@ -49,7 +50,25 @@ extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        (tableView.cellForRow(at: indexPath) as! QuestionTableViewCell).questionView.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))        
+//        (tableView.cellForRow(at: indexPath) as! QuestionTableViewCell).questionView.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
+        
+        
+        let select  = tableView.cellForRow(at: indexPath) as! QuestionTableViewCell
+        select.questionView.backgroundColor = UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1)
+
+        select.question.textColor = .white
+        select.questionTitle.textColor = .white
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let deselect  = tableView.cellForRow(at: indexPath) as! QuestionTableViewCell
+        
+        deselect.questionView.backgroundColor = .white
+        deselect.question.textColor = .black
+        deselect.questionTitle.textColor = .black
+        
+//        (tableView.cellForRow(at: indexPath) as! QuestionTableViewCell).questionView.backgroundColor = .clear
     }
     
     
