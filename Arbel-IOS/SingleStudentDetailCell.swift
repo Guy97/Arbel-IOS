@@ -11,6 +11,7 @@ import UIKit
 class SingleStudentDetailCell: UITableViewCell {
     
     @IBOutlet weak var textResult: UILabel!
+    @IBOutlet weak var testDate: UILabel!
     @IBOutlet weak var textAbsence: UILabel!
     
     override func setSelected(_ selected: Bool, animated: Bool) {

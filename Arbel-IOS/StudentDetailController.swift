@@ -23,7 +23,14 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
     
     var transparentView = UIView()
     
-    var testResult = ["Scritto (26.11.2018): 28", "Orale (15.02.2019): 24", "Test (04.05.2019): +"]
+    struct Test {
+        var date: String
+        var testResult: String
+    }
+    
+//    var testResult = ["Scritto (26.11.2018): 28", "Orale (15.02.2019): 24", "Test (04.05.2019): +"]
+    
+    var testResult = [Test(date: "26.11.2018", testResult: "28"),Test(date: "15.02.2019", testResult: "24"),Test(date: "04.05.2019", testResult: "+"), Test(date: "04.05.2019", testResult: "-")]
     
     var allAbsence = ["04.10.2018", "21.11.2018"]
     
@@ -103,7 +110,14 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == testTableView {
             let result = tableView.dequeueReusableCell(withIdentifier: "result") as! SingleStudentDetailCell
-            result.textResult?.text = testResult[indexPath.row]
+            
+            let testDetail = testResult[indexPath.row]
+            result.textResult?.text = testDetail.testResult
+            result.testDate?.sizeToFit()
+            result.testDate?.text = "Scritto " + "(" + testDetail.date + ")" + ":"
+            
+            
+//            result.textResult?.text = testResult[indexPath.row]
             return result
             
         } else {

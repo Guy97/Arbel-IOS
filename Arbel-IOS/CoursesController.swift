@@ -12,7 +12,14 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
     
     @IBOutlet var coursesList: UITableView!
     
-    var coursesArray = ["Media Design"," Media Design","Video Design","Sound Design"]
+    struct Course {
+        var yearCourse: Int
+        var course: String
+    }
+    
+//    var coursesArray = ["Media Design"," Media Design","Video Design","Sound Design"]
+    
+    var coursesArray = [Course(yearCourse: 1, course: "Media Design"),Course(yearCourse: 2, course: "Media Design"),Course(yearCourse: 2, course: "Video Design"),Course(yearCourse: 3, course: "Sound Design")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +37,14 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "course") as! CourseCell
-        cell.courseName?.text = coursesArray[indexPath.row]
+        
+        let courseDetail = coursesArray[indexPath.row]
+        cell.courseName?.text = courseDetail.course
+        let yearConverted = "\(courseDetail.yearCourse)"
+        cell.year?.text = yearConverted + "°"
+//        cell.year?.text = courseDetail.yearCourse
+        
+//        cell.courseName?.text = coursesArray[indexPath.row]
         return cell
     }
     

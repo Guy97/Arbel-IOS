@@ -31,6 +31,7 @@
 		A90ED80E224E355F00B71E49 /* NoteTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90ED80D224E355F00B71E49 /* NoteTableView.swift */; };
 		A912211C224AD13900779E72 /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912211B224AD13900779E72 /* NoteController.swift */; };
 		A912211E224AE2CA00779E72 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912211D224AE2CA00779E72 /* UnderlineTextField.swift */; };
+		A91BD5DF2286B29E00BFB8D7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91BD5DE2286B29E00BFB8D7 /* DataModel.swift */; };
 		A92CD0B4226F5F9200612B13 /* DetailCourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92CD0B3226F5F9200612B13 /* DetailCourseController.swift */; };
 		A92CD0D5226F915F00612B13 /* StudentTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92CD0D4226F915F00612B13 /* StudentTabController.swift */; };
 		A92CD0D7226F917100612B13 /* TestTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92CD0D6226F917100612B13 /* TestTabController.swift */; };
@@ -100,6 +101,7 @@
 		A90ED80D224E355F00B71E49 /* NoteTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableView.swift; sourceTree = "<group>"; };
 		A912211B224AD13900779E72 /* NoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
 		A912211D224AE2CA00779E72 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
+		A91BD5DE2286B29E00BFB8D7 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		A92CD0B3226F5F9200612B13 /* DetailCourseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCourseController.swift; sourceTree = "<group>"; };
 		A92CD0D4226F915F00612B13 /* StudentTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTabController.swift; sourceTree = "<group>"; };
 		A92CD0D6226F917100612B13 /* TestTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTabController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				A9BF9A792270F2460033F35C /* SaveDesignView.swift */,
 				A92CD0B3226F5F9200612B13 /* DetailCourseController.swift */,
 				A92CD0D4226F915F00612B13 /* StudentTabController.swift */,
+				A91BD5DE2286B29E00BFB8D7 /* DataModel.swift */,
 				A92CD0DA22707E5900612B13 /* StudentCell.swift */,
 				A9431B0622717FA900D36C96 /* StudentDetailController.swift */,
 				A9431B082271C0DA00D36C96 /* SingleStudentDetailCell.swift */,
@@ -486,6 +489,7 @@
 				046E90C9224040FF00C9BC16 /* TabarController.swift in Sources */,
 				046E90D322405B3E00C9BC16 /* ProfileController.swift in Sources */,
 				044CB2F92237CBBD00F0A410 /* AppDelegate.swift in Sources */,
+				A91BD5DF2286B29E00BFB8D7 /* DataModel.swift in Sources */,
 				32FCBB362268B8AE006EA399 /* PasswordController.swift in Sources */,
 				A9FDF30A22708A74002222DC /* CourseCell.swift in Sources */,
 				A9B6A69E224EB5FA00AA6FDA /* LogMemory.swift in Sources */,

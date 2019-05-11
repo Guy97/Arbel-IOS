@@ -9,12 +9,6 @@
 import UIKit
 import XLPagerTabStrip
 
-struct cellData {
-    var opened = Bool()
-    var title = String()
-    var sectionData = [String]()
-}
-
 class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var searchStudent: UISearchBar!
@@ -24,6 +18,19 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     
 //    var students = ["Piero Chiambretti", "Scemo Pagliaccio", "Marcello Pajntar", "Simone Ghisu", "Davide Coscino", "Salvatore Aranzulla", "Riccardo Mores", "Mauro Paffi", "Fabrizio Infante", "Eugenio De Medici"]
     
+    struct Preview {
+        var average: Int
+        var absence: Int
+        var note: String
+    }
+//    var aaaa = [Preview(average: 28, absence: 15, note: "Soffre di DDA, picchiarlo dopo 15min")];]
+    
+    struct cellData {
+        var opened = Bool()
+        var title = String()
+        var sectionData = [Preview]()
+    }
+    
     var tableViewData = [cellData]()
     
     override func viewDidLoad() {
@@ -31,12 +38,14 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         
         elementStyle()
         
-        tableViewData = [cellData(opened: false, title: "Nome Cognome", sectionData: ["Prova nota1"]),
-                         cellData(opened: false, title: "Nome Cognome", sectionData: ["Prova nota2"]),
-                         cellData(opened: false, title: "Nome Cognome", sectionData: ["Prova nota3"])]
+        tableViewData = [cellData(opened: false, title: "Piero Chiambretti", sectionData: [Preview(average: 28, absence: 15, note: "Soffre di DDA, picchiarlo dopo 15min")]),
+                         cellData(opened: false, title: "Mauro Paffi", sectionData: [Preview(average: 15, absence: 1, note: "non è molto, ma è un lavoro onesto")]),
+                         cellData(opened: false, title: "Riccardo Mores", sectionData: [Preview(average: 28, absence: 15, note: "Studente mai visto in aula, ogni volta che faccio l'appello mi da una mela.")])]
     
         studentsList.dataSource = self
         studentsList.delegate = self
+        
+
     }
     
     func elementStyle() {
@@ -78,7 +87,7 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dataIndex = indexPath.row - 1
-        let numberRow = tableViewData.count
+//        let numberRow = tableViewData.count
 //        if indexPath.row == 0 {
 //            guard let cell = tableView.dequeueReusableCell(withIdentifier: "student") else {return StudentCell()}
 ////            cell.textLabel?.text = tableViewData[indexPath.section].title
@@ -97,15 +106,27 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.studentName?.text = tableViewData[indexPath.section].title
             return cell
         }
-            
-        else if indexPath.row == dataIndex {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "save") as! StudentCell
-            return cell
-        }
         
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! StudentCell
-            cell.noteUser?.text = tableViewData[indexPath.section].sectionData[dataIndex]
+            let previewDetail = tableViewData[indexPath.section].sectionData[dataIndex]
+            cell.noteUser?.sizeToFit()
+            cell.noteUser?.text = previewDetail.note
+            
+            let averageConverted = "\(previewDetail.average)"
+            cell.averageUser?.text = "MEDIA: " + averageConverted
+            
+            let absenceConverted = "\(previewDetail.absence)"
+            cell.absenceUser?.sizeToFit()
+            cell.absenceUser?.text = "ASSENZE: " + absenceConverted + "%"
+            
+//            cell.noteUser?.text = tableViewData[indexPath.section].sectionData[dataIndex]
+            
+//            let courseDetail = coursesArray[indexPath.row]
+//            cell.courseName?.text = courseDetail.course
+//            let yearConverted = "\(courseDetail.yearCourse)"
+//            cell.year?.text = yearConverted + "°"
+            
             return cell
         }
         
@@ -142,6 +163,7 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
 //            performSegue(withIdentifier: "showDetail", sender: self)
         }
     }
+    
 
     @IBAction func checkBoxTapped(_ sender: UIButton) {
         
