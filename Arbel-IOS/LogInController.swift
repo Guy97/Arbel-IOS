@@ -22,16 +22,16 @@ extension Double {
     }
 }
 
-extension UIView{
-    
-    func setBorder(radius:CGFloat, color:UIColor = UIColor.clear) -> UIView{
-        let roundView:UIView = self
-        roundView.layer.cornerRadius = CGFloat(radius)
-        roundView.layer.borderWidth = 1
-        roundView.clipsToBounds = true
-        return roundView
-    }
-}
+//extension UIView{
+//
+//    func setBorder(radius:CGFloat, color:UIColor = UIColor.clear) -> UIView{
+//        let roundView:UIView = self
+//        roundView.layer.cornerRadius = CGFloat(radius)
+//        roundView.layer.borderWidth = 1
+//        roundView.clipsToBounds = true
+//        return roundView
+//    }
+//}
 
 class LogInController: UIViewController {
     
@@ -45,16 +45,37 @@ class LogInController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.HideKeyboard()
+        
+        self.usernameForm.layer.cornerRadius = 10
+        self.passwordForm.layer.cornerRadius = 10
+        
+//        let emailImage = UIImage(named:"mailForm")
+//        addLeftImageTo(txtField: usernameForm, andImage: emailImage!)
+//
+//        let passwordImage = UIImage(named:"passwordForm")
+//        addLeftImageTo(txtField: passwordForm, andImage: passwordImage!)
+                
+        
 
-        self.loginButton.layer.cornerRadius = 18
-        loginButton.layer.masksToBounds = true
+//        self.loginButton.layer.cornerRadius = 18
+//        loginButton.layer.masksToBounds = true
 //        loginButton.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
         
-        self.loginButton.setTitleColor(UIColor.white, for: .highlighted)
-        self.loginButton.setBackgroundColor(color: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), forState: .normal)
-        self.loginButton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)
+//        self.loginButton.setTitleColor(UIColor.white, for: .highlighted)
+//        self.loginButton.setBackgroundColor(color: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), forState: .normal)
+//        self.loginButton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)
 
     }
+    
+//    func addLeftImageTo(txtField: UITextField, andImage img: UIImage) {
+//
+//        let leftImageView = UIImageView(frame: CGRect(x: 5.5, y: 5.0, width: img.size.width, height: img.size.height))
+//        leftImageView.image = img
+//        txtField.leftView = leftImageView
+//        txtField.leftViewMode = .always
+////        usernameForm
+////        usernameForm
+//    }
 //    var porcaPuttana : Any!
     @IBAction func login() {
         let postDict:[String:String] = ["email": "\(usernameForm.text!)", "password": "\(passwordForm.text!)"]
@@ -97,8 +118,8 @@ class LogInController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-        self.usernameForm.underlined()
-        self.passwordForm.underlined()
+//        self.usernameForm.underlined()
+//        self.passwordForm.underlined()
         self.usernameForm.text = ""
         self.passwordForm.text = ""
         

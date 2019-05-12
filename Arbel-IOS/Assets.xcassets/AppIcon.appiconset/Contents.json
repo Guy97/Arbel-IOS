@@ -33,13 +33,13 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Home Screen@2x.png",
+      "filename" : "Rectangle@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Home Screen@3x.png",
+      "filename" : "Rectangle@3x.png",
       "scale" : "3x"
     },
     {
@@ -49,7 +49,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "Home Screen.png",
+      "filename" : "Rectangle.png",
       "scale" : "1x"
     }
   ],

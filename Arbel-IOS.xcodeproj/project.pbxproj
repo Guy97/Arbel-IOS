@@ -31,6 +31,7 @@
 		A90ED80E224E355F00B71E49 /* NoteTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90ED80D224E355F00B71E49 /* NoteTableView.swift */; };
 		A912211C224AD13900779E72 /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912211B224AD13900779E72 /* NoteController.swift */; };
 		A912211E224AE2CA00779E72 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912211D224AE2CA00779E72 /* UnderlineTextField.swift */; };
+		A915FB6422884BD700B8E805 /* PaddingTextLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915FB6322884BD700B8E805 /* PaddingTextLogin.swift */; };
 		A91BD5DF2286B29E00BFB8D7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91BD5DE2286B29E00BFB8D7 /* DataModel.swift */; };
 		A91BD5E32286D99000BFB8D7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91BD5E22286D98F00BFB8D7 /* GradientView.swift */; };
 		A92CD0B4226F5F9200612B13 /* DetailCourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92CD0B3226F5F9200612B13 /* DetailCourseController.swift */; };
@@ -48,6 +49,7 @@
 		A9BF9A7A2270F2460033F35C /* SaveDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BF9A792270F2460033F35C /* SaveDesignView.swift */; };
 		A9D81BB0226CBEEA00127910 /* HourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D81BAF226CBEEA00127910 /* HourCollectionViewCell.swift */; };
 		A9D81BB4226CC68400127910 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D81BB3226CC68400127910 /* Activity.swift */; };
+		A9F0960B2288504200F3043E /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0960A2288504200F3043E /* DesignableTextField.swift */; };
 		A9FDF30A22708A74002222DC /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FDF30922708A74002222DC /* CourseCell.swift */; };
 		EB689253227CAEBA00727BDC /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB689252227CAEBA00727BDC /* QuestionViewController.swift */; };
 		EB689255227CB10500727BDC /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB689254227CB10500727BDC /* QuestionTableViewCell.swift */; };
@@ -102,6 +104,7 @@
 		A90ED80D224E355F00B71E49 /* NoteTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableView.swift; sourceTree = "<group>"; };
 		A912211B224AD13900779E72 /* NoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
 		A912211D224AE2CA00779E72 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
+		A915FB6322884BD700B8E805 /* PaddingTextLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextLogin.swift; sourceTree = "<group>"; };
 		A91BD5DE2286B29E00BFB8D7 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		A91BD5E22286D98F00BFB8D7 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		A92CD0B3226F5F9200612B13 /* DetailCourseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCourseController.swift; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		A9BF9A792270F2460033F35C /* SaveDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDesignView.swift; sourceTree = "<group>"; };
 		A9D81BAF226CBEEA00127910 /* HourCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourCollectionViewCell.swift; sourceTree = "<group>"; };
 		A9D81BB3226CC68400127910 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		A9F0960A2288504200F3043E /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		A9FDF30922708A74002222DC /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		D5A7F856B1D7FB4A9D5D4E21 /* Pods_Arbel_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E22AAF5412B0D6F1C2C996BB /* Pods_Arbel_IOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +223,8 @@
 				A94D6E0D224A588100AAA103 /* ObjCBridge.h */,
 				A9943A062249151900ED3899 /* PaddingTextField.swift */,
 				A9943A0822491EEC00ED3899 /* PaddingtextView.swift */,
+				A915FB6322884BD700B8E805 /* PaddingTextLogin.swift */,
+				A9F0960A2288504200F3043E /* DesignableTextField.swift */,
 				A90ED80B224D24A300B71E49 /* UIViewExtension.swift */,
 				A91BD5E22286D98F00BFB8D7 /* GradientView.swift */,
 				A912211D224AE2CA00779E72 /* UnderlineTextField.swift */,
@@ -478,6 +484,7 @@
 				A9BF9A782270DFFC0033F35C /* ArgumentController.swift in Sources */,
 				045F24D8226F23DC0046FEDA /* CheckInternet.swift in Sources */,
 				A9BF9A7A2270F2460033F35C /* SaveDesignView.swift in Sources */,
+				A915FB6422884BD700B8E805 /* PaddingTextLogin.swift in Sources */,
 				046E90CF22405AF800C9BC16 /* CoursesController.swift in Sources */,
 				EB689255227CB10500727BDC /* QuestionTableViewCell.swift in Sources */,
 				A90ED804224BA6C500B71E49 /* CoursesDesignView.swift in Sources */,
@@ -488,6 +495,7 @@
 				049D129A22482AC000CD1548 /* LogInController.swift in Sources */,
 				A9431B0722717FA900D36C96 /* StudentDetailController.swift in Sources */,
 				A9431B092271C0DA00D36C96 /* SingleStudentDetailCell.swift in Sources */,
+				A9F0960B2288504200F3043E /* DesignableTextField.swift in Sources */,
 				A9431B0D2271E02F00D36C96 /* ActivityCell.swift in Sources */,
 				EB689253227CAEBA00727BDC /* QuestionViewController.swift in Sources */,
 				046E90C9224040FF00C9BC16 /* TabarController.swift in Sources */,
