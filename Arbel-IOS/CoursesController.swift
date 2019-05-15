@@ -8,9 +8,14 @@
 
 import UIKit
 
+
 class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var coursesList: UITableView!
+    
+//    var courses = [CoursesData]()
+    
+    var coursesData = Users.userLogin.success.courses
     
     struct Course {
         var yearCourse: Int
@@ -25,10 +30,22 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
         super.viewDidLoad()
         coursesList.dataSource = self
         coursesList.delegate = self
+        
+//        LogInController().fetchEvents(complete: {
+//            (courses) in self.courses = courses
+//            //            Viene gestita l'esecuzione di più elementi di lavoro
+//            let queue = DispatchQueue.main
+//
+//            queue.async(execute: {
+//                self.coursesList.delegate = self
+//                self.coursesList.dataSource = self
+//                self.coursesList?.reloadData()
+//            })
+//        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (coursesArray.count)
+        return (coursesData.count)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -37,10 +54,12 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "course") as! CourseCell
+
         
-        let courseDetail = coursesArray[indexPath.row]
+        let courseDetail = coursesData[indexPath.row]
         cell.courseName?.text = courseDetail.course
-        let yearConverted = "\(courseDetail.yearCourse)"
+        
+        let yearConverted = "\(courseDetail.year)"
         cell.year?.text = yearConverted + "°"
 //        cell.year?.text = courseDetail.yearCourse
         

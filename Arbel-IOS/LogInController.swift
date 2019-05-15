@@ -79,6 +79,7 @@ class LogInController: UIViewController {
 //    var porcaPuttana : Any!
     @IBAction func login() {
         let postDict:[String:String] = ["email": "\(usernameForm.text!)", "password": "\(passwordForm.text!)"]
+        
         Alamofire.request("http://arbel.test/api/login", method: .post, parameters: postDict).responseJSON {response in //response serialization result
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 print("Data: \(utf8Text)") // original server data as UTF8 string
@@ -86,14 +87,41 @@ class LogInController: UIViewController {
                     
                     let jsonDecoder = JSONDecoder()
                     var postData = try jsonDecoder.decode(Users.self, from: response.data!)
-                    Users.ciccio = postData
-//                    porcaPuttana = postData.success.name
-                    //self.performSegue(withIdentifier: "enter", sender: postData)
-                    print(postData, "bo")
-                    print(postData.success.name)
+                    Users.userLogin = postData
                     
-//                    usersData(id: postData.success.id, name: postData.success.name, surname: postData.success.surname, email: postData.success.email)
-//                    self.porcaPuttana = usersData.init(id: postData.success.id, name: postData.success.name, surname: postData.success.surname, email: postData.success.email)
+
+                    print(postData.success.name, "NOME LOGIN")
+                    
+                    let culo = postData.success.courses
+                    var sillixi = culo.map { ($0).course}
+                    
+//                    var culo = postData.success.courses
+//                    print(culo[0].year, "ddddd")
+                    print(culo, "TUTTO ARRAY COURSES")
+                    
+                    print(sillixi, "DIOO CANE")
+                    
+//                    for each in culo{
+//                        print(postData.success(forKey: "year"))
+//                        print(each) //this line will print correctly, so I know the correct data is in the array
+//
+//                    }
+                    
+                    
+//                    print(index, "ARRAY DOPO")
+                    
+//                    for value in culo. {
+//
+//                        print(culo, "ARRAY DOPO")
+//                    }
+                    
+//                    var after = postData.success.courses.course
+//
+//                    print(after, "SOLO I CPRSI ")
+                    
+//                    print(postData.success.courses[0].course, "gapp")
+                    
+
                   
                 }
                 catch

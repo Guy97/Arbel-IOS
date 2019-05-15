@@ -8,6 +8,8 @@
 
 import UIKit
 import XLPagerTabStrip
+import Alamofire
+import SwiftyJSON
 
 class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -16,7 +18,6 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var studentsList: UITableView!
     @IBOutlet weak var saveButton: UIButton!
     
-//    var students = ["Piero Chiambretti", "Scemo Pagliaccio", "Marcello Pajntar", "Simone Ghisu", "Davide Coscino", "Salvatore Aranzulla", "Riccardo Mores", "Mauro Paffi", "Fabrizio Infante", "Eugenio De Medici"]
     
     struct Preview {
         var average: Int
@@ -44,6 +45,19 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     
         studentsList.dataSource = self
         studentsList.delegate = self
+        
+        //        Riprende i dati in arrivo dalla funzione (vedi complete)
+//        StudentListModel().fetchEvents(complete: {
+//            (students) in self.students = students
+//            //            Viene gestita l'esecuzione di più elementi di lavoro
+//            let queue = DispatchQueue.main
+//
+//            queue.async(execute: {
+//                self.studentsList.delegate = self
+//                self.studentsList.dataSource = self
+//                self.studentsList?.reloadData()
+//            })
+//        })
         
 
     }
@@ -87,23 +101,15 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dataIndex = indexPath.row - 1
-//        let numberRow = tableViewData.count
-//        if indexPath.row == 0 {
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "student") else {return StudentCell()}
-////            cell.textLabel?.text = tableViewData[indexPath.section].title
-//            cell.textLabel?.text = tableViewData[indexPath.section].title
-////            cell.studentName?.text = students[indexPath.row]
-//            return cell
-//        }
-//        else {
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {return UITableViewCell()}
-//            cell.textLabel?.text = tableViewData[indexPath.section].sectionData[dataIndex]
-//            return cell
-//        }
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "student") as! StudentCell
-            cell.studentName?.text = tableViewData[indexPath.section].title
+            
+            let student = tableViewData[indexPath.section]
+            
+            cell.studentName?.text = student.title
+            
+//            cell.studentName?.text = tableViewData[indexPath.section].title
             return cell
         }
         
@@ -120,29 +126,9 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.absenceUser?.sizeToFit()
             cell.absenceUser?.text = "ASSENZE: " + absenceConverted + "%"
             
-//            cell.noteUser?.text = tableViewData[indexPath.section].sectionData[dataIndex]
-            
-//            let courseDetail = coursesArray[indexPath.row]
-//            cell.courseName?.text = courseDetail.course
-//            let yearConverted = "\(courseDetail.yearCourse)"
-//            cell.year?.text = yearConverted + "°"
-            
             return cell
         }
         
-        
-        
-        
-//        if indexPath.row == 9 {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "save") as! StudentCell
-//            return cell
-//        } else {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "student") as! StudentCell
-//            cell.studentName?.text = students[indexPath.row]
-//            return cell
-//        }
-        
-
         
     }
 

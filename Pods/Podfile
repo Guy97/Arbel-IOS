@@ -1,0 +1,58 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Alamofire' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Alamofire
+
+end
+
+target 'Calendar-iOS' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Calendar-iOS
+
+end
+
+target 'Charts' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Charts
+
+end
+
+target 'FSCalendar' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for FSCalendar
+
+end
+
+target 'Pods-Arbel-IOS' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Pods-Arbel-IOS
+
+end
+
+target 'XLPagerTabStrip' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for XLPagerTabStrip
+
+end
+
+target 'XLPagerTabStrip-XLPagerTabStrip' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for XLPagerTabStrip-XLPagerTabStrip
+
+end

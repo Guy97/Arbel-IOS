@@ -32,7 +32,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         
-        print(Users.ciccio.success.name, "aio")
+        print(Users.userLogin.success.name, "aio")
         elementStyle()
     
         noteTableView.dataSource = self
@@ -73,7 +73,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidAppear(_ animated: Bool) {
         if CheckInternet.Connection() {
-            infoUser.text = "Bentornato \(Users.ciccio.success.name)," + "\n" + "sei Online"
+            infoUser.text = "Bentornato \(Users.userLogin.success.name)," + "\n" + "sei Online"
         }
         else {
             infoUser.text = "Mi dispiace ma" + "\n" + " sei Offline"

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01EB3A4C3802DEFFE0FA58F0 /* Pods_Arbel_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A7F856B1D7FB4A9D5D4E21 /* Pods_Arbel_IOS.framework */; };
 		044CB2F92237CBBD00F0A410 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB2F82237CBBD00F0A410 /* AppDelegate.swift */; };
 		044CB2FB2237CBBD00F0A410 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB2FA2237CBBD00F0A410 /* ViewController.swift */; };
 		044CB2FE2237CBBD00F0A410 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044CB2FC2237CBBD00F0A410 /* Main.storyboard */; };
@@ -23,6 +22,7 @@
 		046E90D122405B1E00C9BC16 /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E90D022405B1E00C9BC16 /* ContactController.swift */; };
 		046E90D322405B3E00C9BC16 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E90D222405B3E00C9BC16 /* ProfileController.swift */; };
 		049D129A22482AC000CD1548 /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D129922482AC000CD1548 /* LogInController.swift */; };
+		32B61E9C6B54BF6029139EB9 /* Pods_Arbel_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A7F856B1D7FB4A9D5D4E21 /* Pods_Arbel_IOS.framework */; };
 		32FCBB362268B8AE006EA399 /* PasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCBB352268B8AE006EA399 /* PasswordController.swift */; };
 		32FCBB382268B8CC006EA399 /* InformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCBB372268B8CC006EA399 /* InformationController.swift */; };
 		A90E5FDA226B2E01001E8C2F /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E5FD9226B2E01001E8C2F /* ContactTableViewCell.swift */; };
@@ -44,6 +44,7 @@
 		A9431B0D2271E02F00D36C96 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9431B0C2271E02F00D36C96 /* ActivityCell.swift */; };
 		A9943A072249151900ED3899 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9943A062249151900ED3899 /* PaddingTextField.swift */; };
 		A9943A0922491EEC00ED3899 /* PaddingtextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9943A0822491EEC00ED3899 /* PaddingtextView.swift */; };
+		A9B3553D228AA55200332290 /* StudentListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3553C228AA55200332290 /* StudentListModel.swift */; };
 		A9B6A69E224EB5FA00AA6FDA /* LogMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B6A69D224EB5FA00AA6FDA /* LogMemory.swift */; };
 		A9BF9A782270DFFC0033F35C /* ArgumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BF9A772270DFFC0033F35C /* ArgumentController.swift */; };
 		A9BF9A7A2270F2460033F35C /* SaveDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BF9A792270F2460033F35C /* SaveDesignView.swift */; };
@@ -118,6 +119,7 @@
 		A94D6E0D224A588100AAA103 /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
 		A9943A062249151900ED3899 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		A9943A0822491EEC00ED3899 /* PaddingtextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingtextView.swift; sourceTree = "<group>"; };
+		A9B3553C228AA55200332290 /* StudentListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListModel.swift; sourceTree = "<group>"; };
 		A9B6A69D224EB5FA00AA6FDA /* LogMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMemory.swift; sourceTree = "<group>"; };
 		A9BF9A772270DFFC0033F35C /* ArgumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentController.swift; sourceTree = "<group>"; };
 		A9BF9A792270F2460033F35C /* SaveDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDesignView.swift; sourceTree = "<group>"; };
@@ -137,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01EB3A4C3802DEFFE0FA58F0 /* Pods_Arbel_IOS.framework in Frameworks */,
+				32B61E9C6B54BF6029139EB9 /* Pods_Arbel_IOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +264,7 @@
 		A9D81BB5226CC69200127910 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A9B3553C228AA55200332290 /* StudentListModel.swift */,
 				A9D81BB3226CC68400127910 /* Activity.swift */,
 			);
 			path = Model;
@@ -422,6 +425,7 @@
 				"${BUILT_PRODUCTS_DIR}/Calendar-iOS/Calendar_iOS.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -432,6 +436,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Calendar_iOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +493,7 @@
 				046E90CF22405AF800C9BC16 /* CoursesController.swift in Sources */,
 				EB689255227CB10500727BDC /* QuestionTableViewCell.swift in Sources */,
 				A90ED804224BA6C500B71E49 /* CoursesDesignView.swift in Sources */,
+				A9B3553D228AA55200332290 /* StudentListModel.swift in Sources */,
 				A92CD0D7226F917100612B13 /* TestTabController.swift in Sources */,
 				A9D81BB0226CBEEA00127910 /* HourCollectionViewCell.swift in Sources */,
 				044CB2FB2237CBBD00F0A410 /* ViewController.swift in Sources */,
