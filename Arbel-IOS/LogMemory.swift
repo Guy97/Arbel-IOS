@@ -38,15 +38,13 @@ struct CoursesData: Codable {
     var id: Int
     var course: String
     var year: Int
-    var section: String
-    static var sillixi: CoursesData!
-    
+    var section: String    
     
 }
 
 
 struct Students: Codable {
-    var students: [StudentData]
+    var studentLog: [StudentData]
     static var studentList: Students!
 }
 

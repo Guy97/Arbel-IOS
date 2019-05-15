@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class StudentListModel: NSObject {
 
@@ -28,7 +29,6 @@ class StudentListModel: NSObject {
 //        Alamofire.request(url, method: .get).validate().responseJSON
         
             response in
-            //            Verifichiamo errori, guard permette di performare un’azione solo quando la sua condizione non è verificata (quindi falsa)
             guard response.error == nil
                 else {
                     print("errore")
@@ -53,6 +53,11 @@ class StudentListModel: NSObject {
                 let student = try decoder.decode(Students.self, from: response.data!)
                 //                Si mandano i dati recuperati a HistoricalViewController
                 Students.studentList = student
+                
+                let getStudent = student.studentLog
+                var filteredStudent = getStudent.map { ($0).name}
+                
+                
                 print(student, "Vai stronzo")
             }
 

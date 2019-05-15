@@ -76,7 +76,6 @@ class LogInController: UIViewController {
 ////        usernameForm
 ////        usernameForm
 //    }
-//    var porcaPuttana : Any!
     @IBAction func login() {
         let postDict:[String:String] = ["email": "\(usernameForm.text!)", "password": "\(passwordForm.text!)"]
         
@@ -89,38 +88,9 @@ class LogInController: UIViewController {
                     var postData = try jsonDecoder.decode(Users.self, from: response.data!)
                     Users.userLogin = postData
                     
-
-                    print(postData.success.name, "NOME LOGIN")
                     
-                    let culo = postData.success.courses
-                    var sillixi = culo.map { ($0).course}
-                    
-//                    var culo = postData.success.courses
-//                    print(culo[0].year, "ddddd")
-                    print(culo, "TUTTO ARRAY COURSES")
-                    
-                    print(sillixi, "DIOO CANE")
-                    
-//                    for each in culo{
-//                        print(postData.success(forKey: "year"))
-//                        print(each) //this line will print correctly, so I know the correct data is in the array
-//
-//                    }
-                    
-                    
-//                    print(index, "ARRAY DOPO")
-                    
-//                    for value in culo. {
-//
-//                        print(culo, "ARRAY DOPO")
-//                    }
-                    
-//                    var after = postData.success.courses.course
-//
-//                    print(after, "SOLO I CPRSI ")
-                    
-//                    print(postData.success.courses[0].course, "gapp")
-                    
+                    let getCourses = postData.success.courses
+                    var filteredCourses = getCourses.map { ($0).course}
 
                   
                 }

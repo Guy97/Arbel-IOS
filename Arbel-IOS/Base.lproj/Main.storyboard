@@ -180,6 +180,8 @@
                         <outlet property="infoVoice" destination="RSE-CK-92d" id="uej-wc-qWU"/>
                         <outlet property="logoutbutton" destination="Dqt-tI-3kc" id="4ZM-gT-q1d"/>
                         <outlet property="passwordVoice" destination="j5a-kz-mEU" id="WdP-In-MqX"/>
+                        <outlet property="userMail" destination="yjQ-4c-SlT" id="oz8-c0-2Kh"/>
+                        <outlet property="userName" destination="TUd-TR-bib" id="yR7-1d-Kfh"/>
                         <segue destination="dX8-8E-OXk" kind="show" identifier="exit" id="GZQ-V2-aFm"/>
                     </connections>
                 </viewController>

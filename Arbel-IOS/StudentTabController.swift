@@ -18,6 +18,7 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var studentsList: UITableView!
     @IBOutlet weak var saveButton: UIButton!
     
+//    var students = Students.studentList.studentLog
     
     struct Preview {
         var average: Int
@@ -46,7 +47,6 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         studentsList.dataSource = self
         studentsList.delegate = self
         
-        //        Riprende i dati in arrivo dalla funzione (vedi complete)
 //        StudentListModel().fetchEvents(complete: {
 //            (students) in self.students = students
 //            //            Viene gestita l'esecuzione di più elementi di lavoro

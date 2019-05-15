@@ -15,6 +15,10 @@ class ProfileController: UIViewController {
     @IBOutlet weak var imageprofile: UIImageView!
     @IBOutlet weak var logoutbutton: UIButton!
     
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userMail: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,6 +52,12 @@ class ProfileController: UIViewController {
         self.logoutbutton.setBackgroundColor(color: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), forState: .normal)
         self.logoutbutton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        userName.text = "\(Users.userLogin.success.name) " + "\(Users.userLogin.success.surname)"
+        
+        userMail.text = "\(Users.userLogin.success.email)"
     }
     
     @IBAction func exit(_ sender: Any) {
