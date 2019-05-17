@@ -16,28 +16,25 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     
-    var sendArray = ["1 Media Design","2 Media Design","2 Video Design","2 Sound Design"]
+    var coursesData = Users.userLogin.success.courses
     
     var transparentView = UIView()
     var tableView = UITableView()
     
     let height: CGFloat = 300
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.HideKeyboard()
-
+        
         elementStyle()
-    
+        
         tableView.isScrollEnabled = true
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: "Cell")
-
     }
-    
-    
     
     func elementStyle() {
         self.mailForm.layer.cornerRadius = 10
@@ -61,7 +58,7 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         tableView.layer.cornerRadius = 10
         tableView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-
+    
     @IBAction func addAction(_ sender: AnyObject) {
         
         transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
@@ -85,7 +82,6 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         }, completion: nil)
     }
     
-    
     @objc func onClickTransparentView() {
         let screenSize = UIScreen.main.bounds.size
         
@@ -96,13 +92,15 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sendArray.count
+        return coursesData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ContactTableViewCell else {fatalError("Unable to deque cell")}
-                cell.lbl.text = sendArray[indexPath.row]
-                cell.lbl.font = UIFont.systemFont(ofSize: 16)
+        
+        let courseDetail = coursesData[indexPath.row]
+        cell.lbl.text = "\(courseDetail.year)" + "  " + courseDetail.course
+        cell.lbl.font = UIFont.systemFont(ofSize: 16)
         return cell
     }
     
@@ -120,5 +118,3 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 }
-
-

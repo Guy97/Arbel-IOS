@@ -14,14 +14,11 @@ class ProfileController: UIViewController {
     @IBOutlet weak var infoVoice: UIButton!
     @IBOutlet weak var imageprofile: UIImageView!
     @IBOutlet weak var logoutbutton: UIButton!
-    
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userMail: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         elementStyle()
     }
     
@@ -46,12 +43,10 @@ class ProfileController: UIViewController {
         
         logoutbutton.layer.cornerRadius = 18
         logoutbutton.layer.masksToBounds = true
-//        logoutbutton.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
-        
+
         self.logoutbutton.setTitleColor(UIColor.white, for: .highlighted)
         self.logoutbutton.setBackgroundColor(color: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), forState: .normal)
         self.logoutbutton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)
-
     }
     
     override func viewDidAppear(_ animated: Bool) {

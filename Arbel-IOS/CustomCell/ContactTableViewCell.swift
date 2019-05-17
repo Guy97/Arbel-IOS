@@ -17,10 +17,10 @@ class ContactTableViewCell: UITableViewCell {
     
     lazy var lbl: UILabel = {
         let lbl = UILabel(frame: CGRect(x: 40,  y: 10, width: self.frame.width - 80, height: 30))
-            UIFont.systemFont(ofSize: 10)
+        UIFont.systemFont(ofSize: 10)
         return lbl
     }()
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         addSubview(backView)

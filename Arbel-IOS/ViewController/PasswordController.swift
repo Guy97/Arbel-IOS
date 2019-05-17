@@ -9,7 +9,7 @@
 import UIKit
 
 class PasswordController: UIViewController {
-        
+    
     @IBOutlet weak var oldPassword: UITextField!
     @IBOutlet weak var newPassword: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
@@ -27,9 +27,7 @@ class PasswordController: UIViewController {
         self.confirmPassword.layer.cornerRadius = 10
         self.confirmButton.layer.cornerRadius = 18
         confirmButton.clipsToBounds = true
-        
-//        confirmButton.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
-        
+
         self.confirmButton.setTitleColor(UIColor.white, for: .highlighted)
         self.confirmButton.setBackgroundColor(color: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), forState: .normal)
         self.confirmButton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)

@@ -8,11 +8,13 @@
 
 import UIKit
 
-    var list = [String]()
-    var date = [String]()
+//struct Note {
+//    var list: String
+//    var date: String
+//}
 
-
-
+var list = [String]()
+var date = [String]()
 
 class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -20,21 +22,16 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var infoNote: UILabel!
     @IBOutlet weak var infoUser: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    //var bo: users!
-    //var prova: usersData!
-    
+
     var activities = Activity.fetchActivities()
     let cellScalingH: CGFloat = 0.5
     let cellScalingV: CGFloat = 0.7
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        print(Users.userLogin.success.name, "aio")
         elementStyle()
-    
+        
         noteTableView.dataSource = self
         noteTableView.delegate = self
         
@@ -49,7 +46,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
             infoNote.isHidden = true
             print("Note già presenti")
         }
-
+        
         let cellWidth = floor(collectionView.bounds.width * cellScalingH)
         let cellHeight = floor(collectionView.bounds.height * cellScalingV)
         
@@ -59,8 +56,6 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize (width: cellWidth, height: cellHeight)
         collectionView?.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
-        
-        
     }
     
     func elementStyle() {
@@ -85,7 +80,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
-}
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -100,15 +95,15 @@ extension HomeController : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(activities.count)
         return activities.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourCell", for: indexPath) as! HourCollectionViewCell
-
+        
         cell.activity = activities[indexPath.item]
         return cell
     }

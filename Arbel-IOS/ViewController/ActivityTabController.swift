@@ -14,11 +14,8 @@ class ActivityTabController: UIViewController, UITableViewDelegate, UITableViewD
     
     var dataEntries: [ChartDataEntry] = []
     
-//    var chartDataBeanArray = [ChartDataBean]()
-
     @IBOutlet weak var showActivity: UIView!
     @IBOutlet weak var activityTableView: UITableView!
-//    @IBOutlet weak var chartView: LineChartView!
     @IBOutlet weak var mChart: LineChartView!
     
     struct Lessons {
@@ -28,17 +25,10 @@ class ActivityTabController: UIViewController, UITableViewDelegate, UITableViewD
     
     var activityArray = [Lessons(date: "08.15.2019", activity: "Nome Argomento 1"),Lessons(date: "10.15.2019", activity: "Nome Argomento 2"),Lessons(date: "18.15.2019", activity: "Nome Argomento 3"),Lessons(date: "22.15.2019", activity: "Nome Argomento 4")]
     
-    
-//    var activityArray = ["Nome Argomento 1", "Nome Argomento 2", "Nome Argomento 3", "Nome Argomento 4"]
-    
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setChart(values: [40.0,43.0,56.0,23.0,56.0,68.0,48.0,120.0,41.0])
-        
-        
         
         elementStyle()
         
@@ -65,16 +55,14 @@ class ActivityTabController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let activity = tableView.dequeueReusableCell(withIdentifier: "activity") as! ActivityCell
+        let activity = tableView.dequeueReusableCell(withIdentifier: "activity") as! ActivityCell
         
         let singleLesson = activityArray[indexPath.row]
         activity.argumentName?.text = singleLesson.activity
         activity.dateLesson?.text = "Lezione " + singleLesson.date
-        
-//        activity.argumentName?.text = activityArray[indexPath.row]
+
         return activity
-        
-        }
+    }
     
     func setChart(values: [Double]) {
         mChart.noDataText = "Dati non disponibili!"
@@ -112,19 +100,19 @@ class ActivityTabController: UIViewController, UITableViewDelegate, UITableViewD
         mChart.xAxis.gridLineWidth = 0.5
         mChart.xAxis.drawLabelsEnabled = true
         mChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
-
+        
         mChart.leftAxis.drawAxisLineEnabled = false
         mChart.leftAxis.drawGridLinesEnabled = true //
         mChart.leftAxis.gridColor = UIColor(red:220/255, green:220/255,blue:220/255,alpha:1)
         mChart.leftAxis.drawLabelsEnabled = false
         mChart.leftAxis.enabled = true
         mChart.legend.enabled = false
-
+        
         mChart.rightAxis.drawAxisLineEnabled = true
         mChart.rightAxis.drawGridLinesEnabled = false
         mChart.rightAxis.enabled = false
-
-
+        
+        
     }
     
     /// Creating gradient for filling space under the line chart

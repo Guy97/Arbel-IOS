@@ -30,7 +30,7 @@ class DesignableTextField: UITextField {
             
             let imageView = UIImageView(frame: CGRect(x: leftPadding, y: 0, width: image.size.width + 2, height: image.size.height + 2))
             imageView.image = image
-//            imageView.tintColor = tintColor
+            //            imageView.tintColor = tintColor
             
             var width = leftPadding + 20
             
@@ -49,15 +49,15 @@ class DesignableTextField: UITextField {
             leftViewMode = .never
         }
         
-//        attributedPlaceholder = NSAttributedString(string: placeholder != nil ? placeholder! : "", attributes: [NSAttributedString.Key.foregroundColor : tintColor])
+        //        attributedPlaceholder = NSAttributedString(string: placeholder != nil ? placeholder! : "", attributes: [NSAttributedString.Key.foregroundColor : tintColor])
     }
-
+    
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
+    
 }

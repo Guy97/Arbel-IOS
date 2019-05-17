@@ -9,7 +9,7 @@
 import UIKit
 
 class QuestionTableViewCell: UITableViewCell {
-
+    
     
     
     @IBOutlet weak var question: UILabel!
@@ -17,11 +17,11 @@ class QuestionTableViewCell: UITableViewCell {
     @IBOutlet weak var questionView: UIView!
     
     
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
         questionView.layer.cornerRadius = 8
     }
-
+    
 }

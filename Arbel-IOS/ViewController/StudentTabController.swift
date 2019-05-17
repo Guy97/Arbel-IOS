@@ -12,20 +12,19 @@ import Alamofire
 import SwiftyJSON
 
 class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var searchStudent: UISearchBar!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var studentsList: UITableView!
     @IBOutlet weak var saveButton: UIButton!
     
-//    var students = Students.studentList.studentLog
-    
+    var studentsLog = Students.studentList.students
+
     struct Preview {
         var average: Int
         var absence: Int
         var note: String
     }
-//    var aaaa = [Preview(average: 28, absence: 15, note: "Soffre di DDA, picchiarlo dopo 15min")];]
     
     struct cellData {
         var opened = Bool()
@@ -38,27 +37,18 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        elementStyle()
+        var CourseCell_id = PassData.globalVariable.passData
         
-        tableViewData = [cellData(opened: false, title: "Piero Chiambretti", sectionData: [Preview(average: 28, absence: 15, note: "Soffre di DDA, picchiarlo dopo 15min")]),
-                         cellData(opened: false, title: "Mauro Paffi", sectionData: [Preview(average: 15, absence: 1, note: "non è molto, ma è un lavoro onesto")]),
-                         cellData(opened: false, title: "Riccardo Mores", sectionData: [Preview(average: 28, absence: 15, note: "Studente mai visto in aula, ogni volta che faccio l'appello mi da una mela.")])]
-    
+        elementStyle()
+        for student in Students.studentList.students {
+            if (student.class_id == CourseCell_id) {
+                
+                tableViewData.append(cellData(opened: false, title: "\(student)", sectionData: [Preview(average: 28, absence: 15, note: "Soffre di DDA, picchiarlo dopo 15min")]))
+            }
+        }
+        
         studentsList.dataSource = self
         studentsList.delegate = self
-        
-//        StudentListModel().fetchEvents(complete: {
-//            (students) in self.students = students
-//            //            Viene gestita l'esecuzione di più elementi di lavoro
-//            let queue = DispatchQueue.main
-//
-//            queue.async(execute: {
-//                self.studentsList.delegate = self
-//                self.studentsList.dataSource = self
-//                self.studentsList?.reloadData()
-//            })
-//        })
-        
 
     }
     
@@ -76,23 +66,19 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
         self.studentsList.contentInset = insets
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return (students.count)
-        
         if tableViewData[section].opened == true {
             return tableViewData[section].sectionData.count + 1
         }
         else {
             return 1
         }
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-        
         return (tableViewData.count)
         
         
@@ -105,14 +91,13 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "student") as! StudentCell
             
-            let student = tableViewData[indexPath.section]
+            let student = studentsLog[indexPath.section]
             
-            cell.studentName?.text = student.title
+            cell.studentName?.text = student.name + " " + student.surname
             
-//            cell.studentName?.text = tableViewData[indexPath.section].title
             return cell
         }
-        
+            
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! StudentCell
             let previewDetail = tableViewData[indexPath.section].sectionData[dataIndex]
@@ -128,10 +113,8 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
             
             return cell
         }
-        
-        
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row == 0 {
@@ -145,12 +128,10 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
                 let sections = IndexSet.init(integer: indexPath.section)
                 tableView.reloadSections(sections, with: .none)
             }
-            
-//            performSegue(withIdentifier: "showDetail", sender: self)
         }
     }
     
-
+    
     @IBAction func checkBoxTapped(_ sender: UIButton) {
         
         UIView.animate(withDuration: 0.1, delay: 0.01, options: .curveLinear, animations: {
@@ -162,12 +143,6 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
                 sender.transform = .identity
             }, completion: nil)
         }
-//        if sender.isSelected {
-//            sender.isSelected = false
-//        }
-//        else {
-//            sender.isSelected = true
-//        }
     }
 }
 

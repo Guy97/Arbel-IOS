@@ -28,8 +28,6 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
         var testResult: String
     }
     
-//    var testResult = ["Scritto (26.11.2018): 28", "Orale (15.02.2019): 24", "Test (04.05.2019): +"]
-    
     var testResult = [Test(date: "26.11.2018", testResult: "28"),Test(date: "15.02.2019", testResult: "24"),Test(date: "04.05.2019", testResult: "+"), Test(date: "04.05.2019", testResult: "-")]
     
     var allAbsence = ["04.10.2018", "21.11.2018"]
@@ -41,17 +39,13 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationController
         let logoutBarButtonItem = UIBarButtonItem(image: UIImage(named: "contactIcon"), style: .done, target: self, action: #selector(logoutUser))
         self.navigationItem.rightBarButtonItem  = logoutBarButtonItem
-
         
         elementStyle()
         createDataPicker()
         createTestTypePicker()
         self.HideKeyboard()
-        
-//        createToolbar()
         
         testTableView.dataSource = self
         testTableView.delegate = self
@@ -61,7 +55,6 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @objc func logoutUser(){
-        print("mail")
         self.performSegue(withIdentifier: "sendMail", sender: self)
     }
     
@@ -88,7 +81,7 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
         saveButton.layer.cornerRadius = 18
         
         saveButton.layer.masksToBounds = true
-
+        
         self.saveButton.setTitleColor(UIColor.white, for: .highlighted)
         self.saveButton.setBackgroundColor(color: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), forState: .normal)
         self.saveButton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)
@@ -106,7 +99,7 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == testTableView {
             let result = tableView.dequeueReusableCell(withIdentifier: "result") as! SingleStudentDetailCell
@@ -116,8 +109,6 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
             result.testDate?.sizeToFit()
             result.testDate?.text = "Scritto " + "(" + testDetail.date + ")" + ":"
             
-            
-//            result.textResult?.text = testResult[indexPath.row]
             return result
             
         } else {
@@ -130,11 +121,8 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
     func createTestTypePicker() {
         let testPicker = UIPickerView()
         testPicker.center = view.center
-//        view.addSubview(testPicker)
         testPicker.delegate = self
         typeForm.inputView = testPicker
-//        self.view.addSubview(testPicker)
-    
         
         testPicker.backgroundColor = UIColor (red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
         testPicker.clipsToBounds = false
@@ -148,9 +136,6 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
         let datePicker = UIDatePicker()
         dateForm.inputView = datePicker
         
-//        transparentView.backgroundColor = UIColor.black.withAlphaComponent(1)
-
-        
         datePicker.backgroundColor = UIColor (red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
         datePicker.clipsToBounds = false
         datePicker.layer.shadowColor = UIColor (red: 142/255, green: 142/255, blue: 142/255, alpha: 0.7).cgColor
@@ -162,11 +147,6 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
         datePicker.locale = Locale(identifier: "it_IT")
         
         datePicker.addTarget(self, action: #selector(StudentDetailController.dateChaged(datePicker:)), for: .valueChanged)
-        
-        
-//        datePicker.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
-        
-
     }
     
     @objc func dateChaged(datePicker: UIDatePicker) {
@@ -175,25 +155,7 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
         dateFormatter.dateFormat = "dd.MM.yyyy"
         
         dateForm.text = dateFormatter.string(from: datePicker.date)
-//        view.endEditing(true)
     }
-
-    //    func createToolbar() {
-//        let toolBar = UIToolbar()
-//        toolBar.sizeToFit()
-//
-//        let doneButton = UIBarButtonItem(title: "Conferma", style: .plain, target: self, action: #selector(StudentDetailController.dismissKeyboard))
-//
-//        toolBar.setItems([doneButton], animated: false)
-//        toolBar.isUserInteractionEnabled = true
-//
-//        typeForm.inputAccessoryView = toolBar
-//    }
-//
-//    override func dismissKeyboard() {
-//        view.endEditing(true)
-//    }
-    
 }
 
 extension StudentDetailController: UIPickerViewDelegate, UIPickerViewDataSource {

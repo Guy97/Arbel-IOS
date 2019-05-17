@@ -11,10 +11,9 @@ import XLPagerTabStrip
 
 extension UIViewController {
     
-    func HideKeyboard(){
+    func HideKeyboard() {
         
         let Tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self , action: #selector(dismissKeyboard))
-        
         view.addGestureRecognizer(Tap)
     }
     
@@ -27,7 +26,6 @@ class ViewController: UIViewController , UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        }
+    }
 }
 

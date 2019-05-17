@@ -21,7 +21,7 @@ class NoteController: UIViewController {
         formatter.setLocalizedDateFormatFromTemplate("MMMMdd - HH:mm")
         formatter.locale =  Locale(identifier: "it_IT")
         let str = formatter.string(from: Date())
-            
+        
         if (noteForm.text != "") {
             
             date.append(str)
@@ -41,7 +41,7 @@ class NoteController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.HideKeyboard()
         
         elementStyle()
@@ -52,14 +52,9 @@ class NoteController: UIViewController {
         self.noteForm.layer.cornerRadius = 8
         self.saveButton.layer.cornerRadius = 18
         saveButton.layer.masksToBounds = true
-//        saveButton.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
-        
+        //        saveButton.setGradientBackground(colorOne: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), colorTwo: UIColor(red: 233/255, green: 26/255, blue: 75/255, alpha: 1))
         self.saveButton.setTitleColor(UIColor.white, for: .highlighted)
         self.saveButton.setBackgroundColor(color: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), forState: .normal)
         self.saveButton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)
-
     }
-
 }
-
-
