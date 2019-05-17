@@ -21,6 +21,10 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var noteForm: UITextView!
     @IBOutlet weak var saveButton: UIButton!
     
+    @IBOutlet weak var studentName: UILabel!
+    @IBOutlet weak var studentBirthday: UILabel!
+    @IBOutlet weak var badgeStudent: UILabel!
+    
     var transparentView = UIView()
     
     struct Test {
@@ -52,10 +56,21 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
         
         absenceTableView.dataSource = self
         absenceTableView.delegate = self
+        
+        var StudentCell_id = PassData.globalVariable.studentID
+        
+        for student in Students.studentList.students {
+            if (student.id == StudentCell_id) {
+                studentName.text = "\(student.name)" + " " + "\(student.surname)"
+                badgeStudent.text = "N° matricola: " + "\(student.badgeNumber)"
+                studentBirthday.text = "Data di nascita: " + "\(student.birthday)"
+            }
+        }
     }
     
     @objc func logoutUser(){
         self.performSegue(withIdentifier: "sendMail", sender: self)
+
     }
     
     func elementStyle() {

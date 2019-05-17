@@ -32,6 +32,8 @@ class LogInController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.HideKeyboard()
+        usernameForm.text = "luca.infante@ied.edu"
+        passwordForm.text = "cavolo"
         
         self.usernameForm.layer.cornerRadius = 10
         self.passwordForm.layer.cornerRadius = 10
@@ -76,8 +78,8 @@ class LogInController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-        self.usernameForm.text = ""
-        self.passwordForm.text = ""
+//        self.usernameForm.text = ""
+//        self.passwordForm.text = ""
 
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }

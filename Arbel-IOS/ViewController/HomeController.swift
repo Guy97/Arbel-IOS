@@ -29,7 +29,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        API.StudentApi()
         elementStyle()
         
         noteTableView.dataSource = self

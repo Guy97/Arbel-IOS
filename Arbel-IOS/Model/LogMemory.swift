@@ -102,6 +102,7 @@ class API {
 struct PassData {
     struct globalVariable {
         static var passData = Int()
+        static var studentID = Int()
     }
 }
 

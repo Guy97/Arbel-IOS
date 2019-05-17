@@ -129,6 +129,15 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
                 tableView.reloadSections(sections, with: .none)
             }
         }
+        
+        var studentID = 0
+        var detectStudent = studentsLog.map {($0).id}
+        studentID = detectStudent[indexPath.section]
+        
+        PassData.globalVariable.studentID = studentID
+        
+        print(studentID, "QUIII")
+        
     }
     
     

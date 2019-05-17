@@ -1678,7 +1678,7 @@ programmazione 2</string>
                                                             </constraints>
                                                             <state key="normal" image="moreIcon"/>
                                                             <connections>
-                                                                <segue destination="Edr-qN-gdr" kind="show" id="WTQ-2i-0oN"/>
+                                                                <segue destination="Edr-qN-gdr" kind="show" identifier="studentDetail" id="WTQ-2i-0oN"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -2269,12 +2269,15 @@ programmazione 2</string>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="absenceTableView" destination="hOr-mM-LuS" id="2lY-Ce-JOY"/>
+                        <outlet property="badgeStudent" destination="mnu-W3-NhT" id="DMS-4o-x7Q"/>
                         <outlet property="dateForm" destination="azN-8N-yc7" id="a2X-bb-urj"/>
                         <outlet property="essentialView" destination="Pbs-Bc-FJb" id="Z76-Me-ghA"/>
                         <outlet property="formContainer" destination="w53-FT-aDX" id="FqD-Cu-Ls1"/>
                         <outlet property="noteForm" destination="9Dg-fb-oCl" id="K20-g0-5qZ"/>
                         <outlet property="saveButton" destination="ydO-Gb-oHp" id="gqY-FJ-523"/>
+                        <outlet property="studentBirthday" destination="b0O-eH-c3y" id="U2B-aU-2X0"/>
                         <outlet property="studentImage" destination="CIm-SA-VVC" id="5Wp-RQ-8fx"/>
+                        <outlet property="studentName" destination="2IQ-bq-QsF" id="dhI-xi-jEQ"/>
                         <outlet property="testTableView" destination="dfu-du-m94" id="lRh-Gx-8Tx"/>
                         <outlet property="typeForm" destination="Zb8-Sg-7Q1" id="iiU-4S-yfK"/>
                         <outlet property="voteForm" destination="H3B-KZ-HIe" id="XDK-K9-Uh4"/>

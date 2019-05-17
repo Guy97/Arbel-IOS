@@ -26,6 +26,7 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         self.HideKeyboard()
         
         elementStyle()
@@ -34,6 +35,17 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        var StudentCell_id = PassData.globalVariable.studentID
+        
+        for student in Students.studentList.students {
+            if (student.id == StudentCell_id) {
+                mailForm.text = "\(student.email)"
+            }
+        }
+
+        
+        
     }
     
     func elementStyle() {
@@ -103,6 +115,7 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         cell.lbl.font = UIFont.systemFont(ofSize: 16)
         return cell
     }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
