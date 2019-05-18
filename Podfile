@@ -26,7 +26,6 @@ use_frameworks!
 target 'Arbel-IOS' do
     pod 'Calendar-iOS'
     pod 'FSCalendar'
-    pod 'SwiftyJSON'
     pod 'Alamofire', '~> 4.7'
     pod 'XLPagerTabStrip'
     pod 'Charts'

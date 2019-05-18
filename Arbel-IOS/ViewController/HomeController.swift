@@ -21,15 +21,16 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var infoNote: UILabel!
     @IBOutlet weak var infoUser: UILabel!
+    @IBOutlet weak var reload: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
-
+    
     var activities = Activity.fetchActivities()
     let cellScalingH: CGFloat = 0.5
     let cellScalingV: CGFloat = 0.7
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        API.StudentApi()
+        
         elementStyle()
         
         noteTableView.dataSource = self
@@ -107,6 +108,8 @@ extension HomeController : UICollectionViewDataSource {
         cell.activity = activities[indexPath.item]
         return cell
     }
+    
+    
     
 }
 

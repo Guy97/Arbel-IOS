@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 import Alamofire
-import SwiftyJSON
+
 
 class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -48,9 +48,8 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         
         print("\(CourseCell_id)", "ORAAA")
         
-        for student in Students.studentList.students {
+        for student in Students.studentList.students.filter( { return ($0.class_id == CourseCell_id) } ) {
             if (student.class_id == CourseCell_id) {
-                
                 tableViewData.append(cellData(opened: false, title: "\(student.name) " + "\(student.surname)", sectionData: [Preview(average: 28, absence: 15, note: "Soffre di DDA, picchiarlo dopo 15min")]))
                 print("\(student)", "NO")
             }

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2977EA21A738EC44E23462AA7F83C51E"
-               BuildableName = "Pods_Arbel_IOS.framework"
-               BlueprintName = "Pods-Arbel-IOS"
+               BlueprintIdentifier = "2730ABD6B869B9CFDD0BAB15A3E26829"
+               BuildableName = "XLPagerTabStrip.bundle"
+               BlueprintName = "XLPagerTabStrip-XLPagerTabStrip"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2977EA21A738EC44E23462AA7F83C51E"
-            BuildableName = "Pods_Arbel_IOS.framework"
-            BlueprintName = "Pods-Arbel-IOS"
+            BlueprintIdentifier = "2730ABD6B869B9CFDD0BAB15A3E26829"
+            BuildableName = "XLPagerTabStrip.bundle"
+            BlueprintName = "XLPagerTabStrip-XLPagerTabStrip"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

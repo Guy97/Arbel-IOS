@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
+
 
 struct Users: Codable {
     var success: UsersData
@@ -82,7 +82,7 @@ class API {
                     var postData = try jsonDecoder.decode(Students.self, from: response.data!)
                     Students.studentList = postData
                     
-                    print(postData, "FEDERICA")
+                    print(postData, "dati ora")
                     
                     let getStudent = postData.students
                     var filteredStudent = getStudent.map { ($0).name}

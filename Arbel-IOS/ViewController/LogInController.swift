@@ -54,23 +54,25 @@ class LogInController: UIViewController {
                     let getCourses = postData.success.courses
                     var filteredCourses = getCourses.map { ($0).course}
                     var filteredID = getCourses.map { ($0).id}
-                    
+                    print("utente loggato")
+                    self.performSegue(withIdentifier: "enter", sender: self)
                 }
                 catch
                 {
                     print(error)
-                }
-                if utf8Text.contains("error") {
-                    print("utente non loggato")
-                    let alertController = UIAlertController(title: "Attenzione", message:
-                        "Mail o password non corretti", preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "Ok", style: .default))
-                    self.present(alertController, animated: true, completion: nil)
-                }
-                else {
-                    print("utente loggato")
-                    
-                    self.performSegue(withIdentifier: "enter", sender: self)
+                    if !CheckInternet.Connection() {
+                        let alertController = UIAlertController(title: "Sorry :(", message:
+                            "Problemi di connessione con il server, verifica la tua connessione", preferredStyle: .alert)
+                        alertController.addAction(UIAlertAction(title: "Ok", style: .default))
+                        self.present(alertController, animated: true, completion: nil)
+                    }
+                    else {
+                        print("utente non loggato")
+                        let alertController = UIAlertController(title: "Attenzione", message:
+                            "Mail o password non corretti", preferredStyle: .alert)
+                        alertController.addAction(UIAlertAction(title: "Ok", style: .default))
+                        self.present(alertController, animated: true, completion: nil)
+                    }
                 }
             }
         }

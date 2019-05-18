@@ -56,12 +56,16 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
         
         absenceTableView.dataSource = self
         absenceTableView.delegate = self
+        var CourseCell_id = PassData.globalVariable.passData
         
         
         var StudentCell_id = PassData.globalVariable.studentID
-        
-        for student in Students.studentList.students {
+        print(StudentCell_id, "pei")
+        print(Students.studentList.students.filter( { return ($0.class_id == CourseCell_id) } ), "gei")
+        print(Students.studentList.students, "sangei")
+        for student in Students.studentList.students.filter( { return ($0.class_id == CourseCell_id) } ) {
             if (student.id == StudentCell_id) {
+                print(student.id, "aei")
                 studentName.text = "\(student.name)" + " " + "\(student.surname)"
                 badgeStudent.text = "N° matricola: " + "\(student.badgeNumber)"
                 studentBirthday.text = "Data di nascita: " + "\(student.birthday)"

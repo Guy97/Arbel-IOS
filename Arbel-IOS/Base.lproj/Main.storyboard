@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dX8-8E-OXk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dX8-8E-OXk">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -241,16 +241,16 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verticalDivide" translatesAutoresizingMaskIntoConstraints="NO" id="b9p-mf-2L7">
-                                                            <rect key="frame" x="51.666666666666671" y="0.0" width="16" height="45"/>
+                                                            <rect key="frame" x="51.666666666666671" y="0.0" width="1" height="45"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Media Design" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0I-JV-5tC">
-                                                            <rect key="frame" x="90" y="0.0" width="101" height="45"/>
+                                                            <rect key="frame" x="75" y="0.0" width="101" height="45"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goArrow" translatesAutoresizingMaskIntoConstraints="NO" id="pye-cM-Trq">
-                                                            <rect key="frame" x="270" y="0.0" width="16" height="45"/>
+                                                            <rect key="frame" x="279" y="0.0" width="7" height="45"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1195,6 +1195,7 @@ programmazione 2</string>
                         <outlet property="infoNote" destination="9sI-Wu-g1c" id="QNO-TJ-x25"/>
                         <outlet property="infoUser" destination="V4D-mY-ZWU" id="SdJ-NQ-o6c"/>
                         <outlet property="noteTableView" destination="7k9-lo-OF7" id="iu4-GX-KwO"/>
+                        <outlet property="reload" destination="vMo-Z2-vtv" id="VWt-tr-NqA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDY-PW-2Rd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3229,6 +3230,7 @@ programmazione 2</string>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Mgs-sR-4Zq"/>
         <segue reference="Ual-C6-fra"/>
         <segue reference="xRN-Gj-bgT"/>
     </inferredMetricsTieBreakers>
