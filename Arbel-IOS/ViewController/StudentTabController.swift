@@ -19,6 +19,7 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var saveButton: UIButton!
     
     var studentsLog = Students.studentList.students
+    var coursesData = Users.userLogin.success.courses
 
     struct Preview {
         var average: Int
@@ -36,20 +37,25 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        studentsList.dataSource = self
+        studentsList.delegate = self
+        self.title = "hhhh"
+
         
         var CourseCell_id = PassData.globalVariable.passData
         
         elementStyle()
+        
+        print("\(CourseCell_id)", "ORAAA")
+        
         for student in Students.studentList.students {
             if (student.class_id == CourseCell_id) {
                 
-                tableViewData.append(cellData(opened: false, title: "\(student)", sectionData: [Preview(average: 28, absence: 15, note: "Soffre di DDA, picchiarlo dopo 15min")]))
+                tableViewData.append(cellData(opened: false, title: "\(student.name) " + "\(student.surname)", sectionData: [Preview(average: 28, absence: 15, note: "Soffre di DDA, picchiarlo dopo 15min")]))
+                print("\(student)", "NO")
             }
         }
         
-        studentsList.dataSource = self
-        studentsList.delegate = self
-
     }
     
     func elementStyle() {
@@ -91,9 +97,9 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "student") as! StudentCell
             
-            let student = studentsLog[indexPath.section]
+            let student = tableViewData[indexPath.section]
             
-            cell.studentName?.text = student.name + " " + student.surname
+            cell.studentName?.text = student.title
             
             return cell
         }
@@ -157,6 +163,8 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
 
 extension StudentTabController : IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+
         return IndicatorInfo(title: "Studenti")
+
     }
 }

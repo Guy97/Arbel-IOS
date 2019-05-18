@@ -40,7 +40,7 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         
         for student in Students.studentList.students {
             if (student.id == StudentCell_id) {
-                mailForm.text = "\(student.email)"
+                mailForm.text = "\(student.email)".lowercased()
             }
         }
 

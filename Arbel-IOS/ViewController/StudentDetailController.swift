@@ -57,6 +57,7 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
         absenceTableView.dataSource = self
         absenceTableView.delegate = self
         
+        
         var StudentCell_id = PassData.globalVariable.studentID
         
         for student in Students.studentList.students {
@@ -64,6 +65,9 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
                 studentName.text = "\(student.name)" + " " + "\(student.surname)"
                 badgeStudent.text = "N° matricola: " + "\(student.badgeNumber)"
                 studentBirthday.text = "Data di nascita: " + "\(student.birthday)"
+                
+//                self.navigationItem.title = "\(student.name) ".uppercased() + "\(student.surname)".uppercased()
+
             }
         }
     }
