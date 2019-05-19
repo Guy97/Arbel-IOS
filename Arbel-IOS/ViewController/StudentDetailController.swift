@@ -62,7 +62,7 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
         var StudentCell_id = PassData.globalVariable.studentID
         print(StudentCell_id, "pei")
         print(Students.studentList.students.filter( { return ($0.class_id == CourseCell_id) } ), "gei")
-        print(Students.studentList.students, "sangei")
+        print(Students.studentList.students, "bobohkj")
         for student in Students.studentList.students.filter( { return ($0.class_id == CourseCell_id) } ) {
             if (student.id == StudentCell_id) {
                 print(student.id, "aei")

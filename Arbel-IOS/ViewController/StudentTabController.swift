@@ -136,7 +136,8 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         var studentID = 0
-        var detectStudent = studentsLog.map {($0).id}
+        var data = Students.studentList.students.filter( { return ($0.class_id == PassData.globalVariable.passData) } )
+        var detectStudent = data.map {($0).id}
         studentID = detectStudent[indexPath.section]
         
         PassData.globalVariable.studentID = studentID
