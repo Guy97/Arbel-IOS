@@ -9,6 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 import Alamofire
+import Kingfisher
 
 
 class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -29,6 +30,7 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     
     struct cellData {
         var opened = Bool()
+        var userImage = String()
         var title = String()
         var sectionData = [Preview]()
     }
@@ -50,8 +52,11 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         
         for student in Students.studentList.students.filter( { return ($0.class_id == CourseCell_id) } ) {
             if (student.class_id == CourseCell_id) {
-                tableViewData.append(cellData(opened: false, title: "\(student.name) " + "\(student.surname)", sectionData: [Preview(average: 28, absence: 15, note: "Soffre di DDA, picchiarlo dopo 15min")]))
-                print("\(student)", "NO")
+                
+//                let url = URL(string: student.userPicture)
+                
+                tableViewData.append(cellData(opened: false, userImage: "\(student.userPicture)", title: "\(student.name) " + "\(student.surname)", sectionData: [Preview(average: 28, absence: 15, note: "Soffre di DDA, picchiarlo dopo 15min")]))
+                
             }
         }
         
@@ -96,9 +101,13 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "student") as! StudentCell
             
-            let student = tableViewData[indexPath.section]
+            let studentSection = tableViewData[indexPath.section]
             
-            cell.studentName?.text = student.title
+            cell.studentName?.text = studentSection.title
+//            let urla = URL(string: url)
+            let placeholder = UIImage(named: "userPicture")
+            let urlImage = URL(string: studentSection.userImage)
+            cell.userPicture?.kf.setImage(with: urlImage, placeholder: placeholder)
             
             return cell
         }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dX8-8E-OXk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dX8-8E-OXk">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1522,7 +1522,7 @@ programmazione 2</string>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmJ-0d-wJd" customClass="CoursesDesignView" customModule="Arbel_IOS" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="5" width="300" height="45"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myBeauty" translatesAutoresizingMaskIntoConstraints="NO" id="CaS-MY-GcG">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myBeauty" translatesAutoresizingMaskIntoConstraints="NO" id="CaS-MY-GcG">
                                                             <rect key="frame" x="6" y="6" width="45" height="33"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="33" id="DxW-tp-Y6i"/>
@@ -1616,6 +1616,7 @@ programmazione 2</string>
                                         <connections>
                                             <outlet property="studentName" destination="ecR-M5-dKP" id="2b9-wc-T1M"/>
                                             <outlet property="studentView" destination="SmJ-0d-wJd" id="XiB-yT-x5A"/>
+                                            <outlet property="userPicture" destination="CaS-MY-GcG" id="hxk-OD-QGz"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="130" id="MQx-oo-FPR" customClass="StudentCell" customModule="Arbel_IOS" customModuleProvider="target">
@@ -3230,7 +3231,6 @@ programmazione 2</string>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mgs-sR-4Zq"/>
         <segue reference="Ual-C6-fra"/>
         <segue reference="xRN-Gj-bgT"/>
     </inferredMetricsTieBreakers>

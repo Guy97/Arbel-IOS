@@ -5,6 +5,7 @@ PODS:
     - Charts/Core (= 3.3.0)
   - Charts/Core (3.3.0)
   - FSCalendar (2.8.0)
+  - Kingfisher (4.10.1)
   - XLPagerTabStrip (8.1.0)
 
 DEPENDENCIES:
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - Calendar-iOS
   - Charts
   - FSCalendar
+  - Kingfisher
   - XLPagerTabStrip
 
 SPEC REPOS:
@@ -20,6 +22,7 @@ SPEC REPOS:
     - Calendar-iOS
     - Charts
     - FSCalendar
+    - Kingfisher
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
@@ -27,8 +30,9 @@ SPEC CHECKSUMS:
   Calendar-iOS: a7bb0e6d2cee372e7e3de98d44d60ac7364be7f3
   Charts: ec1f57f9340054155691e84d4544a1d239d382c5
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
 
-PODFILE CHECKSUM: 1bd93b79acaaf6d3e687a27d7052b530aca26894
+PODFILE CHECKSUM: b7e19532ea997d5ca8ee793caf21c9727c9b9602
 
 COCOAPODS: 1.5.3

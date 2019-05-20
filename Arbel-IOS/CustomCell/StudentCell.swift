@@ -15,6 +15,7 @@ class StudentCell: UITableViewCell {
     @IBOutlet weak var averageUser: UILabel!
     @IBOutlet weak var absenceUser: UILabel!
     @IBOutlet weak var noteUser: UILabel!
+    @IBOutlet weak var userPicture: UIImageView!
     
     @IBOutlet weak var saveAll: UIButton!
     @IBOutlet weak var argumentName: UILabel!

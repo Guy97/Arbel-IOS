@@ -53,6 +53,7 @@ struct StudentData: Codable {
     var class_id: Int
     var badgeNumber: Int
     var name: String
+    var userPicture: String
     var surname: String
     var birthday: String
     var sex: String

@@ -29,6 +29,7 @@ target 'Arbel-IOS' do
     pod 'Alamofire', '~> 4.7'
     pod 'XLPagerTabStrip'
     pod 'Charts'
+    pod 'Kingfisher'
     
     xcodeproj 'Arbel-IOS.xcodeproj' 
 

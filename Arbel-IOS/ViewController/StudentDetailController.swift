@@ -66,6 +66,11 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
         for student in Students.studentList.students.filter( { return ($0.class_id == CourseCell_id) } ) {
             if (student.id == StudentCell_id) {
                 print(student.id, "aei")
+                
+                let placeholder = UIImage(named: "userPicture")
+                let urlImage = URL(string: student.userPicture)
+                studentImage.kf.setImage(with: urlImage, placeholder: placeholder)
+                
                 studentName.text = "\(student.name)" + " " + "\(student.surname)"
                 badgeStudent.text = "N° matricola: " + "\(student.badgeNumber)"
                 studentBirthday.text = "Data di nascita: " + "\(student.birthday)"
