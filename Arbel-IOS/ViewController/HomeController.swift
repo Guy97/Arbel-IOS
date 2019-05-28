@@ -13,8 +13,8 @@ import UIKit
 //    var date: String
 //}
 
-var list = [String]()
-var date = [String]()
+//var list = [String]()
+//var date = [String]()
 
 class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -28,18 +28,20 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let cellScalingH: CGFloat = 0.5
     let cellScalingV: CGFloat = 0.7
     
+    var reminderData = Users.userLogin.success.memories
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        API.ReminderApi()
         elementStyle()
-        
         noteTableView.dataSource = self
         noteTableView.delegate = self
         
         collectionView?.dataSource = self
         collectionView?.delegate = self
         
-        if (list.count == 0 ) {
+        if (reminderData.count == 0 ) {
             infoNote.isHidden = false
             print("Scrivi una nota")
         }
@@ -68,16 +70,21 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        API.ReminderApi()
+        
         if CheckInternet.Connection() {
             infoUser.text = "Bentornato \(Users.userLogin.success.name)," + "\n" + "sei Online"
         }
         else {
             infoUser.text = "Mi dispiace ma" + "\n" + " sei Offline"
         }
+        
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (list.count) }
+        return (reminderData.count) }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -86,10 +93,26 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let note = tableView.dequeueReusableCell(withIdentifier: "note") as! NoteTableView
-        note.textNote?.text = list[indexPath.row]
-        note.dateNote?.text = date[indexPath.row]
+        
+        let reminder = reminderData[indexPath.row]
+        note.textNote?.text = reminder.memoryText
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .short
+        formatter.setLocalizedDateFormatFromTemplate("MMMMdd - HH:mm")
+        formatter.locale =  Locale(identifier: "it_IT")
+        let str = formatter.string(from: Date())
+        
+        note.dateNote?.text = reminder.created_at
+        
+//        note.textNote?.text = list[indexPath.row]
+//        note.dateNote?.text = date[indexPath.row]
         return note
     }
+
+    
+
 }
 
 extension HomeController : UICollectionViewDataSource {

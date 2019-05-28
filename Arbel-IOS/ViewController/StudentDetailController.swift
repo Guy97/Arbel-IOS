@@ -75,15 +75,15 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
                 badgeStudent.text = "N° matricola: " + "\(student.badgeNumber)"
                 studentBirthday.text = "Data di nascita: " + "\(student.birthday)"
                 
-//                self.navigationItem.title = "\(student.name) ".uppercased() + "\(student.surname)".uppercased()
-
+                //                self.navigationItem.title = "\(student.name) ".uppercased() + "\(student.surname)".uppercased()
+                
             }
         }
     }
     
     @objc func logoutUser(){
         self.performSegue(withIdentifier: "sendMail", sender: self)
-
+        
     }
     
     func elementStyle() {

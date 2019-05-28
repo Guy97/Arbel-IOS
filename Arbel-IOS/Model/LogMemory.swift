@@ -23,6 +23,7 @@ struct UsersData: Codable {
     var email : String
     var subjects : [SubjectsData]
     var courses : [CoursesData]
+    var memories : [Reminder]
     
 }
 
@@ -59,6 +60,23 @@ struct StudentData: Codable {
     var sex: String
     var email: String
     //var details: String
+}
+
+struct PostReminder: Codable {
+    var memories: Reminder
+    static var teacherMemory: PostReminder!
+}
+
+struct GetReminder: Codable {
+    var memo: [Reminder]
+    static var dataReminder: GetReminder!
+}
+
+struct Reminder: Codable {
+    var id: Int
+    var user_id: Int
+    var memoryText: String
+    var created_at: String
 }
 
 class API {
@@ -98,7 +116,38 @@ class API {
             }
         }
     }
+    
+    class func ReminderApi() {
+        
+        let url = URL(string: "http://arbel.test/api/getReminder")!
+        
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(Users.userLogin.success.token)",
+            "Accept": "application/json"
+        ]
+        
+        Alamofire.request(url, method: .get, headers: headers).responseJSON{
+            
+            response in //response serialization result
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                print("Data: \(utf8Text)") // original server data as UTF8 string
+                do {
+                    
+                    let jsonDecoder = JSONDecoder()
+                    var postData = try jsonDecoder.decode(GetReminder.self, from: response.data!)
+                    GetReminder.dataReminder = postData
+                    
+                }
+                catch
+                {
+                    print(error)
+                }
+            }
+        }
+    }
 }
+
 
 struct PassData {
     struct globalVariable {

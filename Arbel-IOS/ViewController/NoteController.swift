@@ -7,35 +7,89 @@
 //
 
 import UIKit
+import Alamofire
 
 class NoteController: UIViewController {
+    
+    var reminderData = Users.userLogin.success.memories
+
     
     @IBOutlet weak var noteForm: UITextView!
     @IBOutlet weak var saveButton: UIButton!
     
     @IBAction func saveButton(_ sender: Any) {
         
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        formatter.timeStyle = .short
-        formatter.setLocalizedDateFormatFromTemplate("MMMMdd - HH:mm")
-        formatter.locale =  Locale(identifier: "it_IT")
-        let str = formatter.string(from: Date())
+        let postDict:[String:String] = ["memoryText": "\(noteForm.text!)", "user_id": "\(Users.userLogin.success.id)"]
         
-        if (noteForm.text != "") {
-            
-            date.append(str)
-            list.append(noteForm.text!)
-            let jsonEncoder = JSONEncoder()
-            do {
-                let jsonData = try jsonEncoder.encode(list)
-                print(String(data: jsonData, encoding: .utf8)!)
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(Users.userLogin.success.token)",
+            "Accept": "application/json"
+        ]
+        
+        Alamofire.request("http://arbel.test/api/postReminder", method: .post, parameters: postDict, headers: headers).responseJSON {response in
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                do {
+                    
+                    let jsonDecoder = JSONDecoder()
+                    var postData = try jsonDecoder.decode(PostReminder.self, from: response.data!)
+                    print(postData, "UDITE")
+//                    postData = PostReminder.teacherMemory
+                    self.reminderData.append(postData.memories)
+                    
+//                    if (self.noteForm.text != "") {
+//
+////                        var filteredReminder = self.reminderData.map {($0).memoryText}
+//
+//                        //            date.append(str)
+//                        reminderData.append(postData.memories.memoryText)
+//                        //                PostReminder.teacherMemory.append(PostReminder.teacherMemory.)
+//                        let jsonEncoder = JSONEncoder()
+//
+//                        do {
+//                            let jsonData = try jsonEncoder.encode(PostReminder.teacherMemory.memories.memoryText)
+//                            print(String(data: jsonData, encoding: .utf8)!)
+//                        }
+//                        catch
+//                        {
+//                            print(error)
+//                        }
+//                        self.noteForm.text = ""
+//                    }
+                }
+                catch
+                {
+                    print(error)
+                
+                }
+                
             }
-            catch
-            {
-                print(error)
-            }
-            noteForm.text = ""
+        
+//        let formatter = DateFormatter()
+//        formatter.dateStyle = .long
+//        formatter.timeStyle = .short
+//        formatter.setLocalizedDateFormatFromTemplate("MMMMdd - HH:mm")
+//        formatter.locale =  Locale(identifier: "it_IT")
+//        let str = formatter.string(from: Date())
+        
+//            if (self.noteForm.text != "") {
+//
+//                var filteredReminder = self.reminderData.map {($0).memoryText}
+//
+////            date.append(str)
+//                reminderData.append(PostReminder.teache)
+////                PostReminder.teacherMemory.append(PostReminder.teacherMemory.)
+//            let jsonEncoder = JSONEncoder()
+//
+//            do {
+//                let jsonData = try jsonEncoder.encode(PostReminder.teacherMemory.memories.memoryText)
+//                print(String(data: jsonData, encoding: .utf8)!)
+//            }
+//            catch
+//            {
+//                print(error)
+//            }
+//                self.noteForm.text = ""
+//            }
         }
     }
     
