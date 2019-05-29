@@ -136,6 +136,7 @@ class API {
                     
                     let jsonDecoder = JSONDecoder()
                     var postData = try jsonDecoder.decode(GetReminder.self, from: response.data!)
+                    print(postData, "agga")
                     GetReminder.dataReminder = postData
                     
                 }
@@ -143,6 +144,7 @@ class API {
                 {
                     print(error)
                 }
+                
             }
         }
     }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 //struct Note {
 //    var list: String
 //    var date: String
@@ -33,6 +33,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         API.ReminderApi()
         elementStyle()
         noteTableView.dataSource = self
@@ -71,7 +72,14 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidAppear(_ animated: Bool) {
         
-        API.ReminderApi()
+        func getPreviousViewController() -> UIViewController? {
+            let viewControllers = self.navigationController?.viewControllers
+            let count = viewControllers!.count
+            guard count > 0 else { return nil }
+            
+            return viewControllers![count - 1]
+        }
+        print(getPreviousViewController() ,"porco")
         
         if CheckInternet.Connection() {
             infoUser.text = "Bentornato \(Users.userLogin.success.name)," + "\n" + "sei Online"
@@ -83,7 +91,16 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        print(Users.userLogin.success.memories, "uscite")
+        print("cazzoo")
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       
         return (reminderData.count) }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -146,6 +163,10 @@ extension HomeController : UIScrollViewDelegate, UICollectionViewDelegate {
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
     }
+    
+    
 }
+
+
 
 

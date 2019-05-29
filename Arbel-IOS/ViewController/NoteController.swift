@@ -11,8 +11,8 @@ import Alamofire
 
 class NoteController: UIViewController {
     
-    var reminderData = Users.userLogin.success.memories
-
+    //var reminderData = Users.userLogin.success.memories
+    var previousVC = HomeController()
     
     @IBOutlet weak var noteForm: UITextView!
     @IBOutlet weak var saveButton: UIButton!
@@ -33,8 +33,9 @@ class NoteController: UIViewController {
                     let jsonDecoder = JSONDecoder()
                     var postData = try jsonDecoder.decode(PostReminder.self, from: response.data!)
                     print(postData, "UDITE")
-//                    postData = PostReminder.teacherMemory
-                    self.reminderData.append(postData.memories)
+                    //postData = PostReminder.teacherMemory
+                    //Users.userLogin.success.memories.append(postData.memories)
+                    
                     
 //                    if (self.noteForm.text != "") {
 //
@@ -90,7 +91,9 @@ class NoteController: UIViewController {
 //            }
 //                self.noteForm.text = ""
 //            }
+           
         }
+        //remdata.reminderData = GetReminder.dataReminder.memo
     }
     
     override func viewDidLoad() {
