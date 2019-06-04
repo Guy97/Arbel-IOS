@@ -8,13 +8,30 @@
 
 import UIKit
 
-class ManageTabBarController: UITabBarController {
+class ManageTabBarController: UITabBarController,  UITabBarControllerDelegate {
     
     var secondItemImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.delegate = self
     }
+    
+//
+//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+//        return (viewController != tabBarController.selectedViewController);
+//    }
+
+        func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+            //for blocking double tap on 3rd tab only
+            let indexOfNewVC = tabBarController.viewControllers?.index(of: viewController)
+            return ((indexOfNewVC != 0) ||
+                (indexOfNewVC != tabBarController.selectedIndex))
+        }
+
+    
+    
     
     private var bounceAnimation: CAKeyframeAnimation = {
         let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
@@ -32,7 +49,9 @@ class ManageTabBarController: UITabBarController {
         
         imageView.layer.add(bounceAnimation, forKey: nil)
     }
+    
 }
+
 
 
 extension UIViewController {
@@ -46,7 +65,3 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
-
-
-
-

@@ -55,7 +55,60 @@ class LogInController: UIViewController {
                     var filteredCourses = getCourses.map { ($0).course}
                     var filteredID = getCourses.map { ($0).id}
                     print("utente loggato")
-                    self.performSegue(withIdentifier: "enter", sender: self)
+//                    self.performSegue(withIdentifier: "enter", sender: self)
+                    if response.result.isSuccess {
+                        print("pax")
+                        
+//                        API.ReminderApi()
+                        
+
+//                        self.performSegue(withIdentifier: "enter", sender: self)
+                            
+                            let url = URL(string: "http://arbel.test/api/getReminder")!
+                            
+                            
+                            let headers: HTTPHeaders = [
+                                "Authorization": "Bearer \(Users.userLogin.success.token)",
+                                "Accept": "application/json"
+                            ]
+                            
+                            Alamofire.request(url, method: .get, headers: headers).responseJSON{
+                                
+                                response in //response serialization result
+                                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                                    print("Data: \(utf8Text)") // original server data as UTF8 string
+                                    do {
+                                        
+                                        let jsonDecoder = JSONDecoder()
+                                        var postData = try jsonDecoder.decode(GetReminder.self, from: response.data!)
+                                        
+                                        GetReminder.dataReminder = postData
+                                        
+                                        if response.result.isSuccess {
+                                            print(postData, "agga")
+                                            
+//                                            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                                            let homeController = storyBoard.instantiateViewController(withIdentifier: "homeScreen") as! HomeController
+                                            
+                                            
+//                                            var navigationController : UINavigationController!
+//                                            navigationController!.pushViewController(homeController, animated: true)
+                                            
+                                            self.performSegue(withIdentifier: "enter", sender: self)
+                                            
+                                            
+                                        }
+                                        
+                                    }
+                                    catch
+                                    {
+                                        print(error)
+                                    }
+                                    
+                                }
+                            }
+                        
+                    }
                 }
                 catch
                 {

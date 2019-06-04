@@ -8,33 +8,40 @@
 
 import UIKit
 import Alamofire
-//struct Note {
-//    var list: String
-//    var date: String
-//}
 
-//var list = [String]()
-//var date = [String]()
 
-class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UIScrollViewDelegate, UICollectionViewDelegate {
     
     @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var infoNote: UILabel!
     @IBOutlet weak var infoUser: UILabel!
     @IBOutlet weak var reload: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+//    var refresh: UIRefreshControl!
     
     var activities = Activity.fetchActivities()
     let cellScalingH: CGFloat = 0.5
     let cellScalingV: CGFloat = 0.7
     
-    var reminderData = Users.userLogin.success.memories
+        var reminderData = GetReminder.dataReminder.memo
+    
+    @IBAction func refreshPage(_ sender: Any) {
+        
+        
+        
+        API.ReminderApi()
+        noteTableView.reloadData()
+        print("culo di bue" )
+
+    }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         API.ReminderApi()
+        API.StudentApi()
+//        self.noteTableView.reloadData()
+
         elementStyle()
         noteTableView.dataSource = self
         noteTableView.delegate = self
@@ -71,7 +78,9 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        API.ReminderApi()
+        self.noteTableView.reloadData()
+
         func getPreviousViewController() -> UIViewController? {
             let viewControllers = self.navigationController?.viewControllers
             let count = viewControllers!.count
@@ -79,7 +88,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             return viewControllers![count - 1]
         }
-        print(getPreviousViewController() ,"porco")
+        print(getPreviousViewController()! ,"porco")
         
         if CheckInternet.Connection() {
             infoUser.text = "Bentornato \(Users.userLogin.success.name)," + "\n" + "sei Online"
@@ -89,19 +98,36 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         
+        
+        
     }
     
+
+    
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
+        super.viewWillAppear(animated)
+                
         print(Users.userLogin.success.memories, "uscite")
         print("cazzoo")
+        API.ReminderApi()
+        //reminderData = GetReminder.dataReminder.memo
         
+//        self.noteTableView.reloadData()
+        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+    }
+    
+
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
-        return (reminderData.count) }
+       print("passaaa", GetReminder.dataReminder.memo)
+        return (GetReminder.dataReminder.memo.count) }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -111,28 +137,26 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let note = tableView.dequeueReusableCell(withIdentifier: "note") as! NoteTableView
         
-        let reminder = reminderData[indexPath.row]
+        let reminder = GetReminder.dataReminder.memo[indexPath.row]
         note.textNote?.text = reminder.memoryText
         
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        formatter.timeStyle = .short
-        formatter.setLocalizedDateFormatFromTemplate("MMMMdd - HH:mm")
-        formatter.locale =  Locale(identifier: "it_IT")
-        let str = formatter.string(from: Date())
+//        let formatter = DateFormatter()
+//        formatter.dateStyle = .long
+//        formatter.timeStyle = .short
+//        formatter.setLocalizedDateFormatFromTemplate("MMMMdd - HH:mm")
+//        formatter.locale =  Locale(identifier: "it_IT")
+//        let str = formatter.string(from: Date())
         
         note.dateNote?.text = reminder.created_at
+        
+//        noteTableView.reloadData()
+
         
 //        note.textNote?.text = list[indexPath.row]
 //        note.dateNote?.text = date[indexPath.row]
         return note
     }
-
     
-
-}
-
-extension HomeController : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -149,23 +173,55 @@ extension HomeController : UICollectionViewDataSource {
         return cell
     }
     
+//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+//        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+//        var offset = targetContentOffset.pointee
+//        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+//        let roundedIndex = round(index)
+//        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+//        targetContentOffset.pointee = offset
+//    }
+
     
-    
+
 }
 
-extension HomeController : UIScrollViewDelegate, UICollectionViewDelegate {
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
-        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
-        var offset = targetContentOffset.pointee
-        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
-        let roundedIndex = round(index)
-        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
-        targetContentOffset.pointee = offset
-    }
-    
-    
-}
+//extension HomeController : UICollectionViewDataSource {
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return 1
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        print(activities.count)
+//        return activities.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourCell", for: indexPath) as! HourCollectionViewCell
+//
+//        cell.activity = activities[indexPath.item]
+//        return cell
+//    }
+//
+//
+//
+//}
+
+//extension HomeController : UIScrollViewDelegate, UICollectionViewDelegate {
+//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        let layout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+//        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+//        var offset = targetContentOffset.pointee
+//        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+//        let roundedIndex = round(index)
+//        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+//        targetContentOffset.pointee = offset
+//    }
+//
+//
+//}
+
 
 
 

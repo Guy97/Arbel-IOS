@@ -18,6 +18,8 @@ class NoteController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     
     @IBAction func saveButton(_ sender: Any) {
+
+    
         
         let postDict:[String:String] = ["memoryText": "\(noteForm.text!)", "user_id": "\(Users.userLogin.success.id)"]
         
@@ -33,6 +35,27 @@ class NoteController: UIViewController {
                     let jsonDecoder = JSONDecoder()
                     var postData = try jsonDecoder.decode(PostReminder.self, from: response.data!)
                     print(postData, "UDITE")
+                    
+                    if response.result.isSuccess {
+
+                        self.performSegue(withIdentifier: "goHome", sender: self)
+                        API.ReminderApi()
+                        
+//                         var teext = GetReminder.dataReminder?.memo
+                        //
+                        //
+                                var teext = self.previousVC.reminderData.map { ($0).memoryText}
+                        //
+                        //        //                var teext = self.previousVC.reminderData
+                                let name : String = self.noteForm!.text!
+                        //        var spero = [teext]
+                                teext.append(name)
+                                self.noteForm?.text! = ""
+//                        self.previousVC.noteTableView.reloadData()
+                        
+                        //remdata.reminderData = GetReminder.dataReminder.memo
+                        
+                    }
                     //postData = PostReminder.teacherMemory
                     //Users.userLogin.success.memories.append(postData.memories)
                     
@@ -56,6 +79,14 @@ class NoteController: UIViewController {
 //                        }
 //                        self.noteForm.text = ""
 //                    }
+//                    var name : String = self.noteForm!.text!
+//                    name.append(postData.memories.memoryText)
+//                    self.noteForm?.text! = ""
+//                    tableview.reloadData()
+//                    postData.memories.memoryText.append(previousVC.reminderData)
+//                    textField?.text! = ""
+                    
+//                    tableview.reloadData()
                 }
                 catch
                 {
@@ -64,6 +95,9 @@ class NoteController: UIViewController {
                 }
                 
             }
+            
+            
+
         
 //        let formatter = DateFormatter()
 //        formatter.dateStyle = .long
@@ -91,14 +125,24 @@ class NoteController: UIViewController {
 //            }
 //                self.noteForm.text = ""
 //            }
-           
+
         }
-        //remdata.reminderData = GetReminder.dataReminder.memo
+//        var teext = GetReminder.dataReminder?.memo
+//
+//
+////        var teext = self.previousVC.reminderData.map { ($0).memoryText}
+//
+//        //                var teext = self.previousVC.reminderData
+//        let name : String = self.noteForm!.text!
+//        var spero = [teext]
+//        spero.append(name)
+//        self.noteForm?.text! = ""
+        
+      //remdata.reminderData = GetReminder.dataReminder.memo
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.HideKeyboard()
         
         elementStyle()
