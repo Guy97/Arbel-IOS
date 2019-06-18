@@ -21,10 +21,20 @@ struct UsersData: Codable {
     var name : String
     var surname : String
     var email : String
+    var events : [TeacherCalendar]
     var subjects : [SubjectsData]
     var courses : [CoursesData]
     var memories : [Reminder]
     
+}
+
+struct TeacherCalendar: Codable {
+    var id : Int
+    var user_id : Int
+    var activity : String
+    var day : String
+    var start_hour : String
+    var end_hour : String
 }
 
 struct SubjectsData: Codable {

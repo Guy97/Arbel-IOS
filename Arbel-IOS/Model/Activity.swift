@@ -8,6 +8,14 @@
 
 import UIKit
 
+extension Date {
+    func string(format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: self)
+    }
+}
+
 class Activity {
 
 var hour = ""
@@ -23,12 +31,18 @@ init(hour: String, work: String, color: UIColor)
     
     static func fetchActivities() -> [Activity]
     {
-        return [
-            Activity(hour: "8:30 - 11:30", work: "2° Media Design (S106), programmazione 2", color: UIColor.white),
-            Activity(hour: "9:00 - 12:00", work: "2° Media Design (S106), programmazione 2", color: UIColor.white),
-            Activity(hour: "12:30 - 15:30", work: "1° Video Design (S8), After Effects", color: UIColor.white),
-            Activity(hour: "16:00 - 18:00", work: "//", color: UIColor.white),
-
-        ]
+        var calendarTeacher = [Activity]()
+        //print("data", Date().string(format: "yyyy-MM-dd"))
+        for event in Users.userLogin.success.events {
+            if "\(Date().string(format: "yyyy-MM-dd"))" == event.day {
+                calendarTeacher.append(Activity(hour: "8:30 - 11:30", work: "\(event.activity)", color: UIColor.white))
+            }
+        }
+        if !calendarTeacher.isEmpty {
+            return calendarTeacher
+        }
+        else {
+            return [Activity(hour: "", work: "Oggi niente lezione", color: UIColor.white)]
+        }
     }
 }
