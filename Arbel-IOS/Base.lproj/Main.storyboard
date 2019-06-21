@@ -409,7 +409,7 @@
             <objects>
                 <viewController id="S1M-4N-cu4" customClass="ContactController" customModule="Arbel_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h5O-b6-Kru">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgp-od-SHq">
@@ -463,7 +463,10 @@
                                         <color key="backgroundColor" name="formColor"/>
                                         <color key="textColor" name="titleColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
+                                        <connections>
+                                            <action selector="keyBoard:" destination="S1M-4N-cu4" eventType="editingDidEnd" id="hTw-f3-hpB"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNZ-LL-aaG">
                                         <rect key="frame" x="256" y="0.0" width="44" height="40"/>
@@ -506,7 +509,10 @@
                                 </constraints>
                                 <color key="textColor" name="titleColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="keyBoard:" destination="S1M-4N-cu4" eventType="editingDidEnd" id="moJ-xe-Z9a"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McV-IP-xxB">
                                 <rect key="frame" x="38" y="274" width="144" height="21"/>
@@ -536,7 +542,7 @@
                                     <constraint firstAttribute="height" constant="229" id="wnQ-Lf-oUy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72i-bx-TOC">
                                 <rect key="frame" x="37.666666666666657" y="584" width="300" height="35"/>
@@ -550,6 +556,9 @@
                                 <state key="normal" title="INVIA">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendButton:" destination="S1M-4N-cu4" eventType="touchUpInside" id="emG-j4-Kpr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="backgroundColor"/>
@@ -586,15 +595,15 @@
                     <navigationItem key="navigationItem" id="hxO-1a-srG"/>
                     <connections>
                         <outlet property="addButton" destination="JNZ-LL-aaG" id="6pn-tA-DAK"/>
-                        <outlet property="mailForm" destination="gJf-S1-yQN" id="MBj-YC-7iT"/>
-                        <outlet property="messageForm" destination="8Eq-fB-Ml3" id="5KF-zQ-PSm"/>
-                        <outlet property="objectForm" destination="gea-dK-MUc" id="3qb-pe-GKD"/>
+                        <outlet property="mailForm" destination="gJf-S1-yQN" id="QYw-S2-mxZ"/>
+                        <outlet property="messageForm" destination="8Eq-fB-Ml3" id="nid-HE-RGu"/>
+                        <outlet property="objectForm" destination="gea-dK-MUc" id="UrX-Ak-eMN"/>
                         <outlet property="sendButton" destination="72i-bx-TOC" id="zFl-Ze-2Q8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BdC-lc-ZSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1150" y="1912"/>
+            <point key="canvasLocation" x="1149.5999999999999" y="1911.576354679803"/>
         </scene>
         <!--Data Source-->
         <scene sceneID="gUd-f1-9WA">
@@ -3233,7 +3242,7 @@ programmazione 2</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="U0t-be-OLg"/>
-        <segue reference="xRN-Gj-bgT"/>
+        <segue reference="6c8-T4-Wr5"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.28673213427827537" blue="0.22068471563571013" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

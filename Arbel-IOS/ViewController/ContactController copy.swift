@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Foundation
 import MessageUI
 
 class ContactController: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate {
@@ -19,7 +18,6 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var addButton: UIButton!
     
     var coursesData = Users.userLogin.success.courses
-    
     
     var transparentView = UIView()
     var tableView = UITableView()
@@ -52,16 +50,16 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         self.mailForm.layer.cornerRadius = 10
         self.objectForm.layer.cornerRadius = 10
         self.messageForm.layer.cornerRadius = 8
-        self.sendButton.layer.cornerRadius = 18
+//        self.sendButton.layer.cornerRadius = 18
         
         addButton.clipsToBounds = true
-        sendButton.layer.masksToBounds = true
+//        sendButton.layer.masksToBounds = true
         addButton.layer.cornerRadius = 10
         addButton.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
         
-        self.sendButton.setTitleColor(UIColor.white, for: .highlighted)
-        self.sendButton.setBackgroundColor(color: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), forState: .normal)
-        self.sendButton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)
+//        self.sendButton.setTitleColor(UIColor.white, for: .highlighted)
+//        self.sendButton.setBackgroundColor(color: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), forState: .normal)
+//        self.sendButton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)
         
         tableView.separatorColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
         tableView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0);
@@ -130,60 +128,22 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    override func didReceiveMemoryWarning() {
-        super.viewDidLoad()
+    
+    @IBAction func sendButton(_ sender: Any) {
+        
+        let emailUser = [Users.userLogin.success.email]
+        let mc: MFMailComposeViewController = MFMailComposeViewController()
+        mc.mailComposeDelegate = self
+        mc.setToRecipients(emailUser)
+        mc.setSubject(objectForm.text!)
+    mc.setMessageBody(messageForm.text!
+        , isHTML: false)
+        self.present(mc, animated: true, completion: nil)
     }
-    
-    @IBAction func sendButton(_ sender:AnyObject ) {
-        let mailComposeViewController = configuredMailComposeViewController()
-        if MFMailComposeViewController.canSendMail() {
-            self.present(mailComposeViewController, animated: true, completion: nil)
-        } else {
-            self.showSendMailErrorAlert()
-        }
-//        if !MFMailComposeViewController.canSendMail() {
-//            let mailComposer = MFMailComposeViewController()
-//            //print(mailComposer)
-//            let emailUser = [Users.userLogin.success.email]
-//            mailComposer.mailComposeDelegate = self
-//            mailComposer.setToRecipients(emailUser)
-//            mailComposer.setSubject(objectForm.text!)
-//            mailComposer.setMessageBody(messageForm.text!, isHTML: false)
-//            self.present(mailComposer, animated: true, completion: nil)
-//            return
-//        }else {
-//            print("cazzo")
-//        }
-    }
-    
-    
-       func configuredMailComposeViewController() -> MFMailComposeViewController {
-       let mailComposerVC = MFMailComposeViewController()
-        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
-       
-        mailComposerVC.setToRecipients([Users.userLogin.success.email])
-        mailComposerVC.setSubject(objectForm.text!)
-        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
-     
-        return mailComposerVC
-        }
- 
-        func showSendMailErrorAlert() {
-        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
-         sendMailErrorAlert.show()
-         }
-
-       // MARK: MFMailComposeViewControllerDelegate Method
-        func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-            controller.dismiss(animated: true, completion: nil)
-        }
-    
-    
     
     @IBAction func keyBoard(_ sender: Any) {
         self.resignFirstResponder()
     }
-
-   
+    
     
 }
