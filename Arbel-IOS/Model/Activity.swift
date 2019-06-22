@@ -35,14 +35,14 @@ init(hour: String, work: String, color: UIColor)
         //print("data", Date().string(format: "yyyy-MM-dd"))
         for event in Users.userLogin.success.events {
             if "\(Date().string(format: "yyyy-MM-dd"))" == event.day {
-                calendarTeacher.append(Activity(hour: "8:30 - 11:30", work: "\(event.activity)", color: UIColor.white))
+                calendarTeacher.append(Activity(hour: "\(event.start_hour) - \(event.end_hour)", work: "\(event.activity)", color: UIColor.white))
             }
         }
         if !calendarTeacher.isEmpty {
             return calendarTeacher
         }
         else {
-            return [Activity(hour: "", work: "Oggi niente lezione", color: UIColor.white)]
+            return [Activity(hour: "Tranquillo", work: "Non hai lezioni oggi, concediti un giorno di riposo!", color: UIColor.white)]
         }
     }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dX8-8E-OXk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dX8-8E-OXk">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -390,8 +390,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JSJ-QV-glN"/>
                     </view>
-                    <navigationItem key="navigationItem" title="PROMEMORIA" leftItemsSupplementBackButton="YES" id="H8a-lK-3un">
-                        <barButtonItem key="backBarButtonItem" title=" " id="B5t-rd-DD3"/>
+                    <navigationItem key="navigationItem" title="PROMEMORIA" id="H8a-lK-3un">
+                        <barButtonItem key="backBarButtonItem" title=" " id="qxc-2u-2Ns"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO"/>
                     <connections>
@@ -699,24 +699,24 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KrU-Pr-W7p">
                                 <rect key="frame" x="20" y="405" width="335" height="407"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CN2-FQ-0J2">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CN2-FQ-0J2">
                                         <rect key="frame" x="17.666666666666657" y="61" width="300" height="256"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="qrp-0B-nXp"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="singleActivity" rowHeight="55" id="TOn-rF-JT9" customClass="ActivityCell" customModule="Arbel_IOS" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="1" width="300" height="55"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="singleActivity" rowHeight="70" id="TOn-rF-JT9" customClass="ActivityCell" customModule="Arbel_IOS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="1" width="300" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TOn-rF-JT9" id="r9o-9q-zP3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="55"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYl-CP-kr3">
                                                             <rect key="frame" x="0.0" y="0.0" width="104" height="44"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 - 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcg-SI-UHA" userLabel="hour">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 - 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcg-SI-UHA" userLabel="hour">
                                                                     <rect key="frame" x="0.0" y="0.0" width="104" height="43.666666666666664"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                     <nil key="textColor"/>
@@ -734,10 +734,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzG-PD-i33">
-                                                            <rect key="frame" x="112" y="0.0" width="188" height="44"/>
+                                                            <rect key="frame" x="112" y="0.0" width="188" height="59"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3P-7L-czd">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="44"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1° Media Design, Storia dell'arte contemporanea" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3P-7L-czd">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="59"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -746,7 +746,7 @@
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="s3P-7L-czd" firstAttribute="top" secondItem="fzG-PD-i33" secondAttribute="top" id="9Mv-mD-9as"/>
-                                                                <constraint firstAttribute="height" constant="44" id="Sk0-w0-UBn"/>
+                                                                <constraint firstAttribute="height" constant="59" id="Sk0-w0-UBn"/>
                                                                 <constraint firstAttribute="width" constant="188" id="UL3-za-VTD"/>
                                                                 <constraint firstAttribute="bottom" secondItem="s3P-7L-czd" secondAttribute="bottom" id="W2k-Hv-HvP"/>
                                                                 <constraint firstAttribute="trailing" secondItem="s3P-7L-czd" secondAttribute="trailing" id="XAg-T9-iEK"/>
@@ -754,7 +754,7 @@
                                                             </constraints>
                                                         </view>
                                                         <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUD-5A-eMS">
-                                                            <rect key="frame" x="0.0" y="40" width="300" height="1"/>
+                                                            <rect key="frame" x="0.0" y="58" width="300" height="1"/>
                                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -766,12 +766,12 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="bUD-5A-eMS" secondAttribute="trailing" id="137-MD-UU3"/>
                                                         <constraint firstAttribute="trailing" secondItem="fzG-PD-i33" secondAttribute="trailing" id="AvB-Xr-4et"/>
-                                                        <constraint firstAttribute="bottom" secondItem="bUD-5A-eMS" secondAttribute="bottom" constant="3" id="PDg-g9-ocE"/>
+                                                        <constraint firstAttribute="bottom" secondItem="bUD-5A-eMS" secondAttribute="bottom" constant="11" id="PDg-g9-ocE"/>
                                                         <constraint firstItem="CYl-CP-kr3" firstAttribute="top" secondItem="r9o-9q-zP3" secondAttribute="top" id="Pen-7Z-r5Q"/>
                                                         <constraint firstAttribute="bottom" secondItem="CYl-CP-kr3" secondAttribute="bottom" id="g6W-sE-7Js"/>
                                                         <constraint firstItem="fzG-PD-i33" firstAttribute="leading" secondItem="CYl-CP-kr3" secondAttribute="trailing" constant="8" id="gwW-1p-Spr"/>
                                                         <constraint firstItem="CYl-CP-kr3" firstAttribute="leading" secondItem="r9o-9q-zP3" secondAttribute="leading" id="h8m-lz-jyx"/>
-                                                        <constraint firstAttribute="bottom" secondItem="fzG-PD-i33" secondAttribute="bottom" id="qIt-di-vvO"/>
+                                                        <constraint firstAttribute="bottom" secondItem="fzG-PD-i33" secondAttribute="bottom" constant="11" id="qIt-di-vvO"/>
                                                         <constraint firstItem="bUD-5A-eMS" firstAttribute="leading" secondItem="r9o-9q-zP3" secondAttribute="leading" id="y4a-zA-pQc"/>
                                                         <constraint firstItem="fzG-PD-i33" firstAttribute="top" secondItem="r9o-9q-zP3" secondAttribute="top" id="zrM-6F-KCO"/>
                                                     </constraints>

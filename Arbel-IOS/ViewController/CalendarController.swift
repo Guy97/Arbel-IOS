@@ -47,14 +47,11 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
         let today = formatter.string(from: Date())
         day.text = "\(today)".uppercased()
         
-        
-//        let formatterrr = DateFormatter()
-//        let cform = formatterrr.string(from: Date())
-//        formatterrr.dateFormat = "yyyy-MM-dd"
+
         
         for event in Users.userLogin.success.events {
             if "\(Date().string(format: "yyyy-MM-dd"))" == event.day {
-                eventData.append(Lessons(hour: "\(event.start_hour)", activity: "\(event.activity)"))
+                eventData.append(Lessons(hour: "\(event.start_hour) - \(event.end_hour) ", activity: "\(event.activity)"))
             }
         }
 
@@ -114,18 +111,25 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
         
         for event in Users.userLogin.success.events {
             if dateStringLong == event.day {
+                
+                
                 eventData.removeAll()
-                eventData.append(Lessons(hour: "\(event.start_hour)", activity: "\(event.activity)"))
+                eventData.append(Lessons(hour: "\(event.start_hour) - \(event.end_hour)", activity: "\(event.activity)"))
                 calendarTableView.reloadData()
+                
+                
                 print(event.day,  "evento")
             }
                 
-            else {
-                eventData.removeAll()
-                eventData.append(Lessons(hour: " " , activity: " Hai il giorno libero \(Users.userLogin.success.name)"))
-                calendarTableView.reloadData()
-                print(event.day,  "vuoto")
-            }
+//            else {
+//                eventData.removeAll()
+//
+//                eventData.append(Lessons(hour: " " , activity: " Hai il giorno libero \(Users.userLogin.success.name)"))
+//                print(event.day,  "vuoto")
+//                calendarTableView.reloadData()
+//
+//                
+//            }
         }
         
     }
