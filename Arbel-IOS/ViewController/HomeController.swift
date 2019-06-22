@@ -23,7 +23,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let cellScalingH: CGFloat = 0.5
     let cellScalingV: CGFloat = 0.7
     
-        var reminderData = GetReminder.dataReminder.memo
+    var reminderData = GetReminder.dataReminder.memo
     
     @IBAction func refreshPage(_ sender: Any) {
         
@@ -139,6 +139,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let reminder = GetReminder.dataReminder.memo[indexPath.row]
         note.textNote?.text = reminder.memoryText
+        
         
 //        let formatter = DateFormatter()
 //        formatter.dateStyle = .long

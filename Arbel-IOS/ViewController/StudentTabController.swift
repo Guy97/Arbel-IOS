@@ -21,7 +21,7 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var studentsLog = Students.studentList.students
     var coursesData = Users.userLogin.success.courses
-
+    
     struct Preview {
         var average: Int
         var absence: Int
@@ -32,6 +32,7 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         var opened = Bool()
         var userImage = String()
         var title = String()
+//        var check = Button()
         var sectionData = [Preview]()
     }
     
@@ -43,7 +44,7 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         studentsList.delegate = self
         self.title = "hhhh"
 
-        
+    
         var CourseCell_id = PassData.globalVariable.passData
         
         elementStyle()
@@ -55,7 +56,7 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
                 
 //                let url = URL(string: student.userPicture)
                 
-                tableViewData.append(cellData(opened: false, userImage: "\(student.userPicture)", title: "\(student.name) " + "\(student.surname)", sectionData: [Preview(average: 28, absence: 15, note: "Soffre di DDA, picchiarlo dopo 15min")]))
+                tableViewData.append(cellData(opened: false, userImage: "\(student.userPicture)", title: "\(student.name) " + "\(student.surname)", sectionData: [Preview(average: 28, absence: 15, note: "\(student.details)")]))
                 
             }
         }
@@ -103,11 +104,26 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
             
             let studentSection = tableViewData[indexPath.section]
             
+            
+            cell.checkButton.tag = indexPath.section
+            cell.checkButton.addTarget(self, action: #selector(checkBoxTapped(_:)), for: .touchUpInside)
+
+            
             cell.studentName?.text = studentSection.title
 //            let urla = URL(string: url)
             let placeholder = UIImage(named: "userPicture")
             let urlImage = URL(string: studentSection.userImage)
             cell.userPicture?.kf.setImage(with: urlImage, placeholder: placeholder)
+//
+//            if studentsList.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark {
+//
+//                studentsList.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+//
+//            } else {
+//
+//                studentsList.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+//
+//            }
             
             return cell
         }
@@ -115,6 +131,8 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! StudentCell
             let previewDetail = tableViewData[indexPath.section].sectionData[dataIndex]
+            
+            
             cell.noteUser?.sizeToFit()
             cell.noteUser?.text = previewDetail.note
             
@@ -125,17 +143,21 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.absenceUser?.sizeToFit()
             cell.absenceUser?.text = "ASSENZE: " + absenceConverted + "%"
             
+            
             return cell
         }
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         
         if indexPath.row == 0 {
             if tableViewData[indexPath.section].opened == true {
                 tableViewData[indexPath.section].opened = false
                 let sections = IndexSet.init(integer: indexPath.section)
                 tableView.reloadSections(sections, with: .none)
+               
             }
             else{
                 tableViewData[indexPath.section].opened = true
@@ -157,16 +179,37 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     @IBAction func checkBoxTapped(_ sender: UIButton) {
-        
+
+
         UIView.animate(withDuration: 0.1, delay: 0.01, options: .curveLinear, animations: {
             sender.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
-            
+
         }) { (success) in
             sender.isSelected = !sender.isSelected
             UIView.animate(withDuration: 0.1, delay: 0.01, options: .curveLinear, animations: {
                 sender.transform = .identity
             }, completion: nil)
         }
+        
+
+        
+       
+        
+        
+        
+        var position: CGPoint = sender.convert(.zero, to: self.studentsList)
+        
+        
+        let indexPath = self.studentsList.indexPathForRow(at: position)
+//        let cell: StudentCell = studentsList.cellForRow(at: IndexPath(row: 0, section: sender.tag)) as!
+//        StudentCell
+        
+        var studentID = 0
+        var data = Students.studentList.students.filter( { return ($0.class_id == PassData.globalVariable.passData) } )
+        var detectStudent = data.map {($0).id}
+        studentID = detectStudent[(indexPath?.section)!]
+
+        print(studentID, "pulizia")
     }
 }
 

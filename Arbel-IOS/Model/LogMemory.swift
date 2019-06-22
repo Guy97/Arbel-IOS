@@ -69,7 +69,7 @@ struct StudentData: Codable {
     var birthday: String
     var sex: String
     var email: String
-    //var details: String
+    var details: String
 }
 
 struct PostReminder: Codable {
@@ -151,26 +151,6 @@ class API {
                     
                     GetReminder.dataReminder = postData
 
-//                    if response.result.isSuccess {
-//                        print(postData, "agga")
-//
-//                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                        let homeController = storyBoard.instantiateViewController(withIdentifier: "homeScreen") as! HomeController
-//
-//
-////                        let displayVC : HomeController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeScreen") as! HomeController
-////
-////                        var present: UIViewController!
-////                        present(displayVC, animated: true, completion: nil)
-//
-//                        var navigationController : UINavigationController!
-//                        navigationController!.pushViewController(homeController, animated: true)
-                    
-                        
-
-
-//                    }
-                    
                 }
                 catch
                 {

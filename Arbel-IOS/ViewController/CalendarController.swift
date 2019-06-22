@@ -11,6 +11,8 @@ import FSCalendar
 
 class CalendarController: UIViewController, UITableViewDelegate, UITableViewDataSource, FSCalendarDataSource, FSCalendarDelegate   {
     
+    var calendarData = Users.userLogin.success.events
+    
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var activityContainer: UIView!
     @IBOutlet weak var day: UILabel!
@@ -21,7 +23,11 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
         var activity: String
     }
     
-    var activityArray = [Lessons(hour: "8:30 - 11:30", activity: "Prima fascia oraria"),Lessons(hour: "9:00 - 12:00", activity: "Seconda fascia oraria"),Lessons(hour: "12:30 - 15:00", activity: "Terza fascia oraria"),Lessons(hour: "15:30 - 18:30", activity: "Quarta fascia oraria")]
+    var eventData = [Lessons]();
+
+    
+    
+//    var activityArray = [Lessons(hour: "8:30 - 11:30", activity: "Prima fascia oraria"),Lessons(hour: "9:00 - 12:00", activity: "Seconda fascia oraria"),Lessons(hour: "12:30 - 15:00", activity: "Terza fascia oraria"),Lessons(hour: "15:30 - 18:30", activity: "Quarta fascia oraria")]
 
     fileprivate weak var calendar2: FSCalendar!
     let calendario: FSCalendarCell = FSCalendarCell()
@@ -40,6 +46,19 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
         formatter.locale =  Locale(identifier: "it_IT")
         let today = formatter.string(from: Date())
         day.text = "\(today)".uppercased()
+        
+        
+//        let formatterrr = DateFormatter()
+//        let cform = formatterrr.string(from: Date())
+//        formatterrr.dateFormat = "yyyy-MM-dd"
+        
+        for event in Users.userLogin.success.events {
+            if "\(Date().string(format: "yyyy-MM-dd"))" == event.day {
+                eventData.append(Lessons(hour: "\(event.start_hour)", activity: "\(event.activity)"))
+            }
+        }
+
+        
     }
     
     func elementStyle() {
@@ -50,8 +69,69 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
         activityContainer.layer.shadowOpacity = 0.6
     }
     
+   
+    
+    fileprivate lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate("EEEE dd")
+        formatter.locale = Locale(identifier: "it_IT")
+        
+        return formatter
+    }()
+    
+//
+//    var datesWithEvent = ["2015-10-03", "2015-10-06", "2015-10-12", "2015-10-25"]
+//
+//    var datesWithMultipleEvents = ["2015-10-08", "2015-10-16", "2015-10-20", "2015-10-28"]
+    
+    fileprivate lazy var dateFormatter2: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
+    
+
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        var filteredDay = calendarData.map { ($0).day}
+//        var filteredHour = calendarData.map { ($0).start_hour}
+
+        
+        let dateString = self.dateFormatter2.string(from: date)
+        
+        if filteredDay.contains(dateString) {
+            return 1
+        }
+        
+        return 0
+    }
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
+        let dateString = self.dateFormatter.string(from: date)
+        let dateStringLong = self.dateFormatter2.string(from: date)
+        
+        day.text = dateString.uppercased()
+        
+        for event in Users.userLogin.success.events {
+            if dateStringLong == event.day {
+                eventData.removeAll()
+                eventData.append(Lessons(hour: "\(event.start_hour)", activity: "\(event.activity)"))
+                calendarTableView.reloadData()
+                print(event.day,  "evento")
+            }
+                
+            else {
+                eventData.removeAll()
+                eventData.append(Lessons(hour: " " , activity: " Hai il giorno libero \(Users.userLogin.success.name)"))
+                calendarTableView.reloadData()
+                print(event.day,  "vuoto")
+            }
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (activityArray.count)
+        return (eventData.count)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -60,10 +140,15 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "singleActivity") as! ActivityCell
-        let activityDetail = activityArray[indexPath.row]
+        
+        let activityDetail = eventData[indexPath.row]
+        
+        
         cell.hourActivity?.text = activityDetail.activity
         cell.currentActivity?.text = activityDetail.hour
-
+        
         return cell
     }
+
+    
 }

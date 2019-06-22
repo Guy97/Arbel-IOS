@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dX8-8E-OXk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dX8-8E-OXk">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1542,9 +1542,6 @@ programmazione 2</string>
                                                             </constraints>
                                                             <state key="normal" image="uncheckedBox"/>
                                                             <state key="selected" image="checkedBox"/>
-                                                            <connections>
-                                                                <action selector="checkBoxTapped:" destination="TBx-MN-FEd" eventType="touchUpInside" id="iQa-TS-TUW"/>
-                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1602,6 +1599,7 @@ programmazione 2</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="checkButton" destination="KXu-wq-DoP" id="jlY-Y0-KQN"/>
                                             <outlet property="studentName" destination="ecR-M5-dKP" id="2b9-wc-T1M"/>
                                             <outlet property="studentView" destination="SmJ-0d-wJd" id="XiB-yT-x5A"/>
                                             <outlet property="userPicture" destination="CaS-MY-GcG" id="hxk-OD-QGz"/>
@@ -1643,8 +1641,8 @@ programmazione 2</string>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lo studente soffre di DDA (Disturbo dell’attenzione). " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chF-cF-ClT">
-                                                            <rect key="frame" x="15" y="60.999999999999993" width="229" height="28.666666666666664"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lo studente soffre di DDA (Disturbo dell’attenzione). " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chF-cF-ClT">
+                                                            <rect key="frame" x="15" y="61" width="229" height="51"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="229" id="u05-1S-iAF"/>
                                                             </constraints>
