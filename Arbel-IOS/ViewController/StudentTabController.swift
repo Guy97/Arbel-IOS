@@ -17,8 +17,8 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var searchStudent: UISearchBar!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var studentsList: UITableView!
-//    @IBOutlet weak var saveButton: UIButton!
-//    
+    @IBOutlet weak var saveButton: UIButton!
+    
     var studentsLog = Students.studentList.students
     var coursesData = Users.userLogin.success.courses
 

@@ -7,19 +7,16 @@
 //
 
 import UIKit
-import Foundation
-import MessageUI
 
-class ContactController: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate {
+class ContactController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var mailForm: UITextField!
     @IBOutlet weak var objectForm: UITextField!
-    @IBOutlet weak var messageForm: UITextField!
+    @IBOutlet weak var messageForm: UITextView!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     
     var coursesData = Users.userLogin.success.courses
-    
     
     var transparentView = UIView()
     var tableView = UITableView()
@@ -41,11 +38,14 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         
         var StudentCell_id = PassData.globalVariable.studentID
         
-//        for student in Students.studentList.students {
-//            if (student.id == StudentCell_id) {
-//                mailForm.text = "\(student.email)".lowercased()
-//            }
-//        }
+        for student in Students.studentList.students {
+            if (student.id == StudentCell_id) {
+                mailForm.text = "\(student.email)".lowercased()
+            }
+        }
+
+        
+        
     }
     
     func elementStyle() {
@@ -130,60 +130,4 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    override func didReceiveMemoryWarning() {
-        super.viewDidLoad()
-    }
-    
-    @IBAction func sendButton(_ sender:AnyObject ) {
-        let mailComposeViewController = configuredMailComposeViewController()
-        if MFMailComposeViewController.canSendMail() {
-            self.present(mailComposeViewController, animated: true, completion: nil)
-        } else {
-            self.showSendMailErrorAlert()
-        }
-//        if !MFMailComposeViewController.canSendMail() {
-//            let mailComposer = MFMailComposeViewController()
-//            //print(mailComposer)
-//            let emailUser = [Users.userLogin.success.email]
-//            mailComposer.mailComposeDelegate = self
-//            mailComposer.setToRecipients(emailUser)
-//            mailComposer.setSubject(objectForm.text!)
-//            mailComposer.setMessageBody(messageForm.text!, isHTML: false)
-//            self.present(mailComposer, animated: true, completion: nil)
-//            return
-//        }else {
-//            print("cazzo")
-//        }
-    }
-    
-    
-       func configuredMailComposeViewController() -> MFMailComposeViewController {
-       let mailComposerVC = MFMailComposeViewController()
-        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
-       
-        mailComposerVC.setToRecipients([Users.userLogin.success.email])
-        mailComposerVC.setSubject(objectForm.text!)
-        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
-     
-        return mailComposerVC
-        }
- 
-        func showSendMailErrorAlert() {
-        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
-         sendMailErrorAlert.show()
-         }
-
-       // MARK: MFMailComposeViewControllerDelegate Method
-        func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-            controller.dismiss(animated: true, completion: nil)
-        }
-    
-    
-    
-    @IBAction func keyBoard(_ sender: Any) {
-        self.resignFirstResponder()
-    }
-
-   
-    
 }
