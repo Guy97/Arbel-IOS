@@ -25,6 +25,7 @@
 		32B61E9C6B54BF6029139EB9 /* Pods_Arbel_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A7F856B1D7FB4A9D5D4E21 /* Pods_Arbel_IOS.framework */; };
 		32FCBB362268B8AE006EA399 /* PasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCBB352268B8AE006EA399 /* PasswordController.swift */; };
 		32FCBB382268B8CC006EA399 /* InformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCBB372268B8CC006EA399 /* InformationController.swift */; };
+		8BC0474122BE9BCA000EAF12 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC0474022BE9BCA000EAF12 /* MessageUI.framework */; };
 		A90E5FDA226B2E01001E8C2F /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90E5FD9226B2E01001E8C2F /* ContactTableViewCell.swift */; };
 		A90ED804224BA6C500B71E49 /* CoursesDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90ED803224BA6C500B71E49 /* CoursesDesignView.swift */; };
 		A90ED80C224D24A300B71E49 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90ED80B224D24A300B71E49 /* UIViewExtension.swift */; };
@@ -94,6 +95,7 @@
 		32FCBB352268B8AE006EA399 /* PasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordController.swift; sourceTree = "<group>"; };
 		32FCBB372268B8CC006EA399 /* InformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationController.swift; sourceTree = "<group>"; };
 		8326CE3A93FD07E2C99ADA02 /* Pods_Arbel_IOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arbel_IOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BC0474022BE9BCA000EAF12 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		9F8FF6F13083F23CAAF23347 /* Pods-Arbel-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arbel-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arbel-IOS/Pods-Arbel-IOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A90E5FD9226B2E01001E8C2F /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		A90ED803224BA6C500B71E49 /* CoursesDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesDesignView.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BC0474122BE9BCA000EAF12 /* MessageUI.framework in Frameworks */,
 				32B61E9C6B54BF6029139EB9 /* Pods_Arbel_IOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +280,7 @@
 		F393F425E70A14346D9F3A42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BC0474022BE9BCA000EAF12 /* MessageUI.framework */,
 				D5A7F856B1D7FB4A9D5D4E21 /* Pods_Arbel_IOS.framework */,
 				8326CE3A93FD07E2C99ADA02 /* Pods_Arbel_IOSTests.framework */,
 				E22AAF5412B0D6F1C2C996BB /* Pods_Arbel_IOSUITests.framework */,
