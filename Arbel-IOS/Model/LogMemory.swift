@@ -112,7 +112,7 @@ struct Absence: Codable {
 }
 
 struct MarkData: Codable {
-    var student_absence: [Mark]
+    var student_marks: [Mark]
     static var studentMark: MarkData!
 }
 
@@ -153,14 +153,11 @@ class API {
                     var filteredStudent = getStudent.map { ($0).name}
                     
                     print(filteredStudent, "Vai stronzo")
-                    
                 }
                 catch
                 {
                     print(error)
                 }
-                
-
             }
         }
     }
@@ -186,7 +183,7 @@ class API {
                     var postData = try jsonDecoder.decode(GetReminder.self, from: response.data!)
                     
                     GetReminder.dataReminder = postData
-
+                    
                 }
                 catch
                 {

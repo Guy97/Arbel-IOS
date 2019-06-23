@@ -24,7 +24,7 @@ class ArgumentController: UIViewController {
         self.argumentForm.layer.cornerRadius = 8
         self.sendButton.layer.cornerRadius = 18
         sendButton.layer.masksToBounds = true
-
+        
         self.sendButton.setTitleColor(UIColor.white, for: .highlighted)
         self.sendButton.setBackgroundColor(color: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), forState: .normal)
         self.sendButton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)
@@ -44,8 +44,6 @@ class ArgumentController: UIViewController {
                     
                     let jsonDecoder = JSONDecoder()
                     var postData = try jsonDecoder.decode(PostArgument.self, from: response.data!)
-                    print(postData, "UDITE")
-                    
                     
                 }
                 catch
@@ -55,9 +53,6 @@ class ArgumentController: UIViewController {
                 }
                 
             }
-            
-            
         }
-        
     }
 }

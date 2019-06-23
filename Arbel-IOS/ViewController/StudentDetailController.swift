@@ -24,20 +24,32 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var studentName: UILabel!
     @IBOutlet weak var studentBirthday: UILabel!
     @IBOutlet weak var badgeStudent: UILabel!
+    @IBOutlet weak var averange: UILabel!
+    @IBOutlet weak var cashBag: UILabel!
     
     var transparentView = UIView()
     
-    struct Test {
-        var date: String
-        var testResult: String
-    }
+    var studentsMark = MarkData.studentMark.student_marks
     
-    var testResult = [Test(date: "26.11.2018", testResult: "28"),Test(date: "15.02.2019", testResult: "24"),Test(date: "04.05.2019", testResult: "+"), Test(date: "04.05.2019", testResult: "-")]
+    
+    struct Test {
+        var mark: Int
+        var tipology: String
+        var date: String
+    }
     
     var allAbsence = ["04.10.2018", "21.11.2018"]
     
     let testType = ["Scritto", "Orale", "Test"]
     var selectedType : String?
+    
+    struct cellData {
+        var mark = Int()
+        var tipology = String()
+        var date = String()
+    }
+    
+    var studentData = [cellData]()
     
     private var datePicker: UIDatePicker?
     
@@ -53,19 +65,28 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
         
         testTableView.dataSource = self
         testTableView.delegate = self
-        
+    
         absenceTableView.dataSource = self
         absenceTableView.delegate = self
+        
+        var filteredID = studentsMark.map { ($0).stud_id}
+        var studID = PassData.globalVariable.studentID
+      
+        for stud in MarkData.studentMark.student_marks.filter ({ return ($0.stud_id == studID) }){
+            if (stud.stud_id == studID) {
+                averange.text = "MEDIA: \(stud.mark)"
+                
+                studentData.append(cellData(mark: stud.mark, tipology: stud.tipology, date: stud.date))
+            }
+        }
+        
+        
         var CourseCell_id = PassData.globalVariable.passData
         
         
         var StudentCell_id = PassData.globalVariable.studentID
-        print(StudentCell_id, "pei")
-        print(Students.studentList.students.filter( { return ($0.class_id == CourseCell_id) } ), "gei")
-        print(Students.studentList.students, "bobohkj")
         for student in Students.studentList.students.filter( { return ($0.class_id == CourseCell_id) } ) {
             if (student.id == StudentCell_id) {
-                print(student.id, "aei")
                 
                 let placeholder = UIImage(named: "userPicture")
                 let urlImage = URL(string: student.userPicture)
@@ -74,8 +95,7 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
                 studentName.text = "\(student.name)" + " " + "\(student.surname)"
                 badgeStudent.text = "N° matricola: " + "\(student.badgeNumber)"
                 studentBirthday.text = "Data di nascita: " + "\(student.birthday)"
-                
-                //                self.navigationItem.title = "\(student.name) ".uppercased() + "\(student.surname)".uppercased()
+                cashBag.text = "Borsa di studio: "
                 
             }
         }
@@ -117,7 +137,7 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == testTableView {
-            return (testResult.count)
+            return (studentData.count)
         }
         else {
             return (allAbsence.count)
@@ -132,8 +152,8 @@ class StudentDetailController: UIViewController, UITableViewDelegate, UITableVie
         if tableView == testTableView {
             let result = tableView.dequeueReusableCell(withIdentifier: "result") as! SingleStudentDetailCell
             
-            let testDetail = testResult[indexPath.row]
-            result.textResult?.text = testDetail.testResult
+            let testDetail = studentData[indexPath.row]
+            result.textResult?.text = "\(testDetail.mark)"
             result.testDate?.sizeToFit()
             result.testDate?.text = "Scritto " + "(" + testDetail.date + ")" + ":"
             

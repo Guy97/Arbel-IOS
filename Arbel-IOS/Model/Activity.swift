@@ -32,7 +32,6 @@ init(hour: String, work: String, color: UIColor)
     static func fetchActivities() -> [Activity]
     {
         var calendarTeacher = [Activity]()
-        //print("data", Date().string(format: "yyyy-MM-dd"))
         for event in Users.userLogin.success.events {
             if "\(Date().string(format: "yyyy-MM-dd"))" == event.day {
                 calendarTeacher.append(Activity(hour: "\(event.start_hour) - \(event.end_hour)", work: "\(event.activity)", color: UIColor.white))

@@ -50,64 +50,44 @@ class LogInController: UIViewController {
                     let jsonDecoder = JSONDecoder()
                     var postData = try jsonDecoder.decode(Users.self, from: response.data!)
                     Users.userLogin = postData
-                                       
+                    
                     let getCourses = postData.success.courses
                     var filteredCourses = getCourses.map { ($0).course}
                     var filteredID = getCourses.map { ($0).id}
                     print("utente loggato")
-//                    self.performSegue(withIdentifier: "enter", sender: self)
                     if response.result.isSuccess {
-                        print("pax")
-                        
-//                        API.ReminderApi()
-                        
 
-//                        self.performSegue(withIdentifier: "enter", sender: self)
+                        let url = URL(string: "http://arbel.test/api/getReminder")!
+                        
+                        let headers: HTTPHeaders = [
+                            "Authorization": "Bearer \(Users.userLogin.success.token)",
+                            "Accept": "application/json"
+                        ]
+                        
+                        Alamofire.request(url, method: .get, headers: headers).responseJSON{
                             
-                            let url = URL(string: "http://arbel.test/api/getReminder")!
-                            
-                            
-                            let headers: HTTPHeaders = [
-                                "Authorization": "Bearer \(Users.userLogin.success.token)",
-                                "Accept": "application/json"
-                            ]
-                            
-                            Alamofire.request(url, method: .get, headers: headers).responseJSON{
-                                
-                                response in //response serialization result
-                                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                                    print("Data: \(utf8Text)") // original server data as UTF8 string
-                                    do {
+                            response in //response serialization result
+                            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                                do {
+                                    
+                                    let jsonDecoder = JSONDecoder()
+                                    var postData = try jsonDecoder.decode(GetReminder.self, from: response.data!)
+                                    
+                                    GetReminder.dataReminder = postData
+                                    
+                                    if response.result.isSuccess {
                                         
-                                        let jsonDecoder = JSONDecoder()
-                                        var postData = try jsonDecoder.decode(GetReminder.self, from: response.data!)
-                                        
-                                        GetReminder.dataReminder = postData
-                                        
-                                        if response.result.isSuccess {
-                                            print(postData, "agga")
-                                            
-//                                            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                                            let homeController = storyBoard.instantiateViewController(withIdentifier: "homeScreen") as! HomeController
-                                            
-                                            
-//                                            var navigationController : UINavigationController!
-//                                            navigationController!.pushViewController(homeController, animated: true)
-                                            
-                                            self.performSegue(withIdentifier: "enter", sender: self)
-                                            
-                                            
-                                        }
-                                        
-                                    }
-                                    catch
-                                    {
-                                        print(error)
+                                        self.performSegue(withIdentifier: "enter", sender: self)
                                     }
                                     
                                 }
+                                catch
+                                {
+                                    print(error)
+                                }
+                                
                             }
-                        
+                        }
                     }
                 }
                 catch
@@ -133,9 +113,7 @@ class LogInController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-//        self.usernameForm.text = ""
-//        self.passwordForm.text = ""
-
+        
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
     

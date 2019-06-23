@@ -60,14 +60,13 @@ class ActivityTabController: UIViewController, UITableViewDelegate, UITableViewD
         let singleLesson = activityArray[indexPath.row]
         activity.argumentName?.text = singleLesson.activity
         activity.dateLesson?.text = "Lezione " + singleLesson.date
-
+        
         return activity
     }
     
     func setChart(values: [Double]) {
         mChart.noDataText = "Dati non disponibili!"
         for i in 0..<values.count {
-            print("chart point : \(values[i])")
             let dataEntry = ChartDataEntry(x: Double(i), y: values[i])
             dataEntries.append(dataEntry)
         }
@@ -111,8 +110,7 @@ class ActivityTabController: UIViewController, UITableViewDelegate, UITableViewD
         mChart.rightAxis.drawAxisLineEnabled = true
         mChart.rightAxis.drawGridLinesEnabled = false
         mChart.rightAxis.enabled = false
-        
-        
+    
     }
     
     /// Creating gradient for filling space under the line chart

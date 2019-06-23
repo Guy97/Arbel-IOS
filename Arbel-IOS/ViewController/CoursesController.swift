@@ -11,7 +11,7 @@ import UIKit
 class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var coursesList: UITableView!
-
+    
     var coursesData = Users.userLogin.success.courses
     var subjectData = Users.userLogin.success.subjects
     
@@ -20,11 +20,12 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
         var course: String
     }
     
-//    var coursesArray = [Course(yearCourse: 1, course: "Media Design"),Course(yearCourse: 2, course: "Media Design"),Course(yearCourse: 2, course: "Video Design"),Course(yearCourse: 3, course: "Sound Design")]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         API.StudentApi()
+        API.StudentAbs()
+        API.StudentMark()
+        API.StudentAbs()
         coursesList.dataSource = self
         coursesList.delegate = self
     }
@@ -42,15 +43,15 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
         
         let courseDetail = coursesData[indexPath.row]
         cell.courseName?.text = courseDetail.course
-    
+        
         let yearConverted = "\(courseDetail.year)"
         cell.year?.text = yearConverted + "°"
-
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "showStudent", sender: self)
         
@@ -63,9 +64,6 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
         var subfilt = subjectData.map {($0).id}
         subjectID = subfilt[indexPath.row]
         PassData.globalVariable.subID = subjectID
-        
-        print(courseID, "CLICCA CLICCA")
-        print(subjectID, "CLICCA")
     }
     
     override func viewWillAppear(_ animated: Bool) {

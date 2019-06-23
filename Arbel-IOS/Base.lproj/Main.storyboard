@@ -1966,7 +1966,7 @@ programmazione 2</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KvT-Ef-iPJ">
                                                         <rect key="frame" x="37" y="20" width="145" height="20"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEDIA: 26" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BoM-Pq-nYc">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEDIA: 00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BoM-Pq-nYc">
                                                                 <rect key="frame" x="0.0" y="0.0" width="145" height="20"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                                 <color key="textColor" name="titleColor"/>
@@ -2267,7 +2267,9 @@ programmazione 2</string>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="absenceTableView" destination="hOr-mM-LuS" id="2lY-Ce-JOY"/>
+                        <outlet property="averange" destination="BoM-Pq-nYc" id="2Qn-lk-Ki5"/>
                         <outlet property="badgeStudent" destination="mnu-W3-NhT" id="DMS-4o-x7Q"/>
+                        <outlet property="cashBag" destination="Pfs-FU-3i7" id="k3v-cA-9dC"/>
                         <outlet property="dateForm" destination="azN-8N-yc7" id="a2X-bb-urj"/>
                         <outlet property="essentialView" destination="Pbs-Bc-FJb" id="Z76-Me-ghA"/>
                         <outlet property="formContainer" destination="w53-FT-aDX" id="FqD-Cu-Ls1"/>

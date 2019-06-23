@@ -45,7 +45,7 @@ extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         let select  = tableView.cellForRow(at: indexPath) as! QuestionTableViewCell
         select.questionView.backgroundColor = UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1)
         
@@ -60,6 +60,4 @@ extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
         deselect.question.textColor = .black
         deselect.questionTitle.textColor = .black
     }
-    
-    
 }

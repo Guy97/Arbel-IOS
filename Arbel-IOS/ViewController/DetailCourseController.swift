@@ -24,7 +24,7 @@ class DetailCourseController: ButtonBarPagerTabStripViewController  {
         super.viewDidLoad()
         
         var CourseCell_id = PassData.globalVariable.passData
-
+        
         for course in Users.userLogin.success.courses {
             if (course.id == CourseCell_id) {
                 self.navigationItem.title = "\(course.year)° " + "\(course.course)".uppercased()

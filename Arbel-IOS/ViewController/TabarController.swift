@@ -18,20 +18,12 @@ class ManageTabBarController: UITabBarController,  UITabBarControllerDelegate {
         self.delegate = self
     }
     
-//
-//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-//        return (viewController != tabBarController.selectedViewController);
-//    }
-
-        func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-            //for blocking double tap on 3rd tab only
-            let indexOfNewVC = tabBarController.viewControllers?.index(of: viewController)
-            return ((indexOfNewVC != 0) ||
-                (indexOfNewVC != tabBarController.selectedIndex))
-        }
-
-    
-    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        //for blocking double tap on 3rd tab only
+        let indexOfNewVC = tabBarController.viewControllers?.index(of: viewController)
+        return ((indexOfNewVC != 0) ||
+            (indexOfNewVC != tabBarController.selectedIndex))
+    }
     
     private var bounceAnimation: CAKeyframeAnimation = {
         let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
@@ -42,7 +34,7 @@ class ManageTabBarController: UITabBarController,  UITabBarControllerDelegate {
     }()
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-
+        
         guard let idx = tabBar.items?.index(of: item), tabBar.subviews.count > idx + 1, let imageView = tabBar.subviews[idx + 1].subviews.first as? UIImageView else {
             return
         }
@@ -51,8 +43,6 @@ class ManageTabBarController: UITabBarController,  UITabBarControllerDelegate {
     }
     
 }
-
-
 
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {

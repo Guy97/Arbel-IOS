@@ -43,7 +43,7 @@ class ProfileController: UIViewController {
         
         logoutbutton.layer.cornerRadius = 18
         logoutbutton.layer.masksToBounds = true
-
+        
         self.logoutbutton.setTitleColor(UIColor.white, for: .highlighted)
         self.logoutbutton.setBackgroundColor(color: UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1), forState: .normal)
         self.logoutbutton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)

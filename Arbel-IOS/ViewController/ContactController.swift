@@ -44,9 +44,6 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
                 mailForm.text = "\(student.email)".lowercased()
             }
         }
-
-        
-        
     }
     
     func elementStyle() {
@@ -116,7 +113,7 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         cell.lbl.font = UIFont.systemFont(ofSize: 16)
         return cell
     }
-
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
@@ -142,25 +139,12 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         } else {
             self.showSendMailErrorAlert()
         }
-        //        if !MFMailComposeViewController.canSendMail() {
-        //            let mailComposer = MFMailComposeViewController()
-        //            //print(mailComposer)
-        //            let emailUser = [Users.userLogin.success.email]
-        //            mailComposer.mailComposeDelegate = self
-        //            mailComposer.setToRecipients(emailUser)
-        //            mailComposer.setSubject(objectForm.text!)
-        //            mailComposer.setMessageBody(messageForm.text!, isHTML: false)
-        //            self.present(mailComposer, animated: true, completion: nil)
-        //            return
-        //        }else {
-        //            print("cazzo")
-        //        }
     }
     
     
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposer = MFMailComposeViewController()
-        mailComposer.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        mailComposer.mailComposeDelegate = self
         
         mailComposer.setToRecipients([Users.userLogin.success.email])
         mailComposer.setSubject(objectForm.text!)
@@ -179,12 +163,7 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         controller.dismiss(animated: true, completion: nil)
     }
     
-    
-    
     @IBAction func keyBoard(_ sender: Any) {
         self.resignFirstResponder()
     }
-    
-
-    
 }
