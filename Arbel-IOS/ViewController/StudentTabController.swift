@@ -12,7 +12,7 @@ import Alamofire
 import Kingfisher
 
 
-class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var searchStudent: UISearchBar!
     @IBOutlet weak var searchView: UIView!
@@ -21,7 +21,10 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var studentsLog = Students.studentList.students
     var coursesData = Users.userLogin.success.courses
+    var filteredArray = [String]()
     
+    var searchController = UISearchController()
+    var resultController = UITableViewController()
     struct Preview {
         var average: Int
         var absence: Int
@@ -41,8 +44,11 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     var absenceSelect = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        caricaDati()
         studentsList.dataSource = self
         studentsList.delegate = self
+        searchStudent.delegate = self
+
         self.title = "hhhh"
 
     
@@ -63,7 +69,9 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
     }
-    
+    func caricaDati(){
+    studentsLog = Students.studentList.students
+    }
     func elementStyle() {
         searchStudent.layer.masksToBounds = true
         searchStudent.backgroundColor = .white
@@ -88,13 +96,11 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         else {
             return 1
         }
+         return studentsLog.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return (tableViewData.count)
-        
-        
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -102,9 +108,8 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "student") as! StudentCell
-            
+            let stud = self.studentsLog[indexPath.row]
             let studentSection = tableViewData[indexPath.section]
-            
             
             cell.checkButton.tag = indexPath.section
             cell.checkButton.addTarget(self, action: #selector(checkBoxTapped(_:)), for: .touchUpInside)
@@ -149,7 +154,37 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
     }
-    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.setShowsCancelButton(true, animated: true)
+        return true
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        caricaDati()
+        studentsList.reloadData()
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.endEditing(true)
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if !searchStudent.text!.isEmpty {
+            
+            // Filta i dati in base alla ricerca
+            studentsLog = studentsLog.filter({(word: String?) -> Bool in
+                
+                let risultato = word?.range(of: searchStudent.text!.lowercased())
+                
+                return risultato != nil
+            })
+        }
+        else {
+            
+            caricaDati()
+        }
+        
+        self.studentsList.reloadData()
+        
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
