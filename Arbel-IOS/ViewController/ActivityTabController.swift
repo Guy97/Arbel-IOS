@@ -110,7 +110,7 @@ class ActivityTabController: UIViewController, UITableViewDelegate, UITableViewD
         mChart.rightAxis.drawAxisLineEnabled = true
         mChart.rightAxis.drawGridLinesEnabled = false
         mChart.rightAxis.enabled = false
-    
+        
     }
     
     /// Creating gradient for filling space under the line chart

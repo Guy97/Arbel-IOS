@@ -25,7 +25,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var reminderData = GetReminder.dataReminder.memo
     
     @IBAction func refreshPage(_ sender: Any) {
-       API.ReminderApi()
+        API.ReminderApi()
         noteTableView.reloadData()
     }
     
@@ -36,7 +36,6 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         elementStyle()
         noteTableView.dataSource = self
         noteTableView.delegate = self
-        
         collectionView?.dataSource = self
         collectionView?.delegate = self
         
@@ -49,10 +48,8 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cellWidth = floor(collectionView.bounds.width * cellScalingH)
         let cellHeight = floor(collectionView.bounds.height * cellScalingV)
-        
         let insetX = (collectionView.bounds.width - cellWidth) / 2
         let insetY = (collectionView.bounds.height - cellHeight) / 2
-        
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize (width: cellWidth, height: cellHeight)
         collectionView?.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
@@ -60,7 +57,6 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func elementStyle() {
         noteTableView.separatorColor = UIColor (white: 0.95, alpha: 1)
-        
         self.tabBarController!.tabBar.layer.borderWidth = 0.5
         self.tabBarController!.tabBar.layer.borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 0.2).cgColor
         self.tabBarController?.tabBar.clipsToBounds = true
@@ -88,13 +84,9 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         API.ReminderApi()
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        
     }
-    
-    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -109,13 +101,10 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let note = tableView.dequeueReusableCell(withIdentifier: "note") as! NoteTableView
-        
         let reminder = GetReminder.dataReminder.memo[indexPath.row]
         note.textNote?.text = reminder.memoryText
         note.dateNote?.text = reminder.created_at
-
         return note
     }
     
@@ -129,7 +118,6 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourCell", for: indexPath) as! HourCollectionViewCell
-        
         cell.activity = activities[indexPath.item]
         return cell
     }

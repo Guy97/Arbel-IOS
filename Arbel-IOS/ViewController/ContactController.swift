@@ -26,12 +26,8 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         self.HideKeyboard()
-        
         elementStyle()
-        
         tableView.isScrollEnabled = true
         tableView.delegate = self
         tableView.dataSource = self
@@ -141,15 +137,12 @@ class ContactController: UIViewController, UITableViewDataSource, UITableViewDel
         }
     }
     
-    
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposer = MFMailComposeViewController()
         mailComposer.mailComposeDelegate = self
-        
         mailComposer.setToRecipients([Users.userLogin.success.email])
         mailComposer.setSubject(objectForm.text!)
         mailComposer.setMessageBody(messageForm.text!, isHTML: false)
-        
         return mailComposer
     }
     

@@ -33,10 +33,8 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         elementStyle()
-        
         calendarTableView.dataSource = self
-        calendarTableView.delegate = self
-        
+        calendarTableView.delegate = self        
         let formatter = DateFormatter()
         formatter.setLocalizedDateFormatFromTemplate("EEEE dd")
         formatter.locale =  Locale(identifier: "it_IT")
@@ -62,7 +60,6 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
         let formatter = DateFormatter()
         formatter.setLocalizedDateFormatFromTemplate("EEEE dd")
         formatter.locale = Locale(identifier: "it_IT")
-        
         return formatter
     }()
     
@@ -75,9 +72,7 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
     
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         var filteredDay = calendarData.map { ($0).day}
-        
         let dateString = self.dateFormatter2.string(from: date)
-        
         if filteredDay.contains(dateString) {
             return 1
         }
@@ -89,12 +84,10 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
         
         let dateString = self.dateFormatter.string(from: date)
         let dateStringLong = self.dateFormatter2.string(from: date)
-        
         day.text = dateString.uppercased()
         
         for event in Users.userLogin.success.events {
             if dateStringLong == event.day {
-                
                 eventData.removeAll()
                 eventData.append(Lessons(hour: "\(event.start_hour) - \(event.end_hour)", activity: "\(event.activity)"))
                 calendarTableView.reloadData()
@@ -112,7 +105,6 @@ class CalendarController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "singleActivity") as! ActivityCell
-        
         let activityDetail = eventData[indexPath.row]
         cell.hourActivity?.text = activityDetail.activity
         cell.currentActivity?.text = activityDetail.hour

@@ -34,7 +34,6 @@ class LogInController: UIViewController {
         self.HideKeyboard()
         usernameForm.text = "luca.infante@ied.edu"
         passwordForm.text = "cavolo"
-        
         self.usernameForm.layer.cornerRadius = 10
         self.passwordForm.layer.cornerRadius = 10
     }
@@ -44,48 +43,39 @@ class LogInController: UIViewController {
         
         Alamofire.request("http://arbel.test/api/login", method: .post, parameters: postDict).responseJSON {response in
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
+//                print("Data: \(utf8Text)") // original server data as UTF8 string
                 do {
                     
                     let jsonDecoder = JSONDecoder()
                     var postData = try jsonDecoder.decode(Users.self, from: response.data!)
                     Users.userLogin = postData
-                    
                     let getCourses = postData.success.courses
                     var filteredCourses = getCourses.map { ($0).course}
                     var filteredID = getCourses.map { ($0).id}
                     print("utente loggato")
                     if response.result.isSuccess {
-
                         let url = URL(string: "http://arbel.test/api/getReminder")!
-                        
                         let headers: HTTPHeaders = [
                             "Authorization": "Bearer \(Users.userLogin.success.token)",
                             "Accept": "application/json"
                         ]
                         
                         Alamofire.request(url, method: .get, headers: headers).responseJSON{
-                            
                             response in //response serialization result
                             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                                 do {
-                                    
                                     let jsonDecoder = JSONDecoder()
                                     var postData = try jsonDecoder.decode(GetReminder.self, from: response.data!)
-                                    
                                     GetReminder.dataReminder = postData
-                                    
                                     if response.result.isSuccess {
                                         
                                         self.performSegue(withIdentifier: "enter", sender: self)
                                     }
-                                    
                                 }
                                 catch
                                 {
                                     print(error)
                                 }
-                                
                             }
                         }
                     }
@@ -111,9 +101,7 @@ class LogInController: UIViewController {
         }
     }
     
-    
     override func viewDidAppear(_ animated: Bool) {
-        
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
     
@@ -124,14 +112,11 @@ class LogInController: UIViewController {
 
 extension UIButton {
     func setBackgroundColor(color: UIColor, forState: UIControl.State) {
-        
         UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
         UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
         UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
-        
         let colorImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
         self.setBackgroundImage(colorImage, for: forState)
     }
 }

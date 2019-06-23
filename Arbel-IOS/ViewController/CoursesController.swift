@@ -54,7 +54,6 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
         
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "showStudent", sender: self)
-        
         var courseID = 0
         var filt = coursesData.map {($0).id}
         courseID = filt[indexPath.row]

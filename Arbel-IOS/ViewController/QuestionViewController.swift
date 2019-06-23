@@ -29,7 +29,6 @@ class QuestionViewController: UIViewController {
 extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return questions.count
     }
     
@@ -38,9 +37,7 @@ extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "question", for: indexPath) as? QuestionTableViewCell
         cell?.question.sizeToFit()
         cell?.question.text = questions[indexPath.row]
-        
         cell?.layer.cornerRadius = 8
-        
         return (cell!)
     }
     
@@ -48,14 +45,12 @@ extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
         
         let select  = tableView.cellForRow(at: indexPath) as! QuestionTableViewCell
         select.questionView.backgroundColor = UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1)
-        
         select.question.textColor = .white
         select.questionTitle.textColor = .white
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let deselect  = tableView.cellForRow(at: indexPath) as! QuestionTableViewCell
-        
         deselect.questionView.backgroundColor = .white
         deselect.question.textColor = .black
         deselect.questionTitle.textColor = .black

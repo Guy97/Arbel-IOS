@@ -15,11 +15,9 @@ class NoteController: UIViewController {
     
     @IBOutlet weak var noteForm: UITextView!
     @IBOutlet weak var saveButton: UIButton!
-    
     @IBAction func saveButton(_ sender: Any) {
         
         let postDict:[String:String] = ["memoryText": "\(noteForm.text!)", "user_id": "\(Users.userLogin.success.id)"]
-        
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(Users.userLogin.success.token)",
             "Accept": "application/json"
@@ -31,9 +29,7 @@ class NoteController: UIViewController {
                     
                     let jsonDecoder = JSONDecoder()
                     var postData = try jsonDecoder.decode(PostReminder.self, from: response.data!)
-                    
                     if response.result.isSuccess {
-                        
                         self.performSegue(withIdentifier: "goHome", sender: self)
                         API.ReminderApi()
                         var teext = self.previousVC.reminderData.map { ($0).memoryText}
@@ -54,7 +50,6 @@ class NoteController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.HideKeyboard()
-        
         elementStyle()
     }
     

@@ -19,11 +19,9 @@ class TestTabController: UIViewController, UITableViewDelegate, UITableViewDataS
     var arguments = ["Argomento 1", "Argomento 2", "Argomento 3", "Argomento 4", "Tutti gli argomenti"]
     
     override func viewDidLoad() {
-        elementStyle()
-        
+        elementStyle()      
         argumentTableView.dataSource = self
         argumentTableView.delegate = self
-        
         super.viewDidLoad()
     }
     
@@ -32,7 +30,6 @@ class TestTabController: UIViewController, UITableViewDelegate, UITableViewDataS
         searchTest.backgroundColor = .white
         searchTest.backgroundImage = nil
         searchTest.layer.cornerRadius = 20
-        
         searchView.layer.cornerRadius = 20
         searchView.layer.shadowColor = UIColor (red: 0/255, green: 0/255, blue: 0/255, alpha: 0.4).cgColor
         searchView.layer.shadowOffset = CGSize (width: 0, height: 1.2)
@@ -53,7 +50,6 @@ class TestTabController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let argument = tableView.dequeueReusableCell(withIdentifier: "argument") as! StudentCell
-        
         argument.argumentName?.text = arguments[indexPath.row]
         return argument
     }
@@ -64,11 +60,8 @@ class TestTabController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
 }
 
-
 extension TestTabController : IndicatorInfoProvider {
-    
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        
         return IndicatorInfo(title: "Test")
     }
 }
