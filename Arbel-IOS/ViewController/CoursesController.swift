@@ -26,6 +26,7 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
         API.StudentAbs()
         API.StudentMark()
         API.StudentAbs()
+        API.TopicApi()
         coursesList.dataSource = self
         coursesList.delegate = self
     }

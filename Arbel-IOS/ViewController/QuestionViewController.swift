@@ -14,6 +14,9 @@ class QuestionViewController: UIViewController {
     
     var questions = ["Prova domanda 1, lorem ipsum dolor consect.", "Prova domanda 2, lorem ipsum dolor consect.", "Prova domanda 3, lorem ipsum dolor consect.", "Prova domanda 4, lorem ipsum dolor consect."]
     
+//    var testData = GetTest.dataTest.tests
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         elementStyle()
@@ -29,14 +32,19 @@ class QuestionViewController: UIViewController {
 extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questions.count
+        return questions .count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "question", for: indexPath) as? QuestionTableViewCell
+        
+        
         cell?.question.sizeToFit()
-        cell?.question.text = questions[indexPath.row]
+        
+        let question = questions [indexPath.row]
+        
+        cell?.question.text = question
         cell?.layer.cornerRadius = 8
         return (cell!)
     }

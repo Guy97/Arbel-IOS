@@ -89,6 +89,19 @@ struct Reminder: Codable {
     var created_at: String
 }
 
+struct GetTest: Codable {
+    var tests: [Test]
+    static var dataTest: GetTest!
+}
+
+struct Test: Codable {
+    var id: Int
+    var topic_id: Int
+    var questions: String
+    var created_at: String
+}
+
+
 struct PostAbsence: Codable {
     var absence: String
 }
@@ -125,11 +138,22 @@ struct Mark: Codable {
     var date: String
 }
 
+struct TopicData: Codable {
+    var arguments: [Argument]
+    static var studentMark: TopicData!
+}
+
+struct Argument: Codable {
+    var id: Int
+    var sub_id: Int
+    var topic: String
+}
+
+
 class API {
     class func StudentApi() {
         
         let url = URL(string: "http://arbel.test/api/user")!
-        print("URCA")
         
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(Users.userLogin.success.token)",
@@ -165,8 +189,6 @@ class API {
     class func ReminderApi() {
         
         let url = URL(string: "http://arbel.test/api/getReminder")!
-        
-        
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(Users.userLogin.success.token)",
             "Accept": "application/json"
@@ -178,12 +200,10 @@ class API {
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 print("Data: \(utf8Text)") // original server data as UTF8 string
                 do {
-                    
                     let jsonDecoder = JSONDecoder()
                     var postData = try jsonDecoder.decode(GetReminder.self, from: response.data!)
                     
                     GetReminder.dataReminder = postData
-                    
                 }
                 catch
                 {
@@ -193,6 +213,7 @@ class API {
             }
         }
     }
+    
     class func StudentMark() {
         
         let url = URL(string: "http://arbel.test/api/studentsMark")!
@@ -255,6 +276,70 @@ class API {
             }
         }
     }
+    
+    class func TestApi() {
+        
+        let url = URL(string: "http://arbel.test/api/getTest")!
+        
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(Users.userLogin.success.token)",
+            "Accept": "application/json"
+        ]
+        
+        Alamofire.request(url, method: .get, headers: headers).responseJSON{
+            
+            response in //response serialization result
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                print("Data: \(utf8Text)") // original server data as UTF8 string
+                do {
+                    
+                    let jsonDecoder = JSONDecoder()
+                    var postData = try jsonDecoder.decode(GetTest.self, from: response.data!)
+                    
+                    GetTest.dataTest = postData
+                    
+        
+                    
+                }
+                catch
+                {
+                    print(error)
+                }
+                
+            }
+        }
+    }
+    
+    class func TopicApi() {
+        
+        let url = URL(string: "http://arbel.test/api/getArgument")!
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(Users.userLogin.success.token)",
+            "Accept": "application/json"
+        ]
+        
+        Alamofire.request(url, method: .get, headers: headers).responseJSON{
+            
+            response in //response serialization result
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                print("Data: \(utf8Text)") // original server data as UTF8 string
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    var postData = try jsonDecoder.decode(GetReminder.self, from: response.data!)
+                    
+                    GetReminder.dataReminder = postData
+                }
+                catch
+                {
+                    print(error)
+                }
+                
+            }
+        }
+    }
+    
+    
 }
 
 

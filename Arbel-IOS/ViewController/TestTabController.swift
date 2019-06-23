@@ -17,12 +17,14 @@ class TestTabController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var argumentTableView: UITableView!
     
     var arguments = ["Argomento 1", "Argomento 2", "Argomento 3", "Argomento 4", "Tutti gli argomenti"]
+//    var topicData = TopicData.studentMark.arguments
     
     override func viewDidLoad() {
         elementStyle()      
         argumentTableView.dataSource = self
         argumentTableView.delegate = self
         super.viewDidLoad()
+        API.TestApi()
     }
     
     func elementStyle() {
@@ -50,7 +52,10 @@ class TestTabController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let argument = tableView.dequeueReusableCell(withIdentifier: "argument") as! StudentCell
-        argument.argumentName?.text = arguments[indexPath.row]
+        
+        let testDetail = arguments[indexPath.row]
+        
+        argument.argumentName?.text = testDetail
         return argument
     }
     
