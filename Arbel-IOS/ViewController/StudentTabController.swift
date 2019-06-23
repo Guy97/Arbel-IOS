@@ -37,7 +37,8 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     var tableViewData = [cellData]()
-    
+    var absence = [Int]()
+    var absenceSelect = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
         studentsList.dataSource = self
@@ -175,6 +176,7 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         
         print(studentID, "QUIII")
         
+        
     }
     
     
@@ -210,6 +212,59 @@ class StudentTabController: UIViewController, UITableViewDelegate, UITableViewDa
         studentID = detectStudent[(indexPath?.section)!]
 
         print(studentID, "pulizia")
+        absence.append(studentID)
+    }
+    
+    @IBAction func saveAbsence() {
+        var hours = 0
+        let mappedItems = absence.map { ($0, 1) }
+        let counts = Dictionary(mappedItems, uniquingKeysWith: +)
+        for (key, value) in counts {
+            if value % 2 != 0 {
+                for i in 0 ..< absence.count {
+                    if absence[i] == key {
+                        //absence.remove(at: absence[i])
+                        absenceSelect.append(absence[i])
+                    }
+                }
+            }
+        }
+        for subject in Users.userLogin.success.subjects {
+            if subject.id == PassData.globalVariable.subID {
+                hours += subject.totHours
+            }
+        }
+        print(hours, "ore")
+        print(absenceSelect, "assenze")
+        for i in 0 ..< absenceSelect.count {
+            let postDict:[String:Int] = ["absence_hours": 300/hours, "stud_id": absenceSelect[i], "sub_id": PassData.globalVariable.subID]
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(Users.userLogin.success.token)",
+            "Accept": "application/json"
+        ]
+        
+        Alamofire.request("http://arbel.test/api/postAbsence", method: .post, parameters: postDict, headers: headers).responseJSON {response in
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                do {
+                    
+                    let jsonDecoder = JSONDecoder()
+                    var postData = try jsonDecoder.decode(PostAbsence.self, from: response.data!)
+                    print(postData, "UDITE")
+                    
+                    
+                }
+                catch
+                {
+                    print(error)
+                    
+                }
+                
+            }
+            
+         
+        }
+        }
     }
 }
 

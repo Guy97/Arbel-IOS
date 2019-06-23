@@ -89,6 +89,23 @@ struct Reminder: Codable {
     var created_at: String
 }
 
+struct PostAbsence: Codable {
+    var arguments: String
+}
+
+struct PostArgument: Codable {
+    var absence: String
+    //static var studentAbsence: PostAbsence!
+}
+
+struct Absence: Codable {
+    var id: Int
+    var sub_id: Int
+    var stud_id: Int
+    var absence_hours: Int
+    var date: String
+}
+
 class API {
     class func StudentApi() {
         
@@ -167,6 +184,7 @@ struct PassData {
     struct globalVariable {
         static var passData = Int()
         static var studentID = Int()
+        static var subID = Int()
     }
 }
 

@@ -13,6 +13,7 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
     @IBOutlet var coursesList: UITableView!
 
     var coursesData = Users.userLogin.success.courses
+    var subjectData = Users.userLogin.success.subjects
     
     struct Course {
         var yearCourse: Int
@@ -54,11 +55,17 @@ class CoursesController: UIViewController ,UITableViewDelegate, UITableViewDataS
         performSegue(withIdentifier: "showStudent", sender: self)
         
         var courseID = 0
-        var gay = coursesData.map {($0).id}
-        courseID = gay[indexPath.row]
+        var filt = coursesData.map {($0).id}
+        courseID = filt[indexPath.row]
         PassData.globalVariable.passData = courseID
         
+        var subjectID = 0
+        var subfilt = subjectData.map {($0).id}
+        subjectID = subfilt[indexPath.row]
+        PassData.globalVariable.subID = subjectID
+        
         print(courseID, "CLICCA CLICCA")
+        print(subjectID, "CLICCA")
     }
     
     override func viewWillAppear(_ animated: Bool) {
