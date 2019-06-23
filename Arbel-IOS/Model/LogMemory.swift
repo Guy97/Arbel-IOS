@@ -90,12 +90,17 @@ struct Reminder: Codable {
 }
 
 struct PostAbsence: Codable {
-    var arguments: String
+    var absence: String
 }
 
 struct PostArgument: Codable {
-    var absence: String
+    var arguments: String
     //static var studentAbsence: PostAbsence!
+}
+
+struct AbsenceData: Codable {
+    var student_absence: [Absence]
+    static var studentAbs: AbsenceData!
 }
 
 struct Absence: Codable {
@@ -103,6 +108,20 @@ struct Absence: Codable {
     var sub_id: Int
     var stud_id: Int
     var absence_hours: Int
+    var date: String
+}
+
+struct MarkData: Codable {
+    var student_absence: [Mark]
+    static var studentMark: MarkData!
+}
+
+struct Mark: Codable {
+    var id: Int
+    var sub_id: Int
+    var stud_id: Int
+    var mark: Int
+    var tipology: String
     var date: String
 }
 
@@ -168,6 +187,68 @@ class API {
                     
                     GetReminder.dataReminder = postData
 
+                }
+                catch
+                {
+                    print(error)
+                }
+                
+            }
+        }
+    }
+    class func StudentMark() {
+        
+        let url = URL(string: "http://arbel.test/api/studentsMark")!
+        
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(Users.userLogin.success.token)",
+            "Accept": "application/json"
+        ]
+        
+        Alamofire.request(url, method: .get, headers: headers).responseJSON{
+            
+            response in //response serialization result
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                print("Data: \(utf8Text)") // original server data as UTF8 string
+                do {
+                    
+                    let jsonDecoder = JSONDecoder()
+                    var postData = try jsonDecoder.decode(MarkData.self, from: response.data!)
+                    
+                    MarkData.studentMark = postData
+                    
+                }
+                catch
+                {
+                    print(error)
+                }
+                
+            }
+        }
+    }
+    class func StudentAbs() {
+        
+        let url = URL(string: "http://arbel.test/api/studentsAbsence")!
+        
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(Users.userLogin.success.token)",
+            "Accept": "application/json"
+        ]
+        
+        Alamofire.request(url, method: .get, headers: headers).responseJSON{
+            
+            response in //response serialization result
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                print("Data: \(utf8Text)") // original server data as UTF8 string
+                do {
+                    
+                    let jsonDecoder = JSONDecoder()
+                    var postData = try jsonDecoder.decode(AbsenceData.self, from: response.data!)
+                    
+                    AbsenceData.studentAbs = postData
+                    
                 }
                 catch
                 {

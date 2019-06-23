@@ -30,8 +30,8 @@ class ArgumentController: UIViewController {
         self.sendButton.setBackgroundColor(color: UIColor(red: 189/255, green: 0/255, blue: 23/255, alpha: 1), forState: .highlighted)
     }
     
-    @IBAction func saveAbsence() {
-        let postDict:[String:Any] = ["topic": "\(argumentForm.text)", "sub_id": PassData.globalVariable.subID]
+    @IBAction func saveArgument() {
+        let postDict:[String:Any] = ["topic": "\(argumentForm.text!)", "sub_id": PassData.globalVariable.subID]
         
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(Users.userLogin.success.token)",

@@ -2317,7 +2317,7 @@ programmazione 2</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveAbsence" destination="35N-QL-19j" eventType="touchUpInside" id="RCs-Qd-uR3"/>
+                                    <action selector="saveArgument" destination="35N-QL-19j" eventType="touchUpInside" id="Ud2-eH-Bbm"/>
                                 </connections>
                             </button>
                         </subviews>
